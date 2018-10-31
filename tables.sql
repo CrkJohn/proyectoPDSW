@@ -4,10 +4,10 @@ CREATE TABLE "User" (
    Tuser varchar(20)  NOT NULL,
    email varchar(20)  NOT NULL,
    CONSTRAINT email UNIQUE (email) NOT DEFERRABLE  INITIALLY IMMEDIATE,
-   CONSTRAINT id PRIMARY KEY (id)
+   CONSTRAINT User_pk PRIMARY KEY (id)
 );
 
-CREATE TABLE Initiative (
+CREATE TABLE "Initiative" (
    id int  NOT NULL,
    description varchar(20)  NOT NULL,
    key_words varchar(100)  NOT NULL,
@@ -16,10 +16,10 @@ CREATE TABLE Initiative (
    num_votos int  NOT NULL,
    start_date date  NOT NULL,
    User_id int  NOT NULL,
-   CONSTRAINT id PRIMARY KEY (id)
+   CONSTRAINT Initiative_pk PRIMARY KEY (id)
 );
 
-CREATE TABLE Comment (
+CREATE TABLE "Comment" (
    id int  NOT NULL,
    comment varchar(200)  NOT NULL,
    User_id int  NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE Comment (
    CONSTRAINT Comment_pk PRIMARY KEY (id)
 );
 
-CREATE TABLE vote (
+CREATE TABLE "vote" (
    User_id int  NOT NULL,
    Initiative_id int  NOT NULL,
    CONSTRAINT vote_pk PRIMARY KEY (User_id,Initiative_id)
