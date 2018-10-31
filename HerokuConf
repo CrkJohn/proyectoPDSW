@@ -1,0 +1,3 @@
+user: whhatikoabxnub
+password: c4eb0ac28c72d7aded51ad911d5ff544d88d30f72e9737fec1856b4891d90b21
+jdbc:postgresql://ec2-107-21-93-132.compute-1.amazonaws.com:5432/dacts9tk3m0pmt?ssl=true&sslfactory=org.postgresql.ssl.NonValidatingFactory
