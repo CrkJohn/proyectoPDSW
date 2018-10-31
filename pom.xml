@@ -14,6 +14,21 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+	<dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>42.0.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.google.inject</groupId>
+		<artifactId>guice</artifactId>
+		<version>4.2.2</version>
+	</dependency>
+	<dependency>
+		<groupId>org.mybatis</groupId>
+        <artifactId>mybatis-guice</artifactId>
+        <version>3.4</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>BancoIniciativas</finalName>
