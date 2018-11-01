@@ -25,6 +25,7 @@ public class InitiativeServicesImplStub implements InitiativeServices{
 		   usersType = new HashMap();
 	       initiatives = new HashMap();
 	       comments = new HashMap();
+	       poblar();
 	 }
 
 
@@ -88,7 +89,7 @@ public class InitiativeServicesImplStub implements InitiativeServices{
 		 
 		 List<String> keyWords= Arrays.asList("Jardin","Baño","Tecnologia");
 		 
-		 Initiative ini1=new Initiative ("Hacer más baños", keyWords,"Logistica",u2);
+		 Initiative ini1=new Initiative ("Hacer mas ba�os", keyWords,"Logistica",u2);
 		 Initiative ini2=new Initiative ("Expandir zona verde", keyWords,"Jardineria",u1);
 		 Initiative ini3=new Initiative ("Mas computadores", keyWords,"Tecnologia",u3);
 		 
@@ -97,7 +98,7 @@ public class InitiativeServicesImplStub implements InitiativeServices{
 		 initiatives.put(3, ini3);
 		 
 		 Comment comment1=new Comment(1, 1, "muy buena idea");
-		 Comment comment2=new Comment(1, 2, "Más espacio para comer!!");
+		 Comment comment2=new Comment(1, 2, "Mas espacio para comer!!");
 		 
 		 comments.put(1, comment1);
 		 comments.put(2, comment2);
