@@ -20,7 +20,7 @@ public class InitiativeServiceFactory {
 
                     @Override
                     protected void initialize() {
-                        install(JdbcHelper.MySQL);                        
+                        install(JdbcHelper.PostgreSQL);                        
                         setClassPathResource("mybatis-config.xml");                        
                     }
 
@@ -32,7 +32,7 @@ public class InitiativeServiceFactory {
 
                     @Override
                     protected void initialize() {
-                        install(JdbcHelper.MySQL);                        
+                        install(JdbcHelper.PostgreSQL);                        
                         setClassPathResource("h2-mybatis-config.xml");                        
                         
                     }
