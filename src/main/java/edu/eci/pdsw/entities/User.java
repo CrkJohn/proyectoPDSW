@@ -1,4 +1,4 @@
-package entities;
+package edu.eci.pdsw.entities;
 
 public class User {
 	private long id;

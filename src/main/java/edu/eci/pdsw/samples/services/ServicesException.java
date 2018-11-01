@@ -1,4 +1,4 @@
-package services;
+package edu.eci.pdsw.samples.services;
 
 public class ServicesException extends Exception {
 	

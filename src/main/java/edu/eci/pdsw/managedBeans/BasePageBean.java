@@ -1,4 +1,4 @@
-package managedBeans;
+package edu.eci.pdsw.managedBeans;
 
 
 import java.io.Serializable;

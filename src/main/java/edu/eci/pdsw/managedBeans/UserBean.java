@@ -1,4 +1,4 @@
-package managedBeans;
+package edu.eci.pdsw.managedBeans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.inject.Inject;

@@ -1,4 +1,4 @@
-package entities;
+package edu.eci.pdsw.entities;
 
 import java.util.*;
 

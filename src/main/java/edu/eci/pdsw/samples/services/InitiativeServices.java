@@ -1,10 +1,10 @@
-package services;
+package edu.eci.pdsw.samples.services;
 
 import java.util.List;
 
-import entities.Comment;
-import entities.Initiative;
-import entities.User;
+import edu.eci.pdsw.entities.Comment;
+import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.User;
 
 public interface InitiativeServices {
 
@@ -57,4 +57,5 @@ public interface InitiativeServices {
 	 * @throws ServicesException
 	 */
 	public Initiative searchInitiative(int idIni) throws ServicesException; 
+	
 }

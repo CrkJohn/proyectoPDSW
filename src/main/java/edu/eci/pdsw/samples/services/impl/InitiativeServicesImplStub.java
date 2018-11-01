@@ -1,19 +1,19 @@
 
-package services.impl;
+package edu.eci.pdsw.samples.services.impl;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import entities.Comment;
-import entities.Initiative;
-import entities.User;
-import entities.UserType;
-import services.ServicesException;
-import services.InitiativeServices;
+import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.UserType;
+import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.Comment;
+import edu.eci.pdsw.samples.services.InitiativeServices;
+import edu.eci.pdsw.samples.services.ServicesException;
 
-public class InitiativeServicesImplStub implements InitiativeServices {
+public class InitiativeServicesImplStub implements InitiativeServices{
 	
 	 private final Map<Long,User> users;
 	 private final Map<Integer,UserType> usersType;
@@ -21,50 +21,43 @@ public class InitiativeServicesImplStub implements InitiativeServices {
 	 private final Map<Integer,Comment> comments;
 	 
 	 public InitiativeServicesImplStub() {
-		   users = new HashMap<>();
-		   usersType = new HashMap<>();
-	       initiatives = new HashMap<>();
-	       comments = new HashMap<>();
+		   users = new HashMap();
+		   usersType = new HashMap();
+	       initiatives = new HashMap();
+	       comments = new HashMap();
 	 }
 
 
-	@Override
 	public void createUser(User user) throws ServicesException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public List<User> listUsers() throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public void createInitiative(Initiative i) throws ServicesException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void createComment(long idUser, int idIni, String comment) throws ServicesException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public void registerVote(long idUser, int idIni) throws ServicesException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
 	public List<Comment> searchCommentsByInitiative(int id) throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public Initiative searchInitiative(int idIni) throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
