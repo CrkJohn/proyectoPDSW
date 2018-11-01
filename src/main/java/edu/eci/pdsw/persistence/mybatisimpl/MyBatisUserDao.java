@@ -8,14 +8,14 @@ import edu.eci.pdsw.samples.services.ServicesException;
 
 public class MyBatisUserDao implements UserDAO{
 
-	public void save(User user) throws ServicesException {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public List<User> loadAll() throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public void load(int id) throws ServicesException {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

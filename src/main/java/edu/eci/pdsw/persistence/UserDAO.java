@@ -9,7 +9,7 @@ import edu.eci.pdsw.samples.services.ServicesException;
 
 public interface UserDAO {
 	
-	public void save (User user) throws ServicesException;
+	public void load (int id) throws ServicesException;
 	
 	public List<User> loadAll() throws ServicesException;
 	
