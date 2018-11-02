@@ -57,4 +57,8 @@ public class User {
 	public void setType(UserType type) {
 		this.type = type;
 	}
+	
+	public String toString() {
+		return name + " " + " " + email;
+	}
 }

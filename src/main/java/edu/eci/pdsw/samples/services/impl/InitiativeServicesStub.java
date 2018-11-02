@@ -13,18 +13,18 @@ import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
 
-public class InitiativeServicesImplStub implements InitiativeServices{
+public class InitiativeServicesStub implements InitiativeServices{
 	
 	 private final Map<Long,User> users;
 	 private final Map<Integer,UserType> usersType;
 	 private final Map<Integer,Initiative> initiatives;
 	 private final Map<Integer,Comment> comments;
 	 
-	 public InitiativeServicesImplStub() {
-		   users = new HashMap();
-		   usersType = new HashMap();
-	       initiatives = new HashMap();
-	       comments = new HashMap();
+	 public InitiativeServicesStub() {
+		   users = new HashMap<Long,User>();
+		   usersType = new HashMap<Integer,UserType>();
+	       initiatives = new HashMap<Integer,Initiative>();
+	       comments = new HashMap<Integer,Comment>();
 	       poblar();
 	 }
 
@@ -103,6 +103,13 @@ public class InitiativeServicesImplStub implements InitiativeServices{
 		 comments.put(1, comment1);
 		 comments.put(2, comment2);
 	 }
+
+
+	@Override
+	public User getUser(int id) throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 
 	

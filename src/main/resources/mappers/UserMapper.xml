@@ -3,24 +3,19 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace "edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper">
+<mapper namespace="edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper">
 
     <resultMap type='User' id='UserResult'>
         <id property='id' column='idus'/>        
         <result property='name' column='name'/>
 		<result property='email' column='email'/>
-		<!---<result property='TypeUser_id' javaType="TypeUser"/>--->
     </resultMap>
 
     <select id="consultUser" resultMap="UserResult" parameterType="map">
-        SELECT
-			u.id idus,
+        SELECT u.id idus,
 			u.name,
-			u.email,
-			<!--u.TypeUser_id-->
-        FROM
-            User as u
-		WHERE
-			u.id = #{id}
+			u.email
+        FROM "User" as u
+		WHERE u.id = #{id}
     </select>
 </mapper>

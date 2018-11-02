@@ -8,6 +8,7 @@
     </settings>
     
     <typeAliases>
+    	<typeAlias type='edu.eci.pdsw.entities.User' alias='User'/>
     </typeAliases>        
 
         
@@ -23,7 +24,8 @@
         </environment>
     </environments>
         
-    <mappers>           
+    <mappers>
+    	<mapper resource="mappers/UserMapper.xml"></mapper>               
     </mappers> 
         
         

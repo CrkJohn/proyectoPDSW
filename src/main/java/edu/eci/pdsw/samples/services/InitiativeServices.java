@@ -58,4 +58,7 @@ public interface InitiativeServices {
 	 */
 	public Initiative searchInitiative(int idIni) throws ServicesException; 
 	
+	
+	public User getUser(int id ) throws ServicesException;
+	
 }
