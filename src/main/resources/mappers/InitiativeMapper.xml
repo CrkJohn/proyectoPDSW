@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper">
+
+    <resultMap type='Initiative' id='InitiativeResult'>
+        <id property='id' column='idin'/>        
+        <result property='description' column='description'/>
+		<result property='area' column='area'/>
+		<result property='num_votos' column='num_votos'/>
+		<result property='creation_date' column='creation_date'/>
+		<result property='User_id' column='User_id'/>
+		<result property='modify_date' column='modify_date'/>
+    </resultMap>
+	
+	<insert id="insertInitiative" parameterType="Initiative">
+		INSERT INTO "Initiative"
+		(id, description, area, num_votos,creation_date,User_id,modify_date) 
+		VALUES(#{idin},#{description},#{area},#{nvotos},#{creation},#{idus},#{modification})
+	</insert>
+	
+</mapper>

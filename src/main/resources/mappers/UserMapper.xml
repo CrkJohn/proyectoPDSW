@@ -9,12 +9,14 @@
         <id property='id' column='idus'/>        
         <result property='name' column='name'/>
 		<result property='email' column='email'/>
+		<result property='Type_user' column='tuser'/>
     </resultMap>
 
     <select id="consultUser" resultMap="UserResult" parameterType="map">
         SELECT u.id idus,
 			u.name,
-			u.email
+			u.email,
+			u.Type_user tuser
         FROM "User" as u
 		WHERE u.id = #{id}
     </select>

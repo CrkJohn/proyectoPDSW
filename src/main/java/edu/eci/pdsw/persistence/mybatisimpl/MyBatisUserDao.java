@@ -1,7 +1,6 @@
 package edu.eci.pdsw.persistence.mybatisimpl;
 
 import java.util.List;
-
 import com.google.inject.Inject;
 import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.persistence.UserDAO;
@@ -12,7 +11,7 @@ public class MyBatisUserDao implements UserDAO{
 	
 	@Inject
 	UserMapper userMapper;
-
+	
 	public List<User> loadAll() throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
@@ -25,8 +24,5 @@ public class MyBatisUserDao implements UserDAO{
 			e.printStackTrace();
 			throw new ServicesException("Load user"+id+ "persistence error");
 		}
-		
 	}
-	
-
 }
