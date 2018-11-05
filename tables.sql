@@ -112,14 +112,14 @@ ALTER TABLE word_initiative ADD CONSTRAINT word_initiative_Key_words
 
 /*
  * Para los tipo usuario se tienen de la siguiente forma:
- * 1 - Administrador
- * 2 - Personal
- * 3 - Proponente
- * 4 - Publico
+ * 0 - Administrador
+ * 1 - Personal
+ * 2 - Proponente
+ * 3 - Publico
  * */
 
-insert into "User" values (2133,'Ana','anamariarincon1299@escuelaing.edu.co','ana123',1);
-insert into "User" values (2143,'Santiago','santiago@mail.escuelaing.edu.co','santiago123',3);
+insert into "User" values (2133,'Ana','anamariarincon1299@escuelaing.edu.co','ana123',0);
+insert into "User" values (2143,'Santiago','santiago@mail.escuelaing.edu.co','santiago123',2);
 
 
 

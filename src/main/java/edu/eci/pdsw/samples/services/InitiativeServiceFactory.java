@@ -7,6 +7,7 @@ import org.mybatis.guice.datasource.helper.JdbcHelper;
 import static com.google.inject.Guice.createInjector;
 import com.google.inject.Injector;
 
+import edu.eci.pdsw.entities.UserType;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
 import edu.eci.pdsw.persistence.mybatisimpl.MyBatisInitiativeDAO;
@@ -67,7 +68,7 @@ public class InitiativeServiceFactory {
     }
     
     public static void main(String a[]) throws ServicesException{
-        System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getUser(2133));
+        //System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getUser("anamariarincon1299@escuelaing.edu.co", "ana123"));
     }
     
 }

@@ -9,15 +9,15 @@
         <id property='id' column='idus'/>        
         <result property='name' column='name'/>
 		<result property='email' column='email'/>
-		<result property='Type_user' column='tuser'/>
+		<result property='type' column='tuser' typeHandler="org.apache.ibatis.type.EnumOrdinalTypeHandler" />
     </resultMap>
 
-    <select id="consultUser" resultMap="UserResult" parameterType="map">
+    <select id="getUserByCredentials" resultMap="UserResult" parameterType="map">
         SELECT u.id idus,
 			u.name,
 			u.email,
 			u.Type_user tuser
         FROM "User" as u
-		WHERE u.id = #{id}
+		WHERE email = #{email} AND password = #{password} 
     </select>
 </mapper>

@@ -63,7 +63,7 @@ public interface InitiativeServices {
 	 * @return
 	 * @throws ServicesException
 	 */
-	public User getUser(int id ) throws ServicesException;
+	public User getUser(String email, String password) throws ServicesException;
 	
 	/**
 	 * 

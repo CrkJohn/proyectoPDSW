@@ -65,17 +65,17 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 	
 	 private void poblar() {
-		 UserType admin=new UserType(1,"Admin");
-		 UserType pmo_odi=new UserType(2,"PMO-ODI");
-		 UserType proponent=new UserType(3,"Proponent");
-		 UserType publico=new UserType(4,"Public");
+		 UserType admin = UserType.Administrador;
+		 UserType pmo_odi= UserType.Personal;
+		 UserType proponent= UserType.Proponente;
+		 UserType publico= UserType.Publico;
 		 
 		 usersType.put(1,admin);
 		 usersType.put(2,pmo_odi);
 		 usersType.put(3,proponent);
 		 usersType.put(4, publico);
 		 
-		 User u1=new User(1016095672,"juanito","choachi","juan.choachi@gmail.com",proponent);
+		 /*User u1=new User(1016095672,"juanito","choachi","juan.choachi@gmail.com",proponent);
 		 User u2=new User(123456789,"santiago","rocha","S.R@gmail.com",proponent);
 		 User u3=new User(111111111,"diego","carvajal","diego-c@gmail.com",proponent);
 		 User u4=new User(987654321,"ana","rincon","anaRincon@gmail.com",pmo_odi);
@@ -85,7 +85,7 @@ public class InitiativeServicesStub implements InitiativeServices{
 		 users.put((long)2, u2);
 		 users.put((long)3, u3);
 		 users.put((long)4, u4);
-		 users.put((long)5, u5);
+		 users.put((long)5, u5);*/
 		 
 		 List<String> keyWords= Arrays.asList("Jardin","Baño","Tecnologia");
 		 
@@ -106,12 +106,14 @@ public class InitiativeServicesStub implements InitiativeServices{
 
 
 	@Override
-	public User getUser(int id) throws ServicesException {
+	public List<Initiative> searchInitiativeByKeywords(List<String> keywords) throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 	@Override
-	public List<Initiative> searchInitiativeByKeywords(List<String> keywords) throws ServicesException {
+	public User getUser(String email, String password) throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
 	}

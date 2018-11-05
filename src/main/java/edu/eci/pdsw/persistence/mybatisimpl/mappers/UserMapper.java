@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import edu.eci.pdsw.entities.User;
 
 public interface UserMapper{
-	public User consultUser(@Param("id") int id);
+	public User getUserByCredentials(@Param("email") String email,  @Param("password") String password);
 	
 	public List<User> consultUsers();
 }

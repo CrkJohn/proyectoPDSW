@@ -62,15 +62,15 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public User getUser(int id) throws ServicesException {
-		return userDAO.load(id);
-	}
 	
 	@Override
 	public List<Initiative> searchInitiativeByKeywords(List<String> keywords) throws ServicesException {
 		return initiativeDAO.load(keywords);
+	}
+
+	@Override
+	public User getUser(String email, String password) throws ServicesException {
+		return userDAO.getUserByCredetianls(email, password);
 	}
 
 

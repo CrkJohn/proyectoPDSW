@@ -17,12 +17,12 @@ public class MyBatisUserDao implements UserDAO{
 		return null;
 	}
 
-	public User load(int id) throws ServicesException {
+	public User getUserByCredetianls(String email, String password) throws ServicesException {
 		try {
-			return userMapper.consultUser(id);
+			return userMapper.getUserByCredentials(email, password);
 		}catch(Exception e) {
 			e.printStackTrace();
-			throw new ServicesException("Load user"+id+ "persistence error");
+			throw new ServicesException("Load user"+email+ "persistence error");
 		}
 	}
 }
