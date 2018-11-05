@@ -11,15 +11,16 @@ public class Initiative {
 	private String area;
 	private int numVotes;
 	private Date startDate;
-	private User user;
+	private Date modifyDate;
+	private int userId;
 	
 	public Initiative() {}
 	
-	public Initiative(String description, List<String> keyWords, String area, User user){
+	public Initiative(String description, List<String> keyWords, String area, int userId){
 		this.description= description;
 		this.keyWords= keyWords;
 		this.area= area;
-		this.user= user;
+		this.userId= userId;
 	}
 
 	public int getId() {
@@ -77,13 +78,20 @@ public class Initiative {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-
-	public User getUser() {
-		return user;
+	public Date getModifyDate() {
+		return modifyDate;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setModifyDate(Date modifyDate) {
+		this.modifyDate = modifyDate;
+	}
+
+	public int getUser() {
+		return userId;
+	}
+
+	public void setUser(int user) {
+		this.userId = user;
 	}
 	
 	

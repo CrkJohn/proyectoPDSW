@@ -21,7 +21,16 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 			throw new ServicesException("Error trying to insert the initiative");
 		}
 	}
-
+	
+	public List<Initiative> load(List<String> keywords) throws ServicesException {
+		try {
+			return initiativeMapper.load(keywords);
+		
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new ServicesException("Unable to load initiatives by keywords, persistence error");
+		}
+	}
 	
 	public List<Initiative> loadByUser(String id) throws ServicesException {
 		// TODO Auto-generated method stub

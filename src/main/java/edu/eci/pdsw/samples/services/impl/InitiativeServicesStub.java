@@ -89,9 +89,9 @@ public class InitiativeServicesStub implements InitiativeServices{
 		 
 		 List<String> keyWords= Arrays.asList("Jardin","BaÃ±o","Tecnologia");
 		 
-		 Initiative ini1=new Initiative ("Hacer mas baños", keyWords,"Logistica",u2);
-		 Initiative ini2=new Initiative ("Expandir zona verde", keyWords,"Jardineria",u1);
-		 Initiative ini3=new Initiative ("Mas computadores", keyWords,"Tecnologia",u3);
+		 Initiative ini1=new Initiative ("Hacer mas baï¿½os", keyWords,"Logistica",1015475102);
+		 Initiative ini2=new Initiative ("Expandir zona verde", keyWords,"Jardineria",123456789);
+		 Initiative ini3=new Initiative ("Mas computadores", keyWords,"Tecnologia",1016095672);
 		 
 		 initiatives.put(1, ini1);
 		 initiatives.put(2, ini2);
@@ -110,6 +110,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	public List<Initiative> searchInitiativeByKeywords(List<String> keywords) throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 	

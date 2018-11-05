@@ -6,13 +6,14 @@
 <mapper namespace="edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper">
 
     <resultMap type='Initiative' id='InitiativeResult'>
-        <id property='id' column='idin'/>        
+        <id property='id' column='id'/>        
         <result property='description' column='description'/>
 		<result property='area' column='area'/>
-		<result property='num_votos' column='num_votos'/>
-		<result property='creation_date' column='creation_date'/>
-		<result property='User_id' column='User_id'/>
-		<result property='modify_date' column='modify_date'/>
+		<result property='numVotes' column='num_votos'/>
+		<result property='startDate' column='creation_date'/>
+		<result property='user' column='User_id'/>
+		<result property='modifyDate' column='modify_date'/>
+		<result property='status' column='Type_Status_id'/>
     </resultMap>
 	
 	<insert id="insertInitiative" parameterType="Initiative">
@@ -20,5 +21,16 @@
 		(id, description, area, num_votos,creation_date,User_id,modify_date) 
 		VALUES(#{idin},#{description},#{area},#{nvotos},#{creation},#{idus},#{modification})
 	</insert>
+	
+	<select id="load" resultMap="InitiativeResult" parameterType="map">
+        SELECT i.id,
+			i.description,
+			i.area,
+			i.creation_date,
+			i.num_votos
+        FROM "Initiative" as i
+        <!--  Esta mal -->
+		WHERE u.id = #{keywords}
+    </select>
 	
 </mapper>

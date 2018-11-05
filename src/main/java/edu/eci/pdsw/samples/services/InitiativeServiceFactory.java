@@ -7,7 +7,9 @@ import org.mybatis.guice.datasource.helper.JdbcHelper;
 import static com.google.inject.Guice.createInjector;
 import com.google.inject.Injector;
 
+import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
+import edu.eci.pdsw.persistence.mybatisimpl.MyBatisInitiativeDAO;
 import edu.eci.pdsw.persistence.mybatisimpl.MyBatisUserDao;
 import edu.eci.pdsw.samples.services.impl.InitiativeServiceImpl;
 import edu.eci.pdsw.samples.services.impl.InitiativeServicesStub;
@@ -28,6 +30,7 @@ public class InitiativeServiceFactory {
                         install(JdbcHelper.PostgreSQL);                        
                         setClassPathResource("mybatis-config.xml");         
                         bind(UserDAO.class).to(MyBatisUserDao.class);
+						bind(InitiativeDAO.class).to(MyBatisInitiativeDAO.class);
                         bind(InitiativeServices.class).to(InitiativeServiceImpl.class);
                     }
 

@@ -57,8 +57,20 @@ public interface InitiativeServices {
 	 * @throws ServicesException
 	 */
 	public Initiative searchInitiative(int idIni) throws ServicesException; 
-	
-	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 * @throws ServicesException
+	 */
 	public User getUser(int id ) throws ServicesException;
+	
+	/**
+	 * 
+	 * @param keywords
+	 * @return
+	 * @throws ServicesException
+	 */
+	public List<Initiative> searchInitiativeByKeywords(List<String> keywords) throws ServicesException; 
 	
 }
