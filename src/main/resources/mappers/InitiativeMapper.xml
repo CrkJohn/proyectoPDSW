@@ -28,9 +28,9 @@
 			i.area,
 			i.creation_date,
 			i.num_votos
-        FROM "Initiative" as i
+        FROM "Initiative" as i, Key_words as kw, word_initiative as wi
         <!--  Esta mal -->
-		WHERE u.id = #{keywords}
+		WHERE kw.word= #{keywords} and kw.id=wi.Key_words_id and wi.Initiative_id=i.id
     </select>
 	
 </mapper>
