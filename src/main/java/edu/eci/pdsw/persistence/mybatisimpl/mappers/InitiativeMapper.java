@@ -2,7 +2,6 @@ package edu.eci.pdsw.persistence.mybatisimpl.mappers;
 
 import java.sql.Date;
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 //import edu.eci.pdsw.entities.Initiative;
 

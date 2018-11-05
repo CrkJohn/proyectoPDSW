@@ -1,6 +1,7 @@
 package edu.eci.pdsw.persistence.mybatisimpl;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import com.google.inject.Inject;
 import edu.eci.pdsw.entities.Initiative;
@@ -13,9 +14,11 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	@Inject
 	InitiativeMapper initiativeMapper;
 
-	public void addInitiative(int idin, String description, String area, int nvotos, Date creation, int idus, Date modification) throws ServicesException{
+	public void addInitiative(int idin, String description, String area, int nvotos, int idus) throws ServicesException{
 		try {
-			initiativeMapper.insertInitiative(idin,description,area,nvotos,creation,idus,modification);
+			LocalDate creationDate = LocalDate.now();
+			LocalDate modificationDate = LocalDate.now();
+			initiativeMapper.insertInitiative(idin,description,area,nvotos, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate));
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new ServicesException("Error trying to insert the initiative");
