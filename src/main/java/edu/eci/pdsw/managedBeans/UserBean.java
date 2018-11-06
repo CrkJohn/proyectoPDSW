@@ -1,12 +1,14 @@
 package edu.eci.pdsw.managedBeans;
 import java.io.IOException;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.h2.engine.SysProperties;
 
 import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.samples.services.InitiativeServices;
@@ -30,11 +32,14 @@ public class UserBean extends BasePageBean {
 	
 	public void logIn(String email, String password) throws ServicesException, IOException {
 		User user = initiativeService.getUser(email, password);
+		FacesContext facesContext = FacesContext.getCurrentInstance();
 		if(user != null) {
-			FacesContext facesContext = FacesContext.getCurrentInstance();
 			HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 			session.setAttribute("id", user.getId());
 			facesContext.getExternalContext().redirect("/faces/initiativerecord.xhtml");
+		}
+		else {
+			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Usuario o clave invalido","Error"));
 		}
 	}
 	
