@@ -14,11 +14,11 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	@Inject
 	InitiativeMapper initiativeMapper;
 
-	public void addInitiative(int idin, String description, String area, int nvotos, int idus) throws ServicesException{
+	public void addInitiative(String description, String area, int idus) throws ServicesException{
 		try {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
-			initiativeMapper.insertInitiative(idin,description,area,nvotos, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate));
+			initiativeMapper.insertInitiative(description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate));
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new ServicesException("Error trying to insert the initiative");

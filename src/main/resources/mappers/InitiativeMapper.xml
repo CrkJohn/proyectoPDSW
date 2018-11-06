@@ -19,7 +19,7 @@
 	<insert id="insertInitiative" parameterType="Initiative">
 		INSERT INTO "Initiative"
 		(id, description, area, num_votos,creation_date,User_id,modify_date) 
-		VALUES(#{idin},#{description},#{area},#{nvotos},#{creation},#{idus},#{modification})
+		VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{nvotos},#{creation},#{idus},#{modification})
 	</insert>
 	
 	<select id="load" resultMap="InitiativeResult" parameterType="map">

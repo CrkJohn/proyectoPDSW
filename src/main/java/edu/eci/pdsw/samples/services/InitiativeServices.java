@@ -26,7 +26,7 @@ public interface InitiativeServices {
 	 * @param i
 	 * @throws ServicesException
 	 */
-	public void createInitiative(Initiative i) throws ServicesException;
+	public void createInitiative(String description, String area, int idus) throws ServicesException;
 	/**
 	 * 
 	 * @param idUser
@@ -71,6 +71,6 @@ public interface InitiativeServices {
 	 * @return
 	 * @throws ServicesException
 	 */
-	public List<Initiative> searchInitiativeByKeywords(List<String> keywords) throws ServicesException; 
+	public List<Initiative> searchInitiativeByKeywords(List<String> keywords) throws ServicesException;
 	
 }

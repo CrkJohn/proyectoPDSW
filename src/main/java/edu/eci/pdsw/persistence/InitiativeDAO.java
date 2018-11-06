@@ -7,7 +7,7 @@ import edu.eci.pdsw.samples.services.ServicesException;
 
 public interface InitiativeDAO {
 	
-	public void addInitiative(int idin, String description, String area, int nvotos, int idus) throws ServicesException;
+	public void addInitiative(String description, String area, int idus) throws ServicesException;
 	
 	public List<Initiative> loadByUser (String id) throws ServicesException;
 	

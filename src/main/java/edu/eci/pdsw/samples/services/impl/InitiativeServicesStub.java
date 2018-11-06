@@ -39,7 +39,7 @@ public class InitiativeServicesStub implements InitiativeServices{
 		return null;
 	}
 
-	public void createInitiative(Initiative i) throws ServicesException {
+	public void createInitiative(String description, String area, int idus) throws ServicesException{
 		// TODO Auto-generated method stub
 		
 	}

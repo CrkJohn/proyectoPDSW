@@ -34,8 +34,12 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	}
 
 	@Override
-	public void createInitiative(Initiative i) throws ServicesException {
-		// TODO Auto-generated method stub
+	public void createInitiative(String description, String area, int idus) throws ServicesException{
+		try {
+			initiativeDAO.addInitiative(description, area, idus);
+		}catch (ServicesException ex) {
+			throw new ServicesException("Error trying to insert the initiative", ex);
+		}
 		
 	}
 
