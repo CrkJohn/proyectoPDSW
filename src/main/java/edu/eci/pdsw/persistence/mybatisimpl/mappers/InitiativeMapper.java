@@ -15,6 +15,6 @@ public interface InitiativeMapper {
 			@Param("modification")Date modification,
 			@Param("state")String state);
 			
-	public List<Initiative> load(@Param("keywords") List<String> keywords);
+	public List<Initiative> load(@Param("keyword") String keyword);
 	
 }
