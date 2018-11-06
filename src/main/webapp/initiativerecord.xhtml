@@ -18,7 +18,10 @@
 		<p:inputText id="area" binding="#{area}"/> 
 		<p:watermark for="area" value="Ingrese el area" />
 		<br></br>
-		<p:commandButton value = "Registra" update="initiative_form" actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value)}"></p:commandButton>
+		<p:inputText id="idUser" binding="#{idUser}"/> 
+		<p:watermark for="idUser" value="Ingrese el id del Usuario" />
+		<br></br>
+		<p:commandButton value = "Registra" update="initiative_form" actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value,idUser.value)}"></p:commandButton>
  	</h:form>
 </h:body>
 </html>
