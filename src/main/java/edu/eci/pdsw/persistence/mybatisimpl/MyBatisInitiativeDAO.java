@@ -18,7 +18,7 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		try {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
-			initiativeMapper.insertInitiative(description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate));
+			initiativeMapper.insertInitiative(description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera de revisión");
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new ServicesException("Error trying to insert the initiative");

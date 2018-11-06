@@ -17,9 +17,9 @@
     </resultMap>
 	
 	<insert id="insertInitiative" parameterType="Initiative">
-		INSERT INTO "Initiative"
-		(id, description, area, num_votos,creation_date,User_id,modify_date) 
-		VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{nvotos},#{creation},#{idus},#{modification})
+		INSERT INTO "initiative"
+		(id, description, area, num_votos,creation_date,User_id,modify_date,type_status_id) 
+		VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{nvotos},#{creation},#{idus},#{modification},#{state})
 	</insert>
 	
 	<select id="load" resultMap="InitiativeResult" parameterType="map">

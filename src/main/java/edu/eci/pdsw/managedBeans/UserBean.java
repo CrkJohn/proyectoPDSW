@@ -1,8 +1,14 @@
 package edu.eci.pdsw.managedBeans;
+import java.io.IOException;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
 
@@ -22,8 +28,14 @@ public class UserBean extends BasePageBean {
 	@Inject
 	InitiativeServices initiativeService;
 	
-	public void logIn(String email, String password) throws ServicesException {
-		System.out.println(initiativeService.getUser(email, password));
+	public void logIn(String email, String password) throws ServicesException, IOException {
+		User user = initiativeService.getUser(email, password);
+		if(user != null) {
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+			HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+			session.setAttribute("id", user.getId());
+			facesContext.getExternalContext().redirect("/faces/initiativerecord.xhtml");
+		}
 	}
 	
 	

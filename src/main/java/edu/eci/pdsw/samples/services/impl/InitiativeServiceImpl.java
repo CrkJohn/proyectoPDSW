@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.User;
-import edu.eci.pdsw.persistence.CommentDAO;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
 import edu.eci.pdsw.samples.services.InitiativeServices;
@@ -17,8 +16,9 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	
 	@Inject
 	private UserDAO userDAO;
+	
+	@Inject
 	private InitiativeDAO initiativeDAO;
-	private CommentDAO commentDAO;
 	
 	
 	@Override
@@ -36,6 +36,7 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	@Override
 	public void createInitiative(String description, String area, int idus) throws ServicesException{
 		try {
+			System.out.println(initiativeDAO+" Holaaaaaaaaaaaaaaaaaaaaaaa");
 			initiativeDAO.addInitiative(description, area, idus);
 		}catch (ServicesException ex) {
 			throw new ServicesException("Error trying to insert the initiative", ex);

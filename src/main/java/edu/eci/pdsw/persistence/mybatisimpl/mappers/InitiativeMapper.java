@@ -12,7 +12,8 @@ public interface InitiativeMapper {
 			@Param("nvotos")int nvotos, 
 			@Param("creation")Date creation, 
 			@Param("idus")int idus, 
-			@Param("modification")Date modification);
+			@Param("modification")Date modification,
+			@Param("state")String state);
 			
 	public List<Initiative> load(@Param("keywords") List<String> keywords);
 	
