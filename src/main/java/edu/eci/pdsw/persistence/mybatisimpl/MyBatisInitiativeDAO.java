@@ -52,8 +52,7 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 
 	
 	public Initiative load(int InitiativeId) throws ServicesException {
-		// TODO Auto-generated method stub
-		return null;
+		return initiativeMapper.loadId(InitiativeId);
 	}
 
 	

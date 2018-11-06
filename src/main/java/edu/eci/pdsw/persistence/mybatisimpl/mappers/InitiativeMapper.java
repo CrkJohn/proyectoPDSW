@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.TypeStatus;;
 
 public interface InitiativeMapper {
 	
@@ -16,5 +17,8 @@ public interface InitiativeMapper {
 			@Param("state")String state);
 			
 	public List<Initiative> load(@Param("keyword") String keyword);
+	
+	public Initiative loadId(@Param("id") int initiativeId);
+
 	
 }

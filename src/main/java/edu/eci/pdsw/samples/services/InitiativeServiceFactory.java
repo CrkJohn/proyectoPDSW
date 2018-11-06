@@ -5,6 +5,10 @@ import org.mybatis.guice.XMLMyBatisModule;
 import org.mybatis.guice.datasource.helper.JdbcHelper;
 
 import static com.google.inject.Guice.createInjector;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.inject.Injector;
 
 import edu.eci.pdsw.entities.UserType;
@@ -68,7 +72,14 @@ public class InitiativeServiceFactory {
     }
     
     public static void main(String a[]) throws ServicesException{
-        //System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getUser("anamariarincon1299@escuelaing.edu.co", "ana123"));
+        System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getUser("anamariarincon1299@escuelaing.edu.co", "ana123"));
+    	
+    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiative(1));
+    	
+    	List<String> kw= new ArrayList<String> (3);
+    	kw.add("Construccion");
+    	kw.add("Diversion");
+    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiativeByKeywords(kw));
     }
     
 }

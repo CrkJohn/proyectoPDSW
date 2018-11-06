@@ -11,10 +11,20 @@
 		<result property='area' column='area'/>
 		<result property='numVotes' column='num_votos'/>
 		<result property='startDate' column='creation_date'/>
-		<result property='user' column='User_id'/>
 		<result property='modifyDate' column='modify_date'/>
-		<result property='status' column='Type_Status_id'/>
+		<association property='user' javaType='User' resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
+		<association property='status' javaType='TypeStatus' resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper.StatusResult'></association>
+		<collection property='keyWords' ofType='java.lang.String' javaType="list">
+			<result column='word' />
+		</collection>
     </resultMap>
+    
+    <resultMap type='TypeStatus' id='StatusResult'>
+    	<id property='id' column='id'/>        
+        <result property='status' column='status'/>
+    </resultMap>
+     
+    
 	
 	<insert id="insertInitiative" parameterType="Initiative">
 		INSERT INTO "initiative"
@@ -24,12 +34,31 @@
 	
 	<select id="load" resultMap="InitiativeResult" parameterType="map">
         SELECT i.id,
-			i.description,
-			i.area,
-			i.creation_date,
-			i.num_votos
-        FROM "Initiative" as i, Key_words as kw, word_initiative as wi
+				i.description,
+				i.area,
+				i.creation_date,
+				i.modify_date,
+				i.user_id,
+				i.type_status_id,
+				i.num_votos,
+				kw.word
+        FROM Initiative as i, Key_words as kw, word_initiative as wi
 		WHERE kw.word= #{keyword} and kw.id=wi.Key_words_id and wi.Initiative_id=i.id
+    </select>
+    
+    <select id='loadId' resultMap= 'InitiativeResult' parameterType='map'>
+    
+    	 SELECT i.id,
+				i.description,
+				i.area,
+				i.creation_date,
+				i.modify_date,
+				i.user_id,
+				i.type_status_id,
+				i.num_votos,
+				kw.word
+		    FROM Initiative as i, Key_words as kw, word_initiative as wi
+		    where kw.id=wi.Key_words_id and wi.Initiative_id=#{id};
     </select>
 	
 </mapper>

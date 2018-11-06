@@ -75,7 +75,7 @@ public class InitiativeServicesStub implements InitiativeServices{
 		 usersType.put(3,proponent);
 		 usersType.put(4, publico);
 		 
-		 /*User u1=new User(1016095672,"juanito","choachi","juan.choachi@gmail.com",proponent);
+		 User u1=new User(1016095672,"juanito","choachi","juan.choachi@gmail.com",proponent);
 		 User u2=new User(123456789,"santiago","rocha","S.R@gmail.com",proponent);
 		 User u3=new User(111111111,"diego","carvajal","diego-c@gmail.com",proponent);
 		 User u4=new User(987654321,"ana","rincon","anaRincon@gmail.com",pmo_odi);
@@ -85,23 +85,25 @@ public class InitiativeServicesStub implements InitiativeServices{
 		 users.put((long)2, u2);
 		 users.put((long)3, u3);
 		 users.put((long)4, u4);
-		 users.put((long)5, u5);*/
+		 users.put((long)5, u5);
 		 
 		 List<String> keyWords= Arrays.asList("Jardin","Baño","Tecnologia");
 		 
-		 Initiative ini1=new Initiative ("Hacer mas ba�os", keyWords,"Logistica",1015475102);
-		 Initiative ini2=new Initiative ("Expandir zona verde", keyWords,"Jardineria",123456789);
-		 Initiative ini3=new Initiative ("Mas computadores", keyWords,"Tecnologia",1016095672);
+		 
+		 
+		 /*Initiative ini1=new Initiative ("Hacer mas ba�os", keyWords,"Logistica",u5);
+		 Initiative ini2=new Initiative ("Expandir zona verde", keyWords,"Jardineria",u2);
+		 Initiative ini3=new Initiative ("Mas computadores", keyWords,"Tecnologia",u1);
 		 
 		 initiatives.put(1, ini1);
 		 initiatives.put(2, ini2);
 		 initiatives.put(3, ini3);
 		 
-		 Comment comment1=new Comment(1, 1, "muy buena idea");
-		 Comment comment2=new Comment(1, 2, "Mas espacio para comer!!");
+		 Comment comment1=new Comment(u1, ini1, "muy buena idea");
+		 Comment comment2=new Comment(u2, ini2, "Mas espacio para comer!!");
 		 
 		 comments.put(1, comment1);
-		 comments.put(2, comment2);
+		 comments.put(2, comment2);*/
 	 }
 
 

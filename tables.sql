@@ -19,6 +19,7 @@ CREATE TABLE Comment (
    comment varchar(200)  NOT NULL,
    User_id int  NOT NULL,
    Initiative_id int  NOT NULL,
+   Date date  NOT NULL,
    CONSTRAINT Comment_pk PRIMARY KEY (id)
 );
 

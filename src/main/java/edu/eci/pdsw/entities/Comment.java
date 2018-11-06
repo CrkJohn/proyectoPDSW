@@ -2,15 +2,15 @@ package edu.eci.pdsw.entities;
 
 public class Comment {
 	private int id;
-	private long idUser;
-	private int idInitiative;
+	private User user;
+	private Initiative initiative;
 	private String comment;
 	
 	public Comment() {}
 	
-	public Comment(long idUser, int idInitiative,String comment ) {
-		this.idUser=idUser;
-		this.idInitiative=idInitiative;
+	public Comment(User user, Initiative initiative,String comment ) {
+		this.user=user;
+		this.initiative=initiative;
 		this.comment=comment;
 	}
 
@@ -22,20 +22,20 @@ public class Comment {
 		this.id = id;
 	}
 
-	public long getIdUser() {
-		return idUser;
+	public User getIdUser() {
+		return user;
 	}
 
-	public void setIdUser(long idUser) {
-		this.idUser = idUser;
+	public void setIdUser(User user) {
+		this.user = user;
 	}
 
-	public int getIdInitiative() {
-		return idInitiative;
+	public Initiative getIdInitiative() {
+		return initiative;
 	}
 
-	public void setIdInitiative(int idInitiative) {
-		this.idInitiative = idInitiative;
+	public void setIdInitiative(Initiative initiative) {
+		this.initiative = initiative;
 	}
 
 	public String getComment() {
