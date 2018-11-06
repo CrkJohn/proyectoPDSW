@@ -17,9 +17,11 @@
 		<p:inputText id="password" binding="#{password}"/> 
 		<p:watermark for="password" value="Contraseña" />
 		<br></br>
+		<br></br>
 		<p:commandButton value = "Registra alquiler"  
-		actionListener="#{userBean.logIn(email.value,password.value)}" id="boton">
+		actionListener="#{userBean.logIn(email.value,password.value)}" id="boton" styleClass="btn btn-success">
 		</p:commandButton>
 	</h:form>
+	<h:outputStylesheet name = "bootstrap-3.3.7-dist/css/bootstrap.min.css" />
 </h:body>
 </html>

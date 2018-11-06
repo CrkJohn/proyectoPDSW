@@ -4,6 +4,11 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+	
+	<context-param>
+		<param-name>primefaces.THEME</param-name>
+		<param-value>none</param-value>
+	</context-param>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -12,6 +17,7 @@
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
+		<url-pattern>/javax.faces.resource/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -21,6 +27,28 @@
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
+	
+	<mine-mapping>
+		<extension>ttf</extension>
+		<mine-type>css/fonts</mine-type>
+	</mine-mapping>
+	<mine-mapping>
+		<extension>otf</extension>
+		<mine-type>font/opentype</mine-type>
+	</mine-mapping>
+	<mine-mapping>
+		<extension>woff2</extension>
+		<mine-type>font/woff2</mine-type>
+	</mine-mapping>
+	<mine-mapping>
+		<extension>woff</extension>
+		<mine-type>font/woff</mine-type>
+	</mine-mapping>
+	<mine-mapping>
+		<extension>eot</extension>
+		<mine-type>aplication/vnd.ns-fontobject</mine-type>
+	</mine-mapping>	
+	
 	<listener>
 		<listener-class>edu.eci.pdsw.guice.GuiceContextListener</listener-class>
 	</listener>
