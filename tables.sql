@@ -29,7 +29,7 @@ CREATE TABLE Initiative (
    num_votos int  NOT NULL,
    creation_date date  NOT NULL,
    User_id int  NOT NULL,
-   modify_date int  NOT NULL,
+   modify_date date  NOT NULL,
    Type_Status_id varchar(50)  NOT NULL,
    CONSTRAINT initiative_pk PRIMARY KEY (id)
 );
@@ -121,5 +121,20 @@ ALTER TABLE word_initiative ADD CONSTRAINT word_initiative_Key_words
 insert into "User" values (2133,'Ana','anamariarincon1299@escuelaing.edu.co','ana123',0);
 insert into "User" values (2143,'Santiago','santiago@mail.escuelaing.edu.co','santiago123',2);
 
+insert into "type_status" values (1, 'En espera de revisión');
+insert into "type_status" values (2, 'En revisión');
+insert into "type_status" values (3, 'Proyecto');
+insert into "type_status" values (4, 'Solucionado');
 
-
+insert into "initiative" (id,description,area,num_votos,creation_date,user_id,modify_date,type_status_id)
+					values ((select count(*)+1 from "initiative"),
+						'Se requieren mas kioscos','construccion',0,(select now()),
+						2133,(select now()),'En espera de revisión') ;
+--XTablas
+drop table "comment";
+drop table "vote";
+drop table "word_initiative";
+drop table "key_words";
+drop table "initiative";
+drop table "User";
+drop table "type_status";
