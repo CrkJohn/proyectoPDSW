@@ -32,7 +32,9 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 			
 			for(String k:keywords) {
 				for(Initiative i:initiativeMapper.load(k)) {
-					initiatives.add(i);
+					if (!initiatives.contains(i)) {
+						initiatives.add(i);
+					}
 				}
 			}
 			return initiatives;
