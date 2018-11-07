@@ -1,5 +1,6 @@
 package edu.eci.pdsw.managedBeans;
 import java.io.IOException;
+import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -49,6 +50,19 @@ public class UserBean extends BasePageBean {
 	
 	public String getName() {
 		return "pablo";
+		
+	public List<User> getUsers() throws Exception{
+		try {
+			return initiativeService.listUsers();
+		}
+		catch(ServicesException ex) {
+			throw ex;
+		}
+	}
+	
+	public void modifyUser(String email, String rol) {
+		System.out.println("HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY______-----------------------------");
+		System.out.println(email+" "+rol);
 	}
 	
 	
