@@ -17,9 +17,8 @@
 		<p:inputText id="password" binding="#{password}"/> 
 		<p:watermark for="password" value="Contraseña" />
 		<br></br>
-		<br></br>
 		<p:commandButton value = "Registra alquiler"  
-		actionListener="#{userBean.logIn(email.value,password.value)}" id="boton" styleClass="btn btn-success">
+		actionListener="#{userBean.logIn(email.value,password.value)}" id="boton" styleClass="btn btn-warning">
 		</p:commandButton>
 	</h:form>
 </ui:define>

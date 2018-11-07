@@ -43,5 +43,13 @@ public class UserBean extends BasePageBean {
 		}
 	}
 	
+	public boolean islogged() {
+		return ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id") != null;
+	}
+	
+	public String getName() {
+		return "pablo";
+	}
+	
 	
 }

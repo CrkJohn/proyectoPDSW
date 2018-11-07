@@ -7,12 +7,41 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<h:outputStylesheet name = "bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	<h:outputStylesheet name = "css/template.css" />
 	<f:verbatim>
 	</f:verbatim>
 	<ui:insert name ="head" />
 </h:head>
 <h:body>
-	<img src="logo.png" alt="Girl in a jacket" style="height:150px;" />
+	<img src="logo.png" style="height:150px;" id="banner"/><br></br>
+	<nav class="navbar navbar-default" id="headRow">
+		<div class ="container-fluid">
+			<div class="navbar-header">
+				 <a class="navbar-brand">Banco de iniciativas</a>
+			</div>
+			<div class="navbar-collpase">
+				<h:panelGroup layout="block" rendered="#{ not userBean.islogged()}">
+						<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myModal">Ingresar</button>
+				</h:panelGroup>
+				<p  class="navbar-text navbar-right"><h:outputText rendered="#{ userBean.islogged()}" value="Bienvenid@ #{userBean.getName()}" /></p>
+			</div>
+		</div>
+	</nav>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Iniciar Sesion</h4>
+	      </div>
+	      <div class="modal-body">
+	      	Aqui va el form del index
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	<ui:insert name="body" />
 	<h:outputScript name = "bootstrap-3.3.7-dist/js/bootstrap.min.js" />
 </h:body>

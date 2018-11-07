@@ -1,0 +1,19 @@
+#banner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#headRow{
+	background-color: #900;
+	color: white;
+}
+
+.navbar-right{
+	margin-right: 0px;
+}
+
+a,p{
+	color:white !important;
+}
+
