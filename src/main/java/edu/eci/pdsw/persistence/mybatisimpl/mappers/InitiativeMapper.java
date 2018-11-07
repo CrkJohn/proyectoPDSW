@@ -20,5 +20,7 @@ public interface InitiativeMapper {
 	
 	public Initiative loadId(@Param("id") int initiativeId);
 
+	public void modifyInitiative(@Param("newStatus")String newStatus,@Param("id") int id);
+
 	
 }

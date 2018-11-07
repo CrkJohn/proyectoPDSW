@@ -34,31 +34,37 @@
 	
 	<select id="load" resultMap="InitiativeResult" parameterType="map">
         SELECT i.id,
-				i.description,
-				i.area,
-				i.creation_date,
-				i.modify_date,
-				i.user_id,
-				i.type_status_id,
-				i.num_votos,
-				kw.word
-        FROM Initiative as i, Key_words as kw, word_initiative as wi
-		WHERE kw.word= #{keyword} and kw.id=wi.Key_words_id and wi.Initiative_id=i.id
+			i.description,
+			i.area,
+			i.creation_date,
+			i.modify_date,
+			i.user_id,
+			ts.status as status,
+			i.num_votos,
+			kw.word
+	    FROM Initiative as i, Key_words as kw, word_initiative as wi, type_status as ts
+	    WHERE kw.word= #{keyword} and kw.id=wi.Key_words_id and wi.Initiative_id=i.id and ts.status = i.type_status_id;
+		
     </select>
     
     <select id='loadId' resultMap= 'InitiativeResult' parameterType='map'>
     
-    	 SELECT i.id,
-				i.description,
-				i.area,
-				i.creation_date,
-				i.modify_date,
-				i.user_id,
-				i.type_status_id,
-				i.num_votos,
-				kw.word
-		    FROM Initiative as i, Key_words as kw, word_initiative as wi
-		    where kw.id=wi.Key_words_id and i.id=#{id};
+    	SELECT i.id,
+			i.description,
+			i.area,
+			i.creation_date,
+			i.modify_date,
+			i.user_id,
+			ts.status as status,
+			i.num_votos,
+			kw.word
+	    FROM Initiative as i, Key_words as kw, word_initiative as wi, type_status as ts
+	    where kw.id=wi.Key_words_id and i.id=#{id} and ts.status = i.type_status_id;
     </select>
+	
+	
+	<update id="modifyInitiative">
+		update initiative set type_status_id= #{newStatus} where id= #{id};
+	</update>
 	
 </mapper>

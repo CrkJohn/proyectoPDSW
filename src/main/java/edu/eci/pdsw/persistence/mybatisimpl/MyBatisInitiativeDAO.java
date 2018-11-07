@@ -55,6 +55,12 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		return initiativeMapper.loadId(InitiativeId);
 	}
 
+	@Override
+	public void modifyInitiative(String newStatus, int id) throws ServicesException {
+		initiativeMapper.modifyInitiative(newStatus,id);
+		
+	}
+
 	
 
 	

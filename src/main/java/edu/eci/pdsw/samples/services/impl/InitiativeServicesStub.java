@@ -128,6 +128,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public void modifyInitiative(String newStatus, int id) throws ServicesException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 
 	
