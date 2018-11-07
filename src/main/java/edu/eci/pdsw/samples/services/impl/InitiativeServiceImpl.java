@@ -76,5 +76,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		return userDAO.getUserByCredetianls(email, password);
 	}
 
+	@Override
+	public void modifyUser(String email, int rol) throws ServicesException {
+		userDAO.modifyUser(email, rol);
+		
+	}
+
 
 }

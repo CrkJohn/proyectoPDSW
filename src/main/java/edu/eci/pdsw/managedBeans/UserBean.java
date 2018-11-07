@@ -1,5 +1,6 @@
 package edu.eci.pdsw.managedBeans;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -60,9 +61,20 @@ public class UserBean extends BasePageBean {
 		}
 	}
 	
-	public void modifyUser(String email, String rol) {
-		System.out.println("HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY______-----------------------------");
-		System.out.println(email+" "+rol);
+	public List<String> tt() {
+		ArrayList<String> arr =  new ArrayList<String>();
+		arr.add("h1");
+		arr.add("h2");
+		return arr;
+	}
+	
+	public void modifyUser(String email, int rol) {
+		try {
+			initiativeService.modifyUser(email, rol);
+		} catch (ServicesException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

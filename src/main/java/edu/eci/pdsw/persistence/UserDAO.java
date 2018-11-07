@@ -13,5 +13,6 @@ public interface UserDAO {
 	
 	public List<User> loadAll() throws ServicesException;
 	
+	public void modifyUser(String email, int rol) throws ServicesException;
 	
 }

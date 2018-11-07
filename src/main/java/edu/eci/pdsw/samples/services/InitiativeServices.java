@@ -21,6 +21,8 @@ public interface InitiativeServices {
 	 * @throws ServicesException
 	 */
 	public List<User> listUsers() throws ServicesException;
+	
+	public void modifyUser(String email, int rol) throws ServicesException;
 	/**
 	 * 
 	 * @param i
