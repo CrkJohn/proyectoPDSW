@@ -3,7 +3,10 @@ package edu.eci.pdsw.persistence.mybatisimpl;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import com.google.inject.Inject;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.persistence.InitiativeDAO;
@@ -29,11 +32,12 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	public List<Initiative> load(List<String> keywords) throws ServicesException {
 		try {
 			List <Initiative> initiatives=new ArrayList <Initiative>();
-			
+			Set<Integer> tmp = new HashSet<Integer>(); 
 			for(String k:keywords) {
 				for(Initiative i:initiativeMapper.load(k)) {
-					if (!initiatives.contains(i)) {
+					if (!tmp.contains(i.getId())) {
 						initiatives.add(i);
+						tmp.add(i.getId());
 					}
 				}
 			}
