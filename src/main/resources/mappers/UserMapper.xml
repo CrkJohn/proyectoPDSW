@@ -28,4 +28,9 @@
 			u.Type_user tuser
         FROM "User" as u    
     </select>
+    
+    <update id='modifyUser'>
+    	update "User" set type_user=#{rol} where email= #{email};
+    </update>
+    
 </mapper>

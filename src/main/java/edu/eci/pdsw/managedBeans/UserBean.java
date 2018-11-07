@@ -1,6 +1,7 @@
 package edu.eci.pdsw.managedBeans;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -11,6 +12,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.UserType;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
 
@@ -61,16 +63,19 @@ public class UserBean extends BasePageBean {
 		}
 	}
 	
-	public List<String> gg (){
-		ArrayList<String> arr =  new ArrayList<String>();
-		arr.add("hola");
-		arr.add("chao");
-		return arr;
+	public List<UserType> getTypes (){
+		return Arrays.asList(UserType.class.getEnumConstants() );
+		
 	}
 	
-	public void modifyUser(String email, String rol) {
-		System.out.println("HEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY______-----------------------------");
-		System.out.println(email+" "+rol);
+	public void modifyUser(String email, int rol) {
+		try {
+			System.out.println(email+" "+rol);
+			initiativeService.modifyUser(email, rol);
+		} catch (ServicesException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	

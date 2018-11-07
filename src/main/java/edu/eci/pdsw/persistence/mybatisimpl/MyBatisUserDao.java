@@ -24,4 +24,15 @@ public class MyBatisUserDao implements UserDAO{
 			throw new ServicesException("Load user"+email+ "persistence error");
 		}
 	}
+
+	@Override
+	public void modifyUser(String email, int rol) throws ServicesException {
+		try {
+			userMapper.modifyUser(email,rol);
+		}catch(Exception e) {
+			e.printStackTrace();
+			throw new ServicesException("modify user"+email+ "persistence error");
+		}
+		
+	}
 }

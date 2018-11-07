@@ -8,4 +8,6 @@ public interface UserMapper{
 	public User getUserByCredentials(@Param("email") String email,  @Param("password") String password);
 	
 	public List<User> consultUsers();
+	
+	public void modifyUser(@Param("email")String email, @Param("rol")int rol);
 }

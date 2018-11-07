@@ -121,6 +121,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public void modifyUser(String email, int rol) throws ServicesException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 
 	
