@@ -9,8 +9,6 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-import org.h2.engine.SysProperties;
-
 import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
@@ -50,6 +48,7 @@ public class UserBean extends BasePageBean {
 	
 	public String getName() {
 		return "pablo";
+	}
 		
 	public List<User> getUsers() throws Exception{
 		try {
