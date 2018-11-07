@@ -9,18 +9,7 @@
 <ui:define name ="head">
 </ui:define>
 <ui:define name = "body">
-	<h:form id="user_form">
-		<p:messages autoUpdate="true" />
-		<p:inputText id="email" binding="#{email}"/> 
-		<p:watermark for="email" value="Correo" />
-		<br></br>
-		<p:inputText id="password" binding="#{password}"/> 
-		<p:watermark for="password" value="Contraseña" />
-		<br></br>
-		<p:commandButton value = "Registra alquiler"  
-		actionListener="#{userBean.logIn(email.value,password.value)}" id="boton" styleClass="btn btn-warning">
-		</p:commandButton>
-	</h:form>
+
 </ui:define>
 </ui:composition>
 </html>

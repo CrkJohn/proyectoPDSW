@@ -36,7 +36,20 @@
 	        <h4 class="modal-title" id="myModalLabel">Iniciar Sesion</h4>
 	      </div>
 	      <div class="modal-body">
-	      	Aqui va el form del index
+	      	<h:form id="user_form">
+	      		<p:messages autoUpdate="true" />
+	      		<div class="form-group">
+			    	<label for="Email1">Correo</label>
+			   		<p:inputText id="email" binding="#{email}" styleClass="form-control" />
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="NuevoRol">Contraseña</label>
+			    	<p:password id="password" binding="#{password}" styleClass="form-control"/>
+			  	</div>
+			  	<p:commandButton value = "Registra alquiler"  
+					actionListener="#{userBean.logIn(email.value,password.value)}" id="boton" styleClass="btn btn-warning">
+			  	</p:commandButton>
+			</h:form>
 	      </div>
 	    </div>
 	  </div>

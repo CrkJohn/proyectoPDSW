@@ -35,6 +35,7 @@ public class UserBean extends BasePageBean {
 		if(user != null) {
 			HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 			session.setAttribute("id", user.getId());
+			session.setAttribute("name", user.getName());
 			facesContext.getExternalContext().redirect("/faces/initiativerecord.xhtml");
 		}
 		else {
@@ -47,7 +48,7 @@ public class UserBean extends BasePageBean {
 	}
 	
 	public String getName() {
-		return "pablo";
+		return ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("name").toString();
 	}
 		
 	public List<User> getUsers() throws Exception{
