@@ -45,9 +45,18 @@
 			    <label for="NuevoRol">Nuevo Rol</label>
 			    <p:inputText id="desc" binding="#{modifyRol}" styleClass="form-control"/>
 			  </div>
-			  <!--<p:commandButton value = "Modificar"  
-				actionListener="#{userBean.modifyUser(modifyEmail.value,modifyRol.value)}" id="boton" styleClass="btn btn-success">
-			  </p:commandButton>-->
+			  <div class="form-group">
+			  	  <label for="NuevoRol">Nuevo Rol</label>
+				  <select class="form-control">
+					<label for="NuevoRol">Nuevo Rol</label>
+					<ui:repeat var="item" value="#{userBean.gg()}">
+						<option>#{item}</option>
+					</ui:repeat> 
+				  </select>
+			  </div>
+			  <p:commandButton value = "Modificar"  
+				actionListener="#{userBean.modifyUser(modifyEmail.value,h.value)}" id="boton" styleClass="btn btn-success">
+			  </p:commandButton>
 			</h:form>
 	     </div>
 	      

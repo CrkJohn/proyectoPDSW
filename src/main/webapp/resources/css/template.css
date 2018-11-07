@@ -17,3 +17,6 @@ a,p{
 	color:white !important;
 }
 
+li >a {
+	color:black !important;
+}
