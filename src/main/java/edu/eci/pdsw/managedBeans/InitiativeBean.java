@@ -1,11 +1,16 @@
 package edu.eci.pdsw.managedBeans;
 
+import java.util.Arrays;
+import java.util.List;
+
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
 
@@ -30,6 +35,12 @@ public class InitiativeBean extends BasePageBean {
 		} catch (ServicesException ex) {
 			throw ex;
 		}
+	}
+	
+	public List<Initiative> searchInitiative(String keyword) throws ServicesException{
+		System.out.println(keyword);
+		List<String> keywords= Arrays.asList(keyword.split(",")); 
+		return initiativeService.searchInitiativeByKeywords(keywords);
 	}
 	
     
