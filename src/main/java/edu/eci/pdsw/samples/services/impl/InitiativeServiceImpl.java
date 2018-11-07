@@ -29,8 +29,7 @@ public class InitiativeServiceImpl implements InitiativeServices {
 
 	@Override
 	public List<User> listUsers() throws ServicesException {
-		// TODO Auto-generated method stub
-		return null;
+		return userDAO.loadAll();
 	}
 
 	@Override

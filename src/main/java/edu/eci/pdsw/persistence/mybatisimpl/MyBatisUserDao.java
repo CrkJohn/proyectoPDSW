@@ -13,8 +13,7 @@ public class MyBatisUserDao implements UserDAO{
 	UserMapper userMapper;
 	
 	public List<User> loadAll() throws ServicesException {
-		// TODO Auto-generated method stub
-		return null;
+		return userMapper.consultUsers();
 	}
 
 	public User getUserByCredetianls(String email, String password) throws ServicesException {

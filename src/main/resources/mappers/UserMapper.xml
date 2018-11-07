@@ -20,4 +20,12 @@
         FROM "User" as u
 		WHERE email = #{email} AND password = #{password} 
     </select>
+    
+    <select id='consultUsers' resultMap= 'UserResult'>
+    	SELECT u.id idus,
+			u.name,
+			u.email,
+			u.Type_user tuser
+        FROM "User" as u    
+    </select>
 </mapper>
