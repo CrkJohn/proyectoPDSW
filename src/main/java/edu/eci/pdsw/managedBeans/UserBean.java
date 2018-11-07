@@ -39,7 +39,7 @@ public class UserBean extends BasePageBean {
 			HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 			session.setAttribute("id", user.getId());
 			session.setAttribute("name", user.getName());
-			facesContext.getExternalContext().redirect("/faces/initiativerecord.xhtml");
+			facesContext.getExternalContext().redirect("/faces/initiativeKeyword.xhtml");
 		}
 		else {
 			facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"Usuario o clave invalido","Error"));

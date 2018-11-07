@@ -26,11 +26,11 @@ public class InitiativeBean extends BasePageBean {
 	private static final long serialVersionUID = 3594009161252782831L;
 	
 	public void addInitiative(String description, String area) throws ServicesException{
-		System.out.println(description);
+		System.out.println(description+" "+area);
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 		try {
-			System.out.println(initiativeService);
+			System.out.println(Integer.parseInt(session.getAttribute("id").toString())+" Holaaaaaaaaaaaaaaaaaaaaaaa");
 			initiativeService.createInitiative(description, area, Integer.parseInt(session.getAttribute("id").toString()));
 		} catch (ServicesException ex) {
 			throw ex;
