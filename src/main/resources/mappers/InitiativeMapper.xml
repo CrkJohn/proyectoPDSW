@@ -58,7 +58,7 @@
 				i.num_votos,
 				kw.word
 		    FROM Initiative as i, Key_words as kw, word_initiative as wi
-		    where kw.id=wi.Key_words_id and wi.Initiative_id=#{id};
+		    where kw.id=wi.Key_words_id and i.id=#{id};
     </select>
 	
 </mapper>
