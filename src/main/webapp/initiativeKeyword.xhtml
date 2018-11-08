@@ -13,59 +13,59 @@
 <ui:define name = "body">
 	<br></br>
 	<h1>Busqueda de iniciativas por palabras clave</h1>
+	<h:form id="initiativeByKeywords_form">
+		<p:dataTable id="initiative_all_table" var="initiative" value="#{initiativeBean.listAll()}">
+			<p:column headerText="Id">
+				<h:outputText value="#{initiative.id}" />
+			</p:column>
+			<p:column headerText="Descripcion">
+				<h:outputText value="#{initiative.description}" />
+			</p:column>
+			<p:column headerText="Area">
+				<h:outputText value="#{initiative.area}" />
+			</p:column>
+			<p:column headerText="Fecha de Creacion">
+				<h:outputText value="#{initiative.startDate}" />
+			</p:column>
+			<p:column headerText="Estado">
+				<h:outputText value="#{initiative.status.status}" />
+			</p:column>
+			<p:column headerText="Votos">
+				<h:outputText value="#{initiative.numVotes}" />
+			</p:column>		
+			<p:column headerText="Modificar">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Modificar</button>
+			</p:column>
+		</p:dataTable>
+		<br/><br/>
+		
+		<input id="keyword2" type="text" value="Construccion" data-role="tagsinput"/>
+		<p:inputText id="keyword" binding="#{keywordsInput}" type="hidden"  />
+		<p:commandButton value = "Buscar" update="initiative_table" actionListener="#{initiativeBean.searchInitiative(keywordsInput.value)}" styleClass="btn btn-outline-light"></p:commandButton>
+		<br/><br/>
 
-	<p:dataTable id="initiative_all_table" var="initiative" value="#{initiativeBean.listAll()}">
-		<p:column headerText="Id">
-			<h:outputText value="#{initiative.id}" />
-		</p:column>
-		<p:column headerText="Descripcion">
-			<h:outputText value="#{initiative.description}" />
-		</p:column>
-		<p:column headerText="Area">
-			<h:outputText value="#{initiative.area}" />
-		</p:column>
-		<p:column headerText="Fecha de Creacion">
-			<h:outputText value="#{initiative.startDate}" />
-		</p:column>
-		<p:column headerText="Estado">
-			<h:outputText value="#{initiative.status.status}" />
-		</p:column>
-		<p:column headerText="Votos">
-			<h:outputText value="#{initiative.numVotes}" />
-		</p:column>		
-		<p:column headerText="Modificar">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Modificar</button>
-		</p:column>
-	</p:dataTable>
-	<br/><br/>
-	
-	<input id="keyword2" type="text" value="Construccion" data-role="tagsinput"/>
-	<p:inputText id="keyword" binding="#{keywordsInput}" type="hidden"  />
-	<p:commandButton value = "Buscar" update="initiative_table" actionListener="#{initiativeBean.searchInitiative(keywordsInput.value)}" styleClass="btn btn-outline-light"></p:commandButton>
-	<br/><br/>
-
- 	<p:dataTable id="initiative_table" var="initiative" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
-		<p:column headerText="Id">
-			<h:outputText value="#{initiative.id}" />
-		</p:column>
-		<p:column headerText="Descripcion">
-			<h:outputText value="#{initiative.description}" />
-		</p:column>
-		<p:column headerText="Area">
-			<h:outputText value="#{initiative.area}" />
-		</p:column>
-		<p:column headerText="Fecha de Creacion">
-			<h:outputText value="#{initiative.startDate}" />
-		</p:column>
-		<p:column headerText="Estado">
-			<h:outputText value="#{initiative.status.status}" />
-		</p:column>
-		<p:column headerText="Votos">
-			<h:outputText value="#{initiative.numVotes}" />
-		</p:column>		
-	</p:dataTable>
-	
- 	
+	 	<p:dataTable id="initiative_table" var="initiative" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
+			<p:column headerText="Id">
+				<h:outputText value="#{initiative.id}" />
+			</p:column>
+			<p:column headerText="Descripcion">
+				<h:outputText value="#{initiative.description}" />
+			</p:column>
+			<p:column headerText="Area">
+				<h:outputText value="#{initiative.area}" />
+			</p:column>
+			<p:column headerText="Fecha de Creacion">
+				<h:outputText value="#{initiative.startDate}" />
+			</p:column>
+			<p:column headerText="Estado">
+				<h:outputText value="#{initiative.status.status}" />
+			</p:column>
+			<p:column headerText="Votos">
+				<h:outputText value="#{initiative.numVotes}" />
+			</p:column>		
+		</p:dataTable>
+	</h:form>
+	 	
 
  	<br/><br/>
 
@@ -74,7 +74,7 @@
  	
  	<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Agregar</button>
 	
-	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
 	  <div class="modal-dialog modal-sm" role="document">
 	    <div class="modal-content">
 	     <div class= "modal-header">
@@ -99,7 +99,6 @@
 	    </div>
 	  </div>
 	</div>
-	
 </ui:define>
 </ui:composition>
 </html>
