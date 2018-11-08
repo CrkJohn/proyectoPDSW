@@ -19,6 +19,17 @@
 		</collection>
     </resultMap>
     
+    <resultMap type='Initiative' id='InitiativeResult1'>
+        <id property='id' column='id'/>        
+        <result property='description' column='description'/>
+		<result property='area' column='area'/>
+		<result property='numVotes' column='num_votos'/>
+		<result property='startDate' column='creation_date'/>
+		<result property='modifyDate' column='modify_date'/>
+		<association property='user' javaType='User' resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
+		<association property='status' javaType='TypeStatus' resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper.StatusResult'></association>
+    </resultMap>
+    
     <resultMap type='TypeStatus' id='StatusResult'>
     	<id property='id' column='id'/>        
         <result property='status' column='status'/>
@@ -62,7 +73,7 @@
 	    where kw.id=wi.Key_words_id and i.id=#{id} and ts.status = i.type_status_id;
     </select>
 	
-	<select id="loadAll" resultMap="InitiativeResult" parameterType="map">
+	<select id="loadAll" resultMap="InitiativeResult1" parameterType="map">
         SELECT i.id,
 			i.description,
 			i.area,
@@ -70,10 +81,9 @@
 			i.modify_date,
 			i.user_id,
 			ts.status as status,
-			i.num_votos,
-			kw.word
-	    FROM Initiative as i, Key_words as kw, word_initiative as wi, type_status as ts
-	    WHERE kw.id=wi.Key_words_id and wi.Initiative_id=i.id and ts.status = i.type_status_id;
+			i.num_votos
+	    FROM Initiative as i, type_status as ts
+	    WHERE ts.status = i.type_status_id;
 		
     </select>
     
