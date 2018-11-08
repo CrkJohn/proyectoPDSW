@@ -10,6 +10,7 @@ import java.util.Set;
 import com.google.inject.Inject;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.persistence.InitiativeDAO;
+import edu.eci.pdsw.entities.TypeStatus;
 import edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper;
 import edu.eci.pdsw.samples.services.ServicesException;
 
@@ -68,6 +69,11 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	@Override
 	public List<Initiative> loadAll() throws ServicesException {
 		return initiativeMapper.loadAll();
+	}
+
+	@Override
+	public List<TypeStatus> listStatus() throws ServicesException {
+		return initiativeMapper.listStatus();
 	}
 
 	

@@ -4,6 +4,7 @@ import java.util.List;
 import java.sql.Date;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.samples.services.ServicesException;
+import edu.eci.pdsw.entities.TypeStatus;
 
 public interface InitiativeDAO {
 	
@@ -18,6 +19,8 @@ public interface InitiativeDAO {
 	public void modifyInitiative(String newStatus, int id) throws ServicesException;
 
 	public List<Initiative> loadAll() throws ServicesException;
+
+	public List<TypeStatus> listStatus() throws ServicesException;
 	
 	
 	

@@ -12,6 +12,7 @@ import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
+import edu.eci.pdsw.entities.TypeStatus;
 
 public class InitiativeServicesStub implements InitiativeServices{
 	
@@ -137,6 +138,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 
 	@Override
 	public List<Initiative> listInitiative() throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<TypeStatus> listStatus() throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
 	}

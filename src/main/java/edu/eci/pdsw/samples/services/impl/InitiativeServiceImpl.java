@@ -11,6 +11,7 @@ import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
+import edu.eci.pdsw.entities.TypeStatus;
 
 public class InitiativeServiceImpl implements InitiativeServices {
 	
@@ -90,6 +91,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	@Override
 	public List<Initiative> listInitiative() throws ServicesException {
 		return initiativeDAO.loadAll();
+	}
+
+	@Override
+	public List<TypeStatus> listStatus() throws ServicesException {
+		return initiativeDAO.listStatus();
 	}
 
 

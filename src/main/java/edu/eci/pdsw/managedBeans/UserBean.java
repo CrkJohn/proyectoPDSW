@@ -65,7 +65,6 @@ public class UserBean extends BasePageBean {
 	
 	public List<UserType> getTypes (){
 		return Arrays.asList(UserType.class.getEnumConstants() );
-		
 	}
 	
 	public void modifyUser(String email, int rol) {

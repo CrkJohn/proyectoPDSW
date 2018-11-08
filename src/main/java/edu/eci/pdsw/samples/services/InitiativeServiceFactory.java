@@ -81,6 +81,7 @@ public class InitiativeServiceFactory {
     	kw.add("Diversion");
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiativeByKeywords(kw));
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().listUsers());
+    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().listStatus());
     }
     
 }

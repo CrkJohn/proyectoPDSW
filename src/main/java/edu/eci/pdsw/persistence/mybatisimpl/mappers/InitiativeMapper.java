@@ -24,5 +24,7 @@ public interface InitiativeMapper {
 
 	public List<Initiative> loadAll();
 
+	public List<TypeStatus> listStatus();
+
 	
 }

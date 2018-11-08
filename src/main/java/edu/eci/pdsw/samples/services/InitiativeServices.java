@@ -5,6 +5,8 @@ import java.util.List;
 import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.TypeStatus;
+
 
 public interface InitiativeServices {
 
@@ -78,5 +80,7 @@ public interface InitiativeServices {
 	public List<Initiative> listInitiative() throws ServicesException;
 	
 	public void modifyInitiative(String newStatus, int id) throws ServicesException;
+	
+	public List<TypeStatus> listStatus() throws ServicesException;
 	
 }

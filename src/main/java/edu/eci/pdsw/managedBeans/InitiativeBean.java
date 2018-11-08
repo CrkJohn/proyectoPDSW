@@ -11,6 +11,8 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.TypeStatus;
+import edu.eci.pdsw.entities.UserType;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
 
@@ -47,7 +49,12 @@ public class InitiativeBean extends BasePageBean {
 	}
 	
 	public void modifyStatus(String newStatus, int id) throws ServicesException{
+		System.out.println("HOLIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII "+newStatus+" "+id);
 		initiativeService.modifyInitiative(newStatus, id);
+	}
+	
+	public List<TypeStatus> getTypes () throws ServicesException{
+		return initiativeService.listStatus();
 	}
     
 }

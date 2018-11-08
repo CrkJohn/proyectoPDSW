@@ -77,6 +77,10 @@
 		
     </select>
     
+    <select id="listStatus" resultMap="StatusResult" parameterType="map">
+    	select status from type_status;
+    </select>
+    
 	<update id="modifyInitiative">
 		update initiative set type_status_id= #{newStatus} where id= #{id};
 	</update>
