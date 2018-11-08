@@ -39,6 +39,7 @@ public class UserBean extends BasePageBean {
 			HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 			session.setAttribute("id", user.getId());
 			session.setAttribute("name", user.getName());
+			session.setAttribute("type", user.getType().ordinal());
 			facesContext.getExternalContext().redirect("/faces/initiativeKeyword.xhtml");
 		}
 		else {
@@ -48,6 +49,12 @@ public class UserBean extends BasePageBean {
 	
 	public boolean islogged() {
 		return ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id") != null;
+	}
+	
+	public boolean isAdmin() {
+		if(islogged())
+			return ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("type").toString().equals("0");
+		return false;
 	}
 	
 	public String getName() {

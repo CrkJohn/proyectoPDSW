@@ -9,6 +9,14 @@
 	color: white;
 }
 
+#user-link{
+	color: white !important;
+}
+
+#user-link:hover{
+	background-color: #730000;
+}
+
 .navbar-right{
 	margin-right: 0px;
 }
