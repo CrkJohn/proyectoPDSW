@@ -39,7 +39,6 @@ public class InitiativeBean extends BasePageBean {
 	}
 	
 	public List<Initiative> searchInitiative(String keyword) throws ServicesException{
-		System.out.println(keyword);
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
 		return initiativeService.searchInitiativeByKeywords(keywords);
 	}
@@ -49,7 +48,6 @@ public class InitiativeBean extends BasePageBean {
 	}
 	
 	public void modifyStatus(String newStatus, int id) throws ServicesException{
-		System.out.println("HOLIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII "+newStatus+" "+id);
 		initiativeService.modifyInitiative(newStatus, id);
 	}
 	
