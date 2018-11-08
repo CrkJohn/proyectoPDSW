@@ -30,7 +30,6 @@ public class InitiativeBean extends BasePageBean {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 		try {
-			System.out.println(Integer.parseInt(session.getAttribute("id").toString())+" Holaaaaaaaaaaaaaaaaaaaaaaa");
 			initiativeService.createInitiative(description, area, Integer.parseInt(session.getAttribute("id").toString()));
 		} catch (ServicesException ex) {
 			throw ex;
@@ -43,5 +42,12 @@ public class InitiativeBean extends BasePageBean {
 		return initiativeService.searchInitiativeByKeywords(keywords);
 	}
 	
+	public List<Initiative> listAll() throws ServicesException{
+		return initiativeService.listInitiative();
+	}
+	
+	public void modifyStatus(String newStatus, int id) throws ServicesException{
+		initiativeService.modifyInitiative(newStatus, id);
+	}
     
 }

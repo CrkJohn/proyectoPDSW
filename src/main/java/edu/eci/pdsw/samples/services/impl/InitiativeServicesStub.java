@@ -135,6 +135,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public List<Initiative> listInitiative() throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 	

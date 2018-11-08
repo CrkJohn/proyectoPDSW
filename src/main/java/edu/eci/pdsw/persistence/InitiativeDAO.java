@@ -16,6 +16,8 @@ public interface InitiativeDAO {
 	public List<Initiative> load(List<String> keywords) throws ServicesException;
 
 	public void modifyInitiative(String newStatus, int id) throws ServicesException;
+
+	public List<Initiative> loadAll() throws ServicesException;
 	
 	
 	

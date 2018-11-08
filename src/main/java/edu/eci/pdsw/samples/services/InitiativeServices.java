@@ -75,6 +75,8 @@ public interface InitiativeServices {
 	 */
 	public List<Initiative> searchInitiativeByKeywords(List<String> keywords) throws ServicesException;
 	
+	public List<Initiative> listInitiative() throws ServicesException;
+	
 	public void modifyInitiative(String newStatus, int id) throws ServicesException;
 	
 }

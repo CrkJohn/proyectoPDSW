@@ -87,5 +87,10 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		
 	}
 
+	@Override
+	public List<Initiative> listInitiative() throws ServicesException {
+		return initiativeDAO.loadAll();
+	}
+
 
 }

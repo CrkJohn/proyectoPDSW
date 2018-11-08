@@ -65,6 +65,11 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		
 	}
 
+	@Override
+	public List<Initiative> loadAll() throws ServicesException {
+		return initiativeMapper.loadAll();
+	}
+
 	
 
 	
