@@ -6,3 +6,7 @@ $('#select').on('change', function() {
 	$(".status").val($('#select').val());
 });
 
+
+$(document).ready(function() {
+    $("#initiativeTable").DataTable();
+} );
