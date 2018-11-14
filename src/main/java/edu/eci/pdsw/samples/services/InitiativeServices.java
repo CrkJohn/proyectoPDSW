@@ -69,6 +69,8 @@ public interface InitiativeServices {
 	 */
 	public User getUser(String email, String password) throws ServicesException;
 	
+	public User consultUserByMail(String usermail)throws ServicesException;
+	
 	/**
 	 * 
 	 * @param keywords

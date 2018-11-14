@@ -70,6 +70,15 @@ public class UserBean extends BasePageBean {
 		}
 	}
 	
+	public User getUserByMail(String usermail) throws Exception{
+		try {
+			return initiativeService.consultUserByMail(usermail);
+		}
+		catch(ServicesException ex) {
+			throw ex;
+		}
+	}
+	
 	public List<UserType> getTypes (){
 		return Arrays.asList(UserType.class.getEnumConstants() );
 	}

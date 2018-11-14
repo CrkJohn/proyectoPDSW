@@ -16,4 +16,6 @@ public interface UserDAO {
 	
 	public void modifyUser(String email, int rol) throws ServicesException;
 	
+	public User loadUserByMail(String usermail) throws ServicesException;
+	
 }

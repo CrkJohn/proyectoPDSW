@@ -35,4 +35,9 @@ public class MyBatisUserDao implements UserDAO{
 		}
 		
 	}
+
+	@Override
+	public User loadUserByMail(String usermail) throws ServicesException {
+		return userMapper.consultUserByMail(usermail);
+	}
 }

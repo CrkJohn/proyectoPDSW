@@ -29,6 +29,14 @@
         FROM "User" as u    
     </select>
     
+    <select id='consultUserByMail' resultMap= 'UserResult'>
+    	SELECT u.id idus,
+			u.name,
+			u.email,
+			u.Type_user tuser
+        FROM "User" as u    
+    </select>
+    
     <update id='modifyUser'>
     	update "User" set type_user=#{rol} where email= #{email};
     </update>

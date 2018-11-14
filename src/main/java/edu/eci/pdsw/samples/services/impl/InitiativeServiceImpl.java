@@ -98,5 +98,10 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		return initiativeDAO.listStatus();
 	}
 
+	@Override
+	public User consultUserByMail(String usermail) throws ServicesException {
+		return userDAO.loadUserByMail(usermail);
+	}
+
 
 }
