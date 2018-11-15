@@ -13,4 +13,9 @@ $('#select').on('change', function() {
 
 $(document).ready(function() {
     $("#initiativeTable").DataTable();
+	$("#keyinitiative").DataTable();
 } );
+
+$("#keyinitiative").load(function(){
+	$("#keyinitiative").DataTable();
+});
