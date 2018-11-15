@@ -44,32 +44,38 @@
 	</table>
 	
 	<h2>Busqueda de iniciativas por palabras clave</h2>
-	<h:form id="initiativeByKeywords_form">
+	<!--  <h:form id="initiativeByKeywords_form">
 		<input id="keyword2" type="text" value="Construccion" data-role="tagsinput"/>
 		<p:inputText id="keyword" binding="#{keywordsInput}" type="hidden"  />
-		<p:commandButton id="buscar_keyword" value = "Buscar" update=":initiative_table" actionListener="#{initiativeBean.searchInitiative(keywordsInput.value)}" styleClass="btn btn-primary"></p:commandButton>
+		<p:commandButton id="buscar_keyword" value = "Buscar" update="initiative_table" actionListener="#{initiativeBean.searchInitiative(keywordsInput.value)}" styleClass="btn btn-primary"></p:commandButton>
 	</h:form>
-
+ -->
 	<br/><br/>
-
- 	<p:dataTable id="initiative_table" var="initiative" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
-		<p:column headerText="Id">
-			<h:outputText value="#{initiative.id}" />
-		</p:column>
-		<p:column headerText="Descripcion">
-			<h:outputText value="#{initiative.description}" />
-		</p:column>
-		<p:column headerText="Area">
-			<h:outputText value="#{initiative.area}" />
-		</p:column>
-		<p:column headerText="Estado">
-			<h:outputText value="#{initiative.status.status}" />
-		</p:column>
-		<p:column headerText="Votos">
-			<h:outputText value="#{initiative.numVotes}" />
-		</p:column>		
-	</p:dataTable>
-	
+	<table id="initiative_table" class="table table-bordered table-striped"> 
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Descripcion</th>
+				<th>Area</th>
+				<th>Estado</th>
+				<th>Votos</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<ui:repeat var="initiative" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
+			<tr>
+				<td>#{initiative.id}</td>
+				<td>#{initiative.description}</td>
+				<td>#{initiative.area}</td>
+				<td>#{initiative.status.status}</td>
+				<td>#{initiative.numVotes}</td>
+		
+			</tr>
+			</ui:repeat>
+		</tbody>
+	</table>
+ 	
 	
 	<div id="modifyStatus" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
 		  <div class="modal-dialog modal-sm" role="document">
