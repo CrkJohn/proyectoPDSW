@@ -44,14 +44,15 @@
 	</table>
 	
 	<h2>Busqueda de iniciativas por palabras clave</h2>
-	<!--  <h:form id="initiativeByKeywords_form">
+	<h:form id="initiativeByKeywords_form">
 		<input id="keyword2" type="text" value="Construccion" data-role="tagsinput"/>
 		<p:inputText id="keyword" binding="#{keywordsInput}" type="hidden"  />
-		<p:commandButton id="buscar_keyword" value = "Buscar" update="initiative_table" actionListener="#{initiativeBean.searchInitiative(keywordsInput.value)}" styleClass="btn btn-primary"></p:commandButton>
+		<p:commandButton id="buscar_keyword" value = "Buscar" update=":initiative_table" styleClass="btn btn-primary"></p:commandButton>
 	</h:form>
- -->
+ 
 	<br/><br/>
-	<table id="initiative_table" class="table table-bordered table-striped"> 
+	<h:panelGroup id="initiative_table">
+	<table id="keyinitiative" class="table table-bordered table-striped"> 
 		<thead>
 			<tr>
 				<th>Id</th>
@@ -75,7 +76,7 @@
 			</ui:repeat>
 		</tbody>
 	</table>
- 	
+ 	</h:panelGroup>
 	
 	<div id="modifyStatus" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
 		  <div class="modal-dialog modal-sm" role="document">
