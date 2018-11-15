@@ -6,7 +6,7 @@ public class Initiative {
 
 	private int id;
 	private String description;
-	private List<String> keyWords;
+	private List<Keyword> keyWords;
 	private TypeStatus status;
 	private String area;
 	private int numVotes;
@@ -41,11 +41,11 @@ public class Initiative {
 		this.description = description;
 	}
 
-	public List<String> getKeyWords() {
+	public List<Keyword> getKeyWords() {
 		return keyWords;
 	}
 
-	public void setKeyWords(List<String> keyWords) {
+	public void setKeyWords(List<Keyword> keyWords) {
 		this.keyWords = keyWords;
 	}
 

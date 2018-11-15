@@ -76,9 +76,12 @@ public class InitiativeServiceFactory {
     	
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiative(1));
     	
-    	List<String> kw= new ArrayList<String> (3);
+    	List<String> kw= new ArrayList<String> (4);
     	kw.add("Construccion");
     	kw.add("Diversion");
+    	kw.add("Estudio");
+    	kw.add("Administrativo");    	
+    	
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiativeByKeywords(kw));
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().listUsers());
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().listStatus());

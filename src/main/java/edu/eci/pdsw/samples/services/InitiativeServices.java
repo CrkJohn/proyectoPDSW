@@ -4,6 +4,7 @@ import java.util.List;
 
 import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.entities.TypeStatus;
 
@@ -30,7 +31,7 @@ public interface InitiativeServices {
 	 * @param i
 	 * @throws ServicesException
 	 */
-	public void createInitiative(String description, String area, int idus) throws ServicesException;
+	public void createInitiative(String description, String area, int idus, List<String> keywords) throws ServicesException;
 	/**
 	 * 
 	 * @param idUser
@@ -84,5 +85,7 @@ public interface InitiativeServices {
 	public void modifyInitiative(String newStatus, int id) throws ServicesException;
 	
 	public List<TypeStatus> listStatus() throws ServicesException;
+	
+	public List<Keyword> listKeywords() throws ServicesException;
 	
 }

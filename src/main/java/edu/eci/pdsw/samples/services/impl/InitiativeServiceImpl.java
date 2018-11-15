@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
@@ -34,9 +35,9 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	}
 
 	@Override
-	public void createInitiative(String description, String area, int idus) throws ServicesException{
+	public void createInitiative(String description, String area, int idus, List<String> keywords) throws ServicesException{
 		try {
-			initiativeDAO.addInitiative(description, area, idus);
+			initiativeDAO.addInitiative(description, area, idus, keywords);
 		}catch (ServicesException ex) {
 			throw new ServicesException("Error trying to insert the initiative", ex);
 		}
@@ -101,6 +102,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	@Override
 	public User consultUserByMail(String usermail) throws ServicesException {
 		return userDAO.loadUserByMail(usermail);
+	}
+
+	@Override
+	public List<Keyword> listKeywords() throws ServicesException {
+		return initiativeDAO.listKeywords();
 	}
 
 

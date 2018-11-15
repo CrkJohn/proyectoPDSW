@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.TypeStatus;;
 
 public interface InitiativeMapper {
@@ -15,6 +16,12 @@ public interface InitiativeMapper {
 			@Param("idus")int idus, 
 			@Param("modification")Date modification,
 			@Param("state")String state);
+	
+	public void insertKeyword(@Param("keyword") String keyword);
+	
+	public void insertWordInitiative();
+	
+	public void insertWordInitiativeId(@Param("id") int id);
 			
 	public List<Initiative> load(@Param("keyword") String keyword);
 	
@@ -25,6 +32,8 @@ public interface InitiativeMapper {
 	public List<Initiative> loadAll();
 
 	public List<TypeStatus> listStatus();
+
+	public List<Keyword> listKeywords();
 
 	
 }

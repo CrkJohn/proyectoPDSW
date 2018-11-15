@@ -9,6 +9,7 @@ import java.util.Set;
 
 import com.google.inject.Inject;
 import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.entities.TypeStatus;
 import edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper;
@@ -19,11 +20,30 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	@Inject
 	InitiativeMapper initiativeMapper;
 
-	public void addInitiative(String description, String area, int idus) throws ServicesException{
+	public void addInitiative(String description, String area, int idus, List<String> keywords) throws ServicesException{
 		try {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
+			
 			initiativeMapper.insertInitiative(description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera revision");
+			List<Keyword> kw= initiativeMapper.listKeywords();
+			/*
+			 * Se revisará si ya existe la palabra clave, para no tener datos duplicados en la BD.
+			 */
+			int idKw ;
+			for (String k: keywords) {
+				idKw= -1;
+				for (Keyword w: kw) {
+					if(w.getKeyword().equals(k)) {idKw= w.getId(); break;}}
+				if (idKw == -1) {
+					initiativeMapper.insertKeyword(k);
+					initiativeMapper.insertWordInitiative();
+				}
+				else {
+					initiativeMapper.insertWordInitiativeId(idKw);
+				}
+			}
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 			throw new ServicesException("Error trying to insert the initiative");
@@ -74,6 +94,11 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	@Override
 	public List<TypeStatus> listStatus() throws ServicesException {
 		return initiativeMapper.listStatus();
+	}
+
+	@Override
+	public List<Keyword> listKeywords() throws ServicesException {
+		return initiativeMapper.listKeywords();
 	}
 
 	

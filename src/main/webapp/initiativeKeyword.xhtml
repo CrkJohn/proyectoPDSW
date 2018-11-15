@@ -128,7 +128,7 @@
 	     	<h4>Agregando iniciativa</h4>
 	     </div>
 	     <div class= "modal-body">
-	     	<h:form>
+	     	<h:form id="addInitiative">
 			  <div class="form-group">
 			    <label for="Email1">Descripcion</label>
 			    <p:inputText id="desc2" binding="#{descripcion}" styleClass="form-control" />
@@ -137,9 +137,13 @@
 			    <label for="NuevoRol">Area</label>
 			    <p:inputText id="desc" binding="#{area}" styleClass="form-control"/>
 			  </div>
-			  <p:commandButton value = "Agregar"  
-				actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value)}" id="boton" styleClass="btn btn-success">
-			  </p:commandButton>
+			  <div class="form-group" id="cont">
+			  	<input id="keywordInsert" type="text" value="Construccion" data-role="tagsinput"/>
+				<p:inputText id="keywordIn" binding="#{keywordIn}" type="hidden"/>
+				<p:commandButton value = "Agregar"  
+					actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value, keywordIn.value)}" id="boton" styleClass="btn btn-primary">
+			  	</p:commandButton>
+			  </div>
 			</h:form>
 	     </div>
 	    </div>

@@ -9,6 +9,7 @@ import java.util.Map;
 import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.entities.UserType;
 import edu.eci.pdsw.entities.Initiative;
+import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
@@ -40,7 +41,7 @@ public class InitiativeServicesStub implements InitiativeServices{
 		return null;
 	}
 
-	public void createInitiative(String description, String area, int idus) throws ServicesException{
+	public void createInitiative(String description, String area, int idus, List<String> keywords) throws ServicesException{
 		// TODO Auto-generated method stub
 		
 	}
@@ -152,6 +153,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 
 	@Override
 	public User consultUserByMail(String usermail) throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<Keyword> listKeywords() throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
 	}
