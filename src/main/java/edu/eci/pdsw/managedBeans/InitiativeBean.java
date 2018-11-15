@@ -33,19 +33,13 @@ public class InitiativeBean extends BasePageBean {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
 		List<String> keywords= Arrays.asList(keyword.split(",")); 
-		System.out.println(keywords);
-		/*
-		List<String> keyword= new ArrayList<String> (4);
-		keyword.add("Construccion");
-		keyword.add("Diversion");
-		keyword.add("Estudio");
-		keyword.add("Ingenieria"); 
+		System.out.println(keywords); 
 		
 		try {
 			initiativeService.createInitiative(description, area, Integer.parseInt(session.getAttribute("id").toString()), keywords);
 		} catch (ServicesException ex) {
 			throw ex;
-		}*/
+		}
 	}
 	
 	public List<Initiative> searchInitiative(String keyword) throws ServicesException{
