@@ -5,7 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
-import edu.eci.pdsw.entities.TypeStatus;;
+import edu.eci.pdsw.entities.TypeStatus;
+import edu.eci.pdsw.entities.User;;
 
 public interface InitiativeMapper {
 	
@@ -34,6 +35,9 @@ public interface InitiativeMapper {
 	public List<TypeStatus> listStatus();
 
 	public List<Keyword> listKeywords();
-
+	
+	public void insertInterested(@Param("idIni")int idIni, @Param("idUser")int idUser);
+	
+	public List<User> loadInterested(@Param("id") int id);
 	
 }

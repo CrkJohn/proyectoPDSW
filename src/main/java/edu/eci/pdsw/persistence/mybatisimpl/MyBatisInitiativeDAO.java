@@ -12,6 +12,7 @@ import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.entities.TypeStatus;
+import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper;
 import edu.eci.pdsw.samples.services.ServicesException;
 
@@ -99,6 +100,17 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	@Override
 	public List<Keyword> listKeywords() throws ServicesException {
 		return initiativeMapper.listKeywords();
+	}
+
+	@Override
+	public void insertInterested(int idIni, int idUser) throws ServicesException {
+		initiativeMapper.insertInterested(idIni, idUser);
+		
+	}
+
+	@Override
+	public List<User> loadInterested(int id) throws ServicesException {
+		return initiativeMapper.loadInterested(id);
 	}
 
 	

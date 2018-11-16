@@ -1,11 +1,15 @@
 package edu.eci.pdsw.persistence;
 
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import java.sql.Date;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.samples.services.ServicesException;
 import edu.eci.pdsw.entities.TypeStatus;
+import edu.eci.pdsw.entities.User;
 
 public interface InitiativeDAO {
 	
@@ -24,6 +28,10 @@ public interface InitiativeDAO {
 	public List<TypeStatus> listStatus() throws ServicesException;
 
 	public List<Keyword> listKeywords() throws ServicesException;
+	
+	public void insertInterested(int idIni, int idUser) throws ServicesException;
+	
+	public List<User> loadInterested(int id) throws ServicesException;
 	
 	
 	
