@@ -29,12 +29,13 @@
         FROM "User" as u    
     </select>
     
-    <select id='consultUserByMail' resultMap= 'UserResult'>
+    <select id='consultUserByMail' resultMap= 'UserResult' parameterType = "map">
     	SELECT u.id idus,
 			u.name,
 			u.email,
 			u.Type_user tuser
-        FROM "User" as u    
+        FROM "User" as u
+        WHERE email LIKE '%#{usermail}%'
     </select>
     
     <update id='modifyUser'>

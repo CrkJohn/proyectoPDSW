@@ -5,6 +5,7 @@ edu\eci\pdsw\entities\Comment.class
 edu\eci\pdsw\samples\services\impl\InitiativeServiceImpl.class
 edu\eci\pdsw\persistence\CommentDAO.class
 edu\eci\pdsw\persistence\UserDAO.class
+edu\eci\pdsw\persistence\mybatisimpl\MyBatisCommentDAO.class
 edu\eci\pdsw\entities\UserType.class
 edu\eci\pdsw\entities\TypeStatus.class
 edu\eci\pdsw\managedBeans\UserBean.class
@@ -15,6 +16,7 @@ edu\eci\pdsw\guice\GuiceContextListener$1.class
 edu\eci\pdsw\managedBeans\InitiativeBean.class
 edu\eci\pdsw\persistence\InitiativeDAO.class
 edu\eci\pdsw\persistence\mybatisimpl\mappers\InitiativeMapper.class
+edu\eci\pdsw\persistence\mybatisimpl\mappers\CommentMapper.class
 edu\eci\pdsw\samples\services\ServicesException.class
 edu\eci\pdsw\entities\User.class
 edu\eci\pdsw\persistence\mybatisimpl\mappers\UserMapper.class
