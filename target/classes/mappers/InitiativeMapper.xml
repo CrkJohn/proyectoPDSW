@@ -53,7 +53,6 @@
     	INSERT INTO "word_initiative" (initiative_id, key_words_id) VALUES ((select max(id) from "initiative"), #{id});
     </insert>
     
-	
 	<insert id="insertInitiative" parameterType="Initiative">
 		INSERT INTO "initiative"
 		(id, description, area, num_votos,creation_date,User_id,modify_date,type_status_id) 
