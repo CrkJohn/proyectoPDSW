@@ -14,6 +14,12 @@ CREATE TABLE vote (
    CONSTRAINT vote_pk PRIMARY KEY (User_id,Initiative_id)
 );
 
+CREATE TABLE interested (
+   Initiative_id int  NOT NULL,
+   User_id int  NOT NULL,
+   CONSTRAINT interested_pk PRIMARY KEY (Initiative_id,User_id)
+);
+
 CREATE TABLE Comment (
    id int  NOT NULL,
    comment varchar(200)  NOT NULL,

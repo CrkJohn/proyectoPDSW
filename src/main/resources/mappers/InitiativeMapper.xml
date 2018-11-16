@@ -40,7 +40,6 @@
         <result property='keyword' column='word'/>
     </resultMap>
      
-    
     <insert id="insertKeyword" parameterType="String">
     	INSERT INTO "key_words" VALUES ((select count(*)+1 from "key_words"), #{keyword});
     </insert>
@@ -59,6 +58,18 @@
 		VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{nvotos},#{creation},#{idus},#{modification},#{state})
 	</insert>
 	
+	<insert id="insertInterested" parameterType="int">
+    	INSERT INTO "interested" (initiative_id, user_id) VALUES #{idIni}, #{idUser});
+    </insert>
+    
+	<select id="loadInterested" resultMap="edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult" parameterType="map">
+		SELECT u.id,
+			u.name,
+			u.email
+        FROM "User" as u, "interested" as i
+        WHERE i.initiative_id=#{id} and i.user_id=u.id;
+    </select>
+    
 	<select id="load" resultMap="InitiativeResult" parameterType="map">
         SELECT i.id,
 			i.description,

@@ -13,6 +13,7 @@ public class Initiative {
 	private Date startDate;
 	private Date modifyDate;
 	private User user;
+	private List<User> interested;
 	
 	public Initiative() {}
 	
@@ -47,6 +48,14 @@ public class Initiative {
 
 	public void setKeyWords(List<Keyword> keyWords) {
 		this.keyWords = keyWords;
+	}
+	
+	public List<User> getInterested() {
+		return interested;
+	}
+
+	public void setInterested(List<User> interested) {
+		this.interested = interested;
 	}
 
 	public TypeStatus getStatus() {
