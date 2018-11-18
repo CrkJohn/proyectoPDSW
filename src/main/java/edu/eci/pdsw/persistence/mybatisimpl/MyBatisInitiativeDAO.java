@@ -113,8 +113,22 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		return initiativeMapper.loadInterested(id);
 	}
 
-	
+	@Override
+	public List<Initiative> loadRelated(int id) throws ServicesException {
+		List<Keyword> keyword=initiativeMapper.loadKeywordInitiative(id);
+		List<String> kw=new ArrayList <String>();
+		for(Keyword k: keyword){
+			kw.add(k.getKeyword());
+		}
+		List<Initiative> related=load(kw);
+		List <Initiative> initiatives=new ArrayList <Initiative>();
+		for (Initiative i:related){
+			if (i.getId()!=id){
+				initiatives.add(i);
+			}
+		}
+		return initiatives;
+	}
 
 	
-
 }

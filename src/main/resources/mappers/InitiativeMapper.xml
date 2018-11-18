@@ -115,6 +115,13 @@
 		
     </select>
     
+    <select id="loadKeywordInitiative" resultMap="KeywordResult" parameterType="map">
+        SELECT kw.id,kw.word
+		from initiative as i, word_initiative as wi, key_words as kw
+		where i.id=#{id} and wi.initiative_id=i.id and kw.id=wi.key_words_id
+   </select>
+    
+    
     <select id="listStatus" resultMap="StatusResult" parameterType="map">
     	select status from type_status;
     </select>

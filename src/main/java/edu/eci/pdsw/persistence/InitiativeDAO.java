@@ -32,8 +32,8 @@ public interface InitiativeDAO {
 	public void insertInterested(int idIni, int idUser) throws ServicesException;
 	
 	public List<User> loadInterested(int id) throws ServicesException;
-	
-	
+
+	public List<Initiative> loadRelated(int id) throws ServicesException;
 	
 
 }

@@ -16,6 +16,7 @@ $(document).ready(function() {
 	$("#keyinitiative").DataTable();
 	$("#interestedTable").DataTable();
 	$("#commentTable").DataTable();
+	$("#relatedTable").DataTable();
 } );
 
 $("#keyinitiative").load(function(){

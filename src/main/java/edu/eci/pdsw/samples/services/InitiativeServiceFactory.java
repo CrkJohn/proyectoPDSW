@@ -96,6 +96,8 @@ public class InitiativeServiceFactory {
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadComment(1));
     	System.out.println("Interesados iniciativa 1");
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadInterested(1));
+    	System.out.println("Cargar iniciativas relacionadas a la 1");
+    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadRelated(1));
     	
     }
     

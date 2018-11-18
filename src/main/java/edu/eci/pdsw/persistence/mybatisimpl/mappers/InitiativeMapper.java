@@ -40,4 +40,6 @@ public interface InitiativeMapper {
 	
 	public List<User> loadInterested(@Param("id") int id);
 	
+	public List<Keyword> loadKeywordInitiative(@Param("id")int id);
+	
 }

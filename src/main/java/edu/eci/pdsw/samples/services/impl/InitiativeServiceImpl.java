@@ -131,13 +131,17 @@ public class InitiativeServiceImpl implements InitiativeServices {
 
 	@Override
 	public void insertInterested(int idIni, int idUser) throws ServicesException {
-		initiativeDAO.insertInterested(idIni, idUser);
-		
+		initiativeDAO.insertInterested(idIni, idUser);		
 	}
 
 	@Override
 	public List<User> loadInterested(int id) throws ServicesException {
 		return initiativeDAO.loadInterested(id);
+	}
+
+	@Override
+	public List<Initiative> loadRelated(int id) throws ServicesException {
+		return initiativeDAO.loadRelated(id);
 	}
 
 

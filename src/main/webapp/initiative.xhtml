@@ -43,6 +43,29 @@
 			</div>
 			<div class="col-xs-6 col-sm-4 col-lg-4">
 			<h3>Información</h3>
+			<p >Aca va la informacion de la iniciativa</p>
+			<table id="relatedTable" class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Descripcion</th>
+							<th>Area</th>
+							<th>Estado</th>
+							<th>Votos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<ui:repeat var="initiative" value="#{initiativeBean.getRelated()}">
+						<tr>
+							<td>#{initiative.id}</td>
+							<td>#{initiative.description}</td>
+							<td>#{initiative.area}</td>
+							<td>#{initiative.status.status}</td>
+							<td>#{initiative.numVotes}</td>	
+						</tr>
+						</ui:repeat>
+					</tbody>
+				</table>
 			</div>
 			<div class="col-xs-6 col-sm-4 col-lg-4 "> 
 			<h3>Comentarios</h3>

@@ -72,4 +72,9 @@ public class InitiativeBean extends BasePageBean {
 	public List<Comment> getComments() throws ServicesException{
 		return initiativeService.loadComment(1);
 	}
+		
+	public List<Initiative> getRelated() throws ServicesException{
+		return initiativeService.loadRelated(1);
+	}
+
 }
