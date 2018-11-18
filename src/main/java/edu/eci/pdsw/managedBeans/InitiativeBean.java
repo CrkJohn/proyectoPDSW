@@ -11,8 +11,10 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.TypeStatus;
+import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.entities.UserType;
 import edu.eci.pdsw.samples.services.InitiativeServices;
 import edu.eci.pdsw.samples.services.ServicesException;
@@ -58,5 +60,16 @@ public class InitiativeBean extends BasePageBean {
 	public List<TypeStatus> getTypes () throws ServicesException{
 		return initiativeService.listStatus();
 	}
-    
+
+	public List<User> getInterested() throws ServicesException{
+		return initiativeService.loadInterested(1);
+	}
+	
+	public void insertInterested(int idIni, int idUser) throws ServicesException{
+		initiativeService.insertInterested(idIni, idUser);
+	}
+	
+	public List<Comment> getComments() throws ServicesException{
+		return initiativeService.loadComment(1);
+	}
 }

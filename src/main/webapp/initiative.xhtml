@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:composition template="/WEB-INF/include/template.xhtml">
+<ui:define name ="head">
+	<h:outputStylesheet name = "css/bootstrap-tagsinput.css" />
+	<h:outputStylesheet name = "css/initiative.css" />
+	<h:outputStylesheet name = "dataTable/css/dataTables.bootstrap.min.css" />
+</ui:define>
+<ui:define name = "body">
+	<br></br>
+	<h1>Iniciativa #name</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-6 col-sm-4 col-lg-4 ">
+				<h3>Interesados</h3>
+				<table id="interestedTable" class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Last Name</th>
+							<th>Email</th>
+						</tr>
+					</thead>
+					<tbody>
+						<ui:repeat var="user" value="#{initiativeBean.getInterested()}">
+						<tr>
+							<td>#{user.id}</td>
+							<td>#{user.name}</td>
+							<td>#{user.lastName}</td>
+							<td>#{user.email}</td>
+						</tr>
+						</ui:repeat>
+					</tbody>
+				</table>
+				
+			</div>
+			<div class="col-xs-6 col-sm-4 col-lg-4">
+			<h3>Información</h3>
+			</div>
+			<div class="col-xs-6 col-sm-4 col-lg-4 "> 
+			<h3>Comentarios</h3>
+			<table id="commentTable" class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Commet</th>
+							<th>Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<ui:repeat var="comment" value="#{initiativeBean.getComments()}">
+						<tr>
+							<td>#{comment.id}</td>
+							<td>#{comment.comment}</td>
+							<td>#{comment.date}</td>
+						</tr>
+						</ui:repeat>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+
+ 	
+	<h:outputScript name = "js/bootstrap-tagsinput.js" />
+ 	<h:outputScript name = "js/initiative.js" />
+	<h:outputScript name = "dataTable/js/jquery.dataTables.min.js" />
+	<h:outputScript name = "dataTable/js/dataTables.bootstrap.min.js" />
+</ui:define>
+</ui:composition>
+</html>
