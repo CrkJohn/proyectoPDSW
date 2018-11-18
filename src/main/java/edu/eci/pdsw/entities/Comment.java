@@ -5,25 +5,23 @@ import java.util.Date;
 public class Comment {
 	private int id;
 	private User user;
-	private Initiative initiative;
 	private String comment;
-	private Date startDate;
+	private Date date;
 	
 	public Comment() {}
 	
-	public Comment(User user, Initiative initiative,String comment, Date startDate ) {
-		this.user=user;
-		this.initiative=initiative;
+	public Comment(int id,String comment, Date date ) {
 		this.comment=comment;
-		this.startDate=startDate;
+		this.date=date;
+		this.id=id;
 	}
 
-	public Date getStartDate() {
-		return startDate;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
+	public void setDate(Date startDate) {
+		this.date = startDate;
 	}
 
 	public int getId() {
@@ -42,20 +40,17 @@ public class Comment {
 		this.user = user;
 	}
 
-	public Initiative getIdInitiative() {
-		return initiative;
-	}
-
-	public void setIdInitiative(Initiative initiative) {
-		this.initiative = initiative;
-	}
-
 	public String getComment() {
 		return comment;
 	}
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+	
+	public String toString() {
+		
+		return "[Initiative: id: "+id+", comment: "+comment+",CreationDate: "+date+", user: "+user+"]";
 	}
 	
 }

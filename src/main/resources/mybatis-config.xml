@@ -12,6 +12,7 @@
     	<typeAlias type='edu.eci.pdsw.entities.Initiative' alias='Initiative'/>
     	<typeAlias type='edu.eci.pdsw.entities.TypeStatus' alias='TypeStatus'/>
     	<typeAlias type='edu.eci.pdsw.entities.Keyword' alias='Keyword'/>
+    	<typeAlias type='edu.eci.pdsw.entities.Comment' alias='Comment'/>
     </typeAliases>        
 
         
@@ -30,6 +31,7 @@
     <mappers>
     	<mapper resource="mappers/UserMapper.xml"></mapper>          
     	<mapper resource="mappers/InitiativeMapper.xml"></mapper>
+    	<mapper resource="mappers/CommentMapper.xml"></mapper>
     </mappers> 
         
         

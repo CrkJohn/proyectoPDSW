@@ -88,4 +88,15 @@ public interface InitiativeServices {
 	
 	public List<Keyword> listKeywords() throws ServicesException;
 	
+	public void addComment (int InitiativeId, int userId, String comment) throws ServicesException;
+	
+	public List<Comment> loadComments() throws ServicesException;
+	
+	public List<Comment> loadComment(int InitiativeId) throws ServicesException;
+	
+	public void insertInterested(int idIni, int idUser) throws ServicesException;
+	
+	public List<User> loadInterested(int id) throws ServicesException;
+
+	
 }

@@ -13,8 +13,10 @@ import com.google.inject.Injector;
 
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.UserType;
+import edu.eci.pdsw.persistence.CommentDAO;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
+import edu.eci.pdsw.persistence.mybatisimpl.MyBatisCommentDAO;
 import edu.eci.pdsw.persistence.mybatisimpl.MyBatisInitiativeDAO;
 import edu.eci.pdsw.persistence.mybatisimpl.MyBatisUserDao;
 import edu.eci.pdsw.samples.services.impl.InitiativeServiceImpl;
@@ -37,7 +39,8 @@ public class InitiativeServiceFactory {
                         setClassPathResource("mybatis-config.xml");         
                         bind(UserDAO.class).to(MyBatisUserDao.class);
 						bind(InitiativeDAO.class).to(MyBatisInitiativeDAO.class);
-                        bind(InitiativeServices.class).to(InitiativeServiceImpl.class);
+						bind(CommentDAO.class).to(MyBatisCommentDAO.class);
+						bind(InitiativeServices.class).to(InitiativeServiceImpl.class);
                     }
 
                 }
@@ -86,6 +89,14 @@ public class InitiativeServiceFactory {
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiativeByKeywords(kw));
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().listUsers());
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().listStatus());
+    	
+    	System.out.println("Comentarios");
+    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadComments());
+    	System.out.println("Comentarios de la iniciativa 1");
+    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadComment(1));
+    	System.out.println("Interesados iniciativa 1");
+    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadInterested(1));
+    	
     }
     
 }

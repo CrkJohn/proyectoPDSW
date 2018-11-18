@@ -36,7 +36,7 @@ public class GuiceContextListener implements ServletContextListener {
                 bind(InitiativeServices.class).to(InitiativeServiceImpl.class);
                 bind(UserDAO.class).to(MyBatisUserDao.class);
                 bind(InitiativeDAO.class).to(MyBatisInitiativeDAO.class);
-                //bind(CommentDAO.class).to(MyBatisCommentDAO.class);
+                bind(CommentDAO.class).to(MyBatisCommentDAO.class);
                 
             }
         });

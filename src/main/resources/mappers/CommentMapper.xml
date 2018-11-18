@@ -7,34 +7,40 @@
 
     <resultMap type='Comment' id='CommentResult'>
         <id property='id' column='id'/>        
-        <result property='Comment' column='comment'/>
-		<result property='startDate' column='date'/>
+        <result property='comment' column='comment'/>
+		<result property='date' column='date'/>
 		<association property='user' javaType='User' resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
-		<association property='initiative' javaType='Initiative' resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper.InitiativeResult1'></association>
     </resultMap>
-    
+    <!--  
     <insert id="addComment" parameterType="Comment">
 		INSERT INTO "comment"
-		(id, comment, user_id, initiative_id,date) 
-		VALUES((select count(*)+1 from "comment"),#{comment},#{idUser},#{idInitiative},#{date})
+		(id, comment, user_id,date) 
+		VALUES((select count(*)+1 from "comment"),#{comment},#{idUser},#{date})
 	</insert>
+    -->
     
     <select id="loadComments" resultMap="CommentResult" parameterType="map">
         SELECT c.id,
         	c.comment,
 			c.date,
 			c.user_id,
-			c.initiative_id
-		FROM Comment as c;
+			u.id idus,
+			u.name,
+			u.email,
+			u.Type_user tuser
+		FROM Comment as c , "User" as u where c.user_id=u.id;
     </select>
     
-    <select id="loadComment" resultMap="CommentResult" parameterType="map">
+     <select id="loadComment" resultMap="CommentResult" parameterType="map">
         SELECT c.id,
         	c.comment,
 			c.date,
 			c.user_id,
-			c.initiative_id
-		FROM Comment as c WHERE c.initiative_id=#{id};
-    </select>
-    
+			u.id idus,
+			u.name,
+			u.email,
+			u.Type_user tuser
+		FROM "comment" as c, "comment_initiative" as ci, "User" as u WHERE ci.initiative_id=#{id} and ci.comment_id=c.id and c.user_id=u.id;
+	 </select>
+
 </mapper>

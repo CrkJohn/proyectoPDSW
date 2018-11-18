@@ -24,9 +24,14 @@ CREATE TABLE Comment (
    id int  NOT NULL,
    comment varchar(200)  NOT NULL,
    User_id int  NOT NULL,
-   Initiative_id int  NOT NULL,
    Date date  NOT NULL,
    CONSTRAINT Comment_pk PRIMARY KEY (id)
+);
+
+CREATE TABLE comment_initiative (
+   Initiative_id int  NOT NULL,
+   Comment_id int  NOT NULL,
+   CONSTRAINT comment_initiative_pk PRIMARY KEY (Initiative_id,Comment_id)
 );
 
 CREATE TABLE Initiative (

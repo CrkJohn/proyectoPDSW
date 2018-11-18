@@ -165,6 +165,41 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public void addComment(int InitiativeId, int userId, String comment) throws ServicesException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public List<Comment> loadComments() throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<Comment> loadComment(int InitiativeId) throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void insertInterested(int idIni, int idUser) throws ServicesException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public List<User> loadInterested(int id) throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 	

@@ -8,6 +8,7 @@ import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.persistence.CommentDAO;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
 import edu.eci.pdsw.samples.services.InitiativeServices;
@@ -22,6 +23,9 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	@Inject
 	private InitiativeDAO initiativeDAO;
 	
+	@Inject
+	private CommentDAO commentDAO;
+
 	
 	@Override
 	public void createUser(User user) throws ServicesException {
@@ -108,6 +112,34 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	public List<Keyword> listKeywords() throws ServicesException {
 		return initiativeDAO.listKeywords();
 	}
+	
+
+	@Override
+	public void addComment (int InitiativeId, int userId, String comment) throws ServicesException {
+		commentDAO.addComment(InitiativeId, userId, comment);
+	}
+	
+	@Override
+	public List<Comment> loadComments() throws ServicesException {
+		return commentDAO.loadComments();
+	}
+	
+	@Override
+	public List<Comment> loadComment(int InitiativeId) throws ServicesException {
+		return commentDAO.loadComment(InitiativeId);
+	}
+
+	@Override
+	public void insertInterested(int idIni, int idUser) throws ServicesException {
+		initiativeDAO.insertInterested(idIni, idUser);
+		
+	}
+
+	@Override
+	public List<User> loadInterested(int id) throws ServicesException {
+		return initiativeDAO.loadInterested(id);
+	}
+
 
 
 }

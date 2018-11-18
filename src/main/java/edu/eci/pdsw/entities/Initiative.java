@@ -14,6 +14,7 @@ public class Initiative {
 	private Date modifyDate;
 	private User user;
 	private List<User> interested;
+	private List<Comment> comments;
 	
 	public Initiative() {}
 	
@@ -24,6 +25,14 @@ public class Initiative {
 		this.numVotes =  numVotes;
 		this.startDate = startDate;
 		this.modifyDate = modifyDate;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
 	}
 
 	public int getId() {
