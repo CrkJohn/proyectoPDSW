@@ -10,8 +10,73 @@
 <ui:define name ="head">
 </ui:define>
 <ui:define name = "body">
+	<br></br>
 	<h1>Usuarios</h1>
-	<p:dataTable id="user_table" var="user" value="#{userBean.users}">
+	<table id="usersTable" class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Correo</th>
+				<th>Rol</th>
+				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}"><th>Modificar</th></h:panelGroup>
+			</tr>
+		</thead>
+		<tbody>
+			<ui:repeat var="user" value="#{userBean.getUsers()}">
+			<tr>
+				<td>#{user.id}</td>
+				<td>#{user.name}</td>
+				<td>#{user.email}</td>
+				<td>#{user.type}</td>
+				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
+					<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Modificar</button></td>
+				</h:panelGroup>
+			</tr>
+			</ui:repeat>
+		</tbody>
+	</table>
+	
+	
+	<!--Inicio del codigo del error de parametro -->
+	
+	
+	<!-- <h2>Busqueda de usuarios</h2>
+	<h:form id="userByMail_form">
+		<input id="usemail" type="text" value="santiago" data-role="tagsinput"/>
+		<p:inputText id="email" binding="#{mailInput}" type="hidden"  />
+		<p:commandButton id="buscar_mail" value = "Buscar" update=":user_table" styleClass="btn btn-primary"></p:commandButton>
+	</h:form> -->
+	
+	<br/><br/>
+	<!-- <h:panelGroup id="user_table">
+	<table id="usermail" class="table table-bordered table-striped"> 
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Correo</th>
+				<th>Rol</th>
+			</tr>
+		</thead>
+		<tbody>
+			<ui:repeat var="uMail" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
+			<tr>
+				<td>#{uMail.id}</td>
+				<td>#{uMail.name}</td>
+				<td>#{uMail.email}</td>
+				<td>#{uMail.type}</td>
+		
+			</tr>
+			</ui:repeat>
+		</tbody>
+	</table>
+ 	</h:panelGroup> -->
+ 	
+ 	
+	<!--fin del codigo del error de parametro (value="#{userBean.getUsers()}) -->
+	
+	<!--<p:dataTable id="user_table" var="user" value="#{userBean.users}">
 		<p:column headerText="#">
 			<h:outputText value="#{user.id}"/>
 		</p:column>
@@ -24,10 +89,10 @@
 		<p:column headerText="Rol">
 			<h:outputText value="#{user.type}"/>
 		</p:column>
-	</p:dataTable>	
+	</p:dataTable>-->	
 	<br/><br/>
 	<!-- Small modal -->
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Modificar</button>
+	<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Modificar</button>-->
 	
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
 	  <div class="modal-dialog modal-sm" role="document">
