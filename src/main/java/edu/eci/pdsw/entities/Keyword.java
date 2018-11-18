@@ -27,4 +27,8 @@ public class Keyword {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+	
+	public String toString() {
+		return keyword;
+	}
 }

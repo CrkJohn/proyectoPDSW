@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.google.inject.Injector;
 
+import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.UserType;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
@@ -75,7 +76,7 @@ public class InitiativeServiceFactory {
         System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getUser("anamariarincon1299@escuelaing.edu.co", "ana123"));
     	
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiative(1));
-    	
+
     	List<String> kw= new ArrayList<String> (4);
     	kw.add("Construccion");
     	kw.add("Diversion");

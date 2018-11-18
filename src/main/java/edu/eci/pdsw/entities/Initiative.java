@@ -107,7 +107,7 @@ public class Initiative {
 	
 	public String toString() {
 		
-		return "[Initiative: id: "+id+", description: "+description+", Area: "+area+", CreationDate: "+startDate+", ModifyDate: "+modifyDate+", user: "+user+", status: "+status+", votes: "+numVotes+"]";
+		return "[Initiative: id: "+id+", description: "+description+", Area: "+area+", CreationDate: "+startDate+", ModifyDate: "+modifyDate+", user: "+user+", status: "+status+", votes: "+numVotes+", keywords:"+keyWords+"]";
 	}
 	
 }
