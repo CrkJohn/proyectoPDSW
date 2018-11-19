@@ -47,6 +47,13 @@ public class UserBean extends BasePageBean {
 		}
 	}
 	
+	public void logOut() throws ServicesException, IOException{
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+		session.removeAttribute("id");
+		facesContext.getExternalContext().redirect("/faces/index.xhtml");
+	} 
+	
 	public boolean islogged() {
 		return ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id") != null;
 	}
