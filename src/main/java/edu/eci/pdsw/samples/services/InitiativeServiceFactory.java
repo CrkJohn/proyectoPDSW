@@ -98,6 +98,8 @@ public class InitiativeServiceFactory {
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadInterested(1));
     	System.out.println("Cargar iniciativas relacionadas a la 1");
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadRelated(1));
+    	//InitiativeServiceFactory.getInstance().getInitiativeServices().insertInterested(4, 2143);
+    	
     	     
     }
     
