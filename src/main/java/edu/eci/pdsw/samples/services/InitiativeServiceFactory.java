@@ -100,6 +100,7 @@ public class InitiativeServiceFactory {
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadRelated(1));
     	//InitiativeServiceFactory.getInstance().getInitiativeServices().insertInterested(4, 2143);
     	
+    	
     	     
     }
     

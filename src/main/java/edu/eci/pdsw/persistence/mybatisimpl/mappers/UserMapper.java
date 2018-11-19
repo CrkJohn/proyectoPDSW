@@ -9,7 +9,7 @@ public interface UserMapper{
 	
 	public List<User> consultUsers();
 	
-	public User consultUserByMail(@Param("usermail")String usermail);
+	public List<User> consultUserByMail(@Param("usermail")String usermail);
 	
 	public void modifyUser(@Param("email")String email, @Param("rol")int rol);
 }

@@ -41,15 +41,15 @@
 	<!--Inicio del codigo del error de parametro -->
 	
 	
-	<!-- <h2>Busqueda de usuarios</h2>
+	<h2>Busqueda de usuarios</h2>
 	<h:form id="userByMail_form">
 		<input id="usemail" type="text" value="santiago" data-role="tagsinput"/>
 		<p:inputText id="email" binding="#{mailInput}" type="hidden"  />
 		<p:commandButton id="buscar_mail" value = "Buscar" update=":user_table" styleClass="btn btn-primary"></p:commandButton>
-	</h:form> -->
+	</h:form>
 	
 	<br/><br/>
-	<!-- <h:panelGroup id="user_table">
+	<h:panelGroup id="user_table">
 	<table id="usermail" class="table table-bordered table-striped"> 
 		<thead>
 			<tr>
@@ -60,7 +60,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<ui:repeat var="uMail" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
+			<ui:repeat var="uMail" value="#{userBean.getUserByMail(mailInput.value)}">
 			<tr>
 				<td>#{uMail.id}</td>
 				<td>#{uMail.name}</td>
@@ -71,8 +71,7 @@
 			</ui:repeat>
 		</tbody>
 	</table>
- 	</h:panelGroup> -->
- 	
+ 	</h:panelGroup>
  	
 	<!--fin del codigo del error de parametro (value="#{userBean.getUsers()}) -->
 	

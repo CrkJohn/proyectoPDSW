@@ -77,7 +77,7 @@ public class UserBean extends BasePageBean {
 		}
 	}
 	
-	public User getUserByMail(String usermail) throws Exception{
+	public List<User> getUserByMail(String usermail) throws Exception{
 		try {
 			return initiativeService.consultUserByMail(usermail);
 		}

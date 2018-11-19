@@ -152,7 +152,7 @@ public class InitiativeServicesStub implements InitiativeServices{
 
 
 	@Override
-	public User consultUserByMail(String usermail) throws ServicesException {
+	public List<User> consultUserByMail(String usermail) throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
 	}

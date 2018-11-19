@@ -104,7 +104,7 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	}
 
 	@Override
-	public User consultUserByMail(String usermail) throws ServicesException {
+	public List<User> consultUserByMail(String usermail) throws ServicesException {
 		return userDAO.loadUserByMail(usermail);
 	}
 

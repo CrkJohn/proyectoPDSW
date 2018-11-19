@@ -35,7 +35,7 @@
 			u.email,
 			u.Type_user tuser
         FROM "User" as u
-        WHERE email LIKE '%#{usermail}%'
+        WHERE email LIKE '%'||#{usermail}||'%'
     </select>
     
     <update id='modifyUser'>
