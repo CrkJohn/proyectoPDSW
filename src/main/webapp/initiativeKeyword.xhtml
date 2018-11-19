@@ -24,7 +24,7 @@
 				<th>Area</th>
 				<th>Estado</th>
 				<th>Votos</th>
-				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}"><th>Modificar</th></h:panelGroup>
+				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}"><th>Ver mas</th></h:panelGroup>
 			</tr>
 		</thead>
 		<tbody>
@@ -36,7 +36,7 @@
 				<td>#{item.status.status}</td>
 				<td>#{item.numVotes}</td>
 				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
-					<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifyStatus">Modificar</button></td>
+					<td><p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/></td>
 				</h:panelGroup>
 					</tr>
 			</ui:repeat>
@@ -77,39 +77,6 @@
 		</tbody>
 	</table>
  	</h:panelGroup>
-	
-	<div id="modifyStatus" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
-		  <div class="modal-dialog modal-sm" role="document">
-		    <div class="modal-content">
-		     <div class= "modal-header">
-		     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		     	<h4>Modificando Estado</h4>
-		     </div>
-		     <div class= "modal-body">
-		     	<h:form>
-				  <div class="form-group">
-				    <label for="new_status">Nuevo estado</label>
-				    <select class="form-control" id="select">
-				    	<label for="new_status">Nuevo estado</label>
-						<ui:repeat var="newStatus" value="#{initiativeBean.getTypes()}">
-							<option value="#{newStatus.status}">#{newStatus.status}</option>
-						</ui:repeat> 
-					  </select>
-					  <p:inputText styleClass="status" binding="#{newStatus1}" type="hidden"  />
-				  </div>
-				  <div class="form-group">
-				    <label for="id">id</label>
-				    <p:inputText id="desc7" binding="#{desc7}" styleClass="form-control"/>
-				  </div>
-				  <p:commandButton value = "Modificar"  
-					actionListener="#{initiativeBean.modifyStatus(newStatus1.value,desc7.value)}" id="boton" styleClass="btn btn-success">
-				  </p:commandButton>
-				</h:form>
-		     </div>
-		    </div>
-		  </div>
-		</div>	 	
-
 	<br/><br/>
  	
  	<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">

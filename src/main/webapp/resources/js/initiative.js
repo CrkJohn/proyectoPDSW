@@ -6,6 +6,10 @@ $("#keywordInsert").on( 'change',function(){
 	$("#addInitiative\\:keywordIn").val($("#keywordInsert").val())
 });
 
+$("#description_initiative\\:boton").on( 'click',function(){
+	$("#description_initiative\\:idInitiative").val($("#idInitiative").val())
+});
+
 $('#select').on('change', function() {
 	$(".status").val($('#select').val());
 });
@@ -18,6 +22,12 @@ $(document).ready(function() {
 	$("#commentTable").DataTable();
 	$("#relatedTable").DataTable();
 } );
+
+$(document).on("click", ".open-DescriptionInitiative", function () {
+     var initiativeId = $(this).data('id');
+     $(".modal-body #idInitiative").val( initiativeId );
+});
+
 
 $("#keyinitiative").load(function(){
 	$("#keyinitiative").DataTable();

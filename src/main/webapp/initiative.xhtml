@@ -14,7 +14,10 @@
 </ui:define>
 <ui:define name = "body">
 	<br></br>
-	<h1>Iniciativa #name</h1>
+	<f:metadata>
+	    <f:viewParam name="initiative" value="#{dInitiativeBean.initiative}" />
+	</f:metadata>
+	<h1>Iniciativa #{dInitiativeBean.initiative}</h1>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs-6 col-sm-4 col-lg-4 ">
@@ -29,7 +32,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<ui:repeat var="user" value="#{initiativeBean.getInterested()}">
+						<ui:repeat var="user" value="#{dInitiativeBean.getInterested()}">
 						<tr>
 							<td>#{user.id}</td>
 							<td>#{user.name}</td>
@@ -55,7 +58,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<ui:repeat var="initiative" value="#{initiativeBean.getRelated()}">
+						<ui:repeat var="initiative" value="#{dInitiativeBean.getRelated()}">
 						<tr>
 							<td>#{initiative.id}</td>
 							<td>#{initiative.description}</td>
@@ -78,7 +81,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<ui:repeat var="comment" value="#{initiativeBean.getComments()}">
+						<ui:repeat var="comment" value="#{dInitiativeBean.getComments()}">
 						<tr>
 							<td>#{comment.id}</td>
 							<td>#{comment.comment}</td>

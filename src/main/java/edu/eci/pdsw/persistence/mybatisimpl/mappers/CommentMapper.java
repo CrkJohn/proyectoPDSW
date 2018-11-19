@@ -11,7 +11,8 @@ public interface CommentMapper {
 	
 	public List<Comment> loadComments();
 	
-	public void addComment(@Param("idInitiative") int idInitiative, @Param("idUser") int idUser,@Param("comment") String comment, @Param("date")Date date);
+	public void addComment(@Param("idInitiative") int idInitiative, @Param("idUser") int idUser,
+			@Param("comment") String comment, @Param("date")Date date);
 	
 	public List<Comment> loadComment(@Param("id")int idInitiative);
 }

@@ -53,28 +53,6 @@ public class InitiativeBean extends BasePageBean {
 		return initiativeService.listInitiative();
 	}
 	
-	public void modifyStatus(String newStatus, int id) throws ServicesException{
-		initiativeService.modifyInitiative(newStatus, id);
-	}
 	
-	public List<TypeStatus> getTypes () throws ServicesException{
-		return initiativeService.listStatus();
-	}
-
-	public List<User> getInterested() throws ServicesException{
-		return initiativeService.loadInterested(1);
-	}
-	
-	public void insertInterested(int idIni, int idUser) throws ServicesException{
-		initiativeService.insertInterested(idIni, idUser);
-	}
-	
-	public List<Comment> getComments() throws ServicesException{
-		return initiativeService.loadComment(1);
-	}
-		
-	public List<Initiative> getRelated() throws ServicesException{
-		return initiativeService.loadRelated(1);
-	}
 
 }

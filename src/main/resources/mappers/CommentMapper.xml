@@ -11,14 +11,13 @@
 		<result property='date' column='date'/>
 		<association property='user' javaType='User' resultMap='edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult'></association>
     </resultMap>
-    <!--  
-    <insert id="addComment" parameterType="Comment">
+
+    <insert id="addComment">
 		INSERT INTO "comment"
-		(id, comment, user_id,date) 
-		VALUES((select count(*)+1 from "comment"),#{comment},#{idUser},#{date})
+		(id, comment, user_id, initiative_id ,date) 
+		VALUES((select count(*)+1 from "comment"),#{comment},#{idUser},#{idInitiative},#{date})
 	</insert>
-    -->
-    
+   
     <select id="loadComments" resultMap="CommentResult" parameterType="map">
         SELECT c.id,
         	c.comment,
