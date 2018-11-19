@@ -53,6 +53,6 @@ public class InitiativeBean extends BasePageBean {
 		return initiativeService.listInitiative();
 	}
 	
-	
+
 
 }

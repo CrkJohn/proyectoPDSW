@@ -144,6 +144,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		return initiativeDAO.loadRelated(id);
 	}
 
+	@Override
+	public void deleteInterested(int idInitiative, int idUser) {
+		initiativeDAO.deleteInterested(idInitiative, idUser);		
+	}
+
 
 
 }

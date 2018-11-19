@@ -99,6 +99,8 @@ public interface InitiativeServices {
 	public List<User> loadInterested(int id) throws ServicesException;
 	
 	public List<Initiative> loadRelated(int id) throws ServicesException;
+
+	public void deleteInterested(int idInitiative, int idUser);
 	
 	
 }

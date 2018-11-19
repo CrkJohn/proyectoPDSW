@@ -43,6 +43,14 @@
 					</tbody>
 				</table>
 				
+				<p:commandButton value = "Interesado"  
+					actionListener="#{dInitiativeBean.insertInterested()}" id="botonInteres" styleClass="btn btn-primary">
+			  	</p:commandButton>
+				<p:commandButton value = "Dejar Interes"  
+					actionListener="#{dInitiativeBean.deleteInterested()}" id="botonDejarInteres" styleClass="btn btn-primary">
+			  	</p:commandButton>
+				
+				
 			</div>
 			<div class="col-xs-6"> 
 			<h3>Comentarios</h3>

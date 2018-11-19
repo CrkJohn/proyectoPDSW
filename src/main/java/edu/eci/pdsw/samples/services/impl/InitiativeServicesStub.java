@@ -207,6 +207,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public void deleteInterested(int idInitiative, int idUser) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 
 	

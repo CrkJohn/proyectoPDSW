@@ -130,5 +130,11 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		return initiatives;
 	}
 
+	@Override
+	public void deleteInterested(int idInitiative, int idUser) {
+		initiativeMapper.deleteInterested(idInitiative, idUser);
+		
+	}
+
 	
 }

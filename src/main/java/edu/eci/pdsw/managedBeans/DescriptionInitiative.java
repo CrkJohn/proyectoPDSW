@@ -6,7 +6,9 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
@@ -43,8 +45,12 @@ public class DescriptionInitiative extends BasePageBean{
 		return initiativeService.loadInterested(initiative);
 	}
 	
-	public void insertInterested(int idIni, int idUser) throws ServicesException{
-		initiativeService.insertInterested(idIni, idUser);
+	public void insertInterested() throws ServicesException{
+		initiativeService.insertInterested(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
+	}
+	
+	public void deleteInterested() throws ServicesException{
+		initiativeService.deleteInterested(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
 	}
 	
 	public List<Comment> getComments() throws ServicesException{
