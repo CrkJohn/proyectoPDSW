@@ -30,7 +30,7 @@
 				<td>#{user.email}</td>
 				<td>#{user.type}</td>
 				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
-					<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Modificar</button></td>
+					<td><button type="button" data-id="#{user.email}" class="modify-User btn btn-primary" data-toggle="modal" data-target="#modifyUs">Modificar</button></td>
 				</h:panelGroup>
 			</tr>
 			</ui:repeat>
@@ -73,27 +73,11 @@
 	</table>
  	</h:panelGroup>
  	
-	<!--fin del codigo del error de parametro (value="#{userBean.getUsers()}) -->
 	
-	<!--<p:dataTable id="user_table" var="user" value="#{userBean.users}">
-		<p:column headerText="#">
-			<h:outputText value="#{user.id}"/>
-		</p:column>
-		<p:column headerText="Nombre">
-			<h:outputText value="#{user.name}"/>
-		</p:column>
-		<p:column headerText="Correo">
-			<h:outputText value="#{user.email}"/>
-		</p:column>
-		<p:column headerText="Rol">
-			<h:outputText value="#{user.type}"/>
-		</p:column>
-	</p:dataTable>-->	
 	<br/><br/>
-	<!-- Small modal -->
-	<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Modificar</button>-->
 	
-	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modifyUs">
 	  <div class="modal-dialog modal-sm" role="document">
 	    <div class="modal-content">
 	     <div class= "modal-header">
@@ -102,10 +86,8 @@
 	     </div>
 	     <div class= "modal-body">
 	     	<h:form id="rol_form">
-			  <div class="form-group">
-			    <label for="Email1">Email</label>
-			    <p:inputText id="desc2" binding="#{modifyEmail}" styleClass="form-control" />
-			  </div>
+	     	  <input type="text" name="emailUser" id="emailUser" value="" style="visibility: hidden"/>	  
+			  <p:inputText id="emailUser" binding="#{emailUser}" type="hidden"/>
 			  <div class="form-group" >
 			  	  <label for="NuevoRol">Nuevo Rol</label>
 				  <select class="form-control" id="select">
@@ -117,7 +99,7 @@
 				  <p:inputText styleClass="rol" binding="#{modifyRol2}" type="hidden"  />
 			  </div>
 			  <p:commandButton value = "Modificar"
-				actionListener="#{userBean.modifyUser(modifyEmail.value,modifyRol2.value)}" id="boton" styleClass="btn btn-success">
+				actionListener="#{userBean.modifyUser(emailUser.value,modifyRol2.value)}" id="boton" styleClass="btn btn-success">
 			  </p:commandButton>
 			</h:form>
 	     </div>
