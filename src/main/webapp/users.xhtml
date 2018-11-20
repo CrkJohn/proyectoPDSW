@@ -35,16 +35,12 @@
 			</tr>
 			</ui:repeat>
 		</tbody>
-	</table>
-	
-	
-	<!--Inicio del codigo del error de parametro -->
-	
+	</table>	
 	
 	<h2>Busqueda de usuarios</h2>
 	<h:form id="userByMail_form">
-		<input id="usemail" type="text" value="santiago" data-role="tagsinput"/>
-		<p:inputText id="email" binding="#{mailInput}" type="hidden"  />
+		<input id="usemail2" type="text" value="santiago" data-role="tagsinput"/>
+		<p:inputText id="mail" binding="#{mailInput}" type="hidden"  />
 		<p:commandButton id="buscar_mail" value = "Buscar" update=":user_table" styleClass="btn btn-primary"></p:commandButton>
 	</h:form>
 	
@@ -106,7 +102,9 @@
 	    </div>
 	  </div>
 	</div>
+	
 	<h:outputScript name = "js/user.js" />
+	
 </ui:define>
 </ui:composition>
 </html>
