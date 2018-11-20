@@ -31,7 +31,8 @@
     </select>
     
      <select id="loadComment" resultMap="CommentResult" parameterType="map">
-        SELECT c.id,
+     	
+     	SELECT distinct c.id,
         	c.comment,
 			c.date,
 			c.user_id,
@@ -39,7 +40,7 @@
 			u.name,
 			u.email,
 			u.Type_user tuser
-		FROM "comment" as c, "comment_initiative" as ci, "User" as u WHERE ci.initiative_id=#{id} and ci.comment_id=c.id and c.user_id=u.id;
+		FROM "comment" as c, "User" as u, "initiative" as i WHERE  c.initiative_id=#{id} and c.user_id=u.id;
 	 </select>
 
 </mapper>
