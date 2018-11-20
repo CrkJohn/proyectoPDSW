@@ -8,6 +8,7 @@ import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.chartInitiative;
 import edu.eci.pdsw.persistence.CommentDAO;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.persistence.UserDAO;
@@ -147,6 +148,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	@Override
 	public void deleteInterested(int idInitiative, int idUser) {
 		initiativeDAO.deleteInterested(idInitiative, idUser);		
+	}
+
+	@Override
+	public List<chartInitiative> getDataChart() throws ServicesException {
+		return initiativeDAO.gerDataChart();
 	}
 
 

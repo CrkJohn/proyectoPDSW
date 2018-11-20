@@ -10,6 +10,7 @@ import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.samples.services.ServicesException;
 import edu.eci.pdsw.entities.TypeStatus;
 import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.chartInitiative;
 
 public interface InitiativeDAO {
 	
@@ -36,6 +37,8 @@ public interface InitiativeDAO {
 	public List<Initiative> loadRelated(int id) throws ServicesException;
 
 	public void deleteInterested(int idInitiative, int idUser);
+
+	public List<chartInitiative> gerDataChart();
 	
 
 }

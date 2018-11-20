@@ -28,6 +28,11 @@
     	<id property='id' column='id'/>        
         <result property='keyword' column='word'/>
     </resultMap>
+    
+    <resultMap type="chartInitiative" id="chartInitiativeResult">
+    	<result property='area' column='area'/>        
+        <result property='cantidad' column='cantidad'/>
+    </resultMap>
      
     <insert id="insertKeyword" parameterType="String">
     	INSERT INTO "key_words" VALUES ((select count(*)+1 from "key_words"), #{keyword});
@@ -136,6 +141,12 @@
     
     <select id="listKeywords" resultMap= "KeywordResult" parameterType="map">
     	select id, word from key_words;
+    </select>
+    
+    <select id="getDataChart" resultMap= "chartInitiativeResult" parameterType="map">
+    	select area, count(*) as cantidad 
+    	from initiative 
+		group by area;
     </select>
     
 	<update id="modifyInitiative">

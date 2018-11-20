@@ -8,6 +8,7 @@ import java.util.Map;
 
 import edu.eci.pdsw.entities.User;
 import edu.eci.pdsw.entities.UserType;
+import edu.eci.pdsw.entities.chartInitiative;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.Comment;
@@ -211,6 +212,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	public void deleteInterested(int idInitiative, int idUser) {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	@Override
+	public List<chartInitiative> getDataChart() throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

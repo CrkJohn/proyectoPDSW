@@ -6,7 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.TypeStatus;
-import edu.eci.pdsw.entities.User;;
+import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.chartInitiative;;
 
 public interface InitiativeMapper {
 	
@@ -43,5 +44,7 @@ public interface InitiativeMapper {
 	public List<Keyword> loadKeywordInitiative(@Param("id")int id);
 
 	public void deleteInterested(@Param("idIni")int idInitiative, @Param("idUser")int idUser);
+
+	public List<chartInitiative> getDataChart();
 	
 }
