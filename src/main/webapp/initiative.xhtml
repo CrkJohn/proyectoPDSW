@@ -54,6 +54,7 @@
 			</div>
 			<div class="col-xs-6"> 
 			<h3>Comentarios</h3>
+			<h:panelGroup id="comment_table">
 			<table id="commentTable" class="table table-bordered table-striped">
 					<thead>
 						<tr>
@@ -73,10 +74,10 @@
 					</tbody>
 				</table>
 				
-				<!--<p:commandButton value = "Agregar comentario"  
-					actionListener="#{dInitiativeBean.insertInterested()}" id="botonInteres" styleClass="btn btn-primary">
-			  	</p:commandButton>-->
-				
+			  	<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
+					<td><button type="button" data-id="botonAgregarComentario" update="comment_table" styleClass="modify-User btn btn-primary" data-toggle="modal" data-target="#addComment">Agregar comentario</button></td>
+				</h:panelGroup>
+				</h:panelGroup>
 			</div>			
 			<div class="col-xs-12">
 			<h3>Información</h3>
@@ -107,6 +108,29 @@
 		</div>
 	</div>
 	
+	
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="addComment">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	     <div class= "modal-header">
+	     	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	     	<h4>Agregue su comentario</h4>
+	     </div>
+	     <div class= "modal-body">
+	     	<h:form id="comment_form">
+			  <p:messages autoUpdate="true" />
+			  <div class="form-group">
+			  	<label for="Comment1">Comentario</label>
+			   	<p:inputText id="comment" binding="#{comment}" styleClass="form-control" style = "height: 70px"/>
+			  </div>
+			  <p:commandButton value = "Comentar"
+				actionListener="#{dInitiativeBean.insertComment(comment.value)}" id="boton" styleClass="btn btn-success">
+			  </p:commandButton>
+			</h:form>
+	     </div>
+	    </div>
+	  </div>
+	</div>
 
  	
 	<h:outputScript name = "js/bootstrap-tagsinput.js" />
