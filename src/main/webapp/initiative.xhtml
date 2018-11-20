@@ -26,7 +26,6 @@
 					<table id="interestedTable" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Id</th>
 								<th>Name</th>
 								<th>Last Name</th>
 								<th>Email</th>
@@ -35,7 +34,6 @@
 						<tbody>
 							<ui:repeat var="user" value="#{dInitiativeBean.getInterested()}">
 							<tr>
-								<td>#{user.id}</td>
 								<td>#{user.name}</td>
 								<td>#{user.lastName}</td>
 								<td>#{user.email}</td>
@@ -64,7 +62,6 @@
 			<table id="commentTable" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>Id</th>
 							<th>Commet</th>
 							<th>Date</th>
 						</tr>
@@ -72,7 +69,6 @@
 					<tbody>
 						<ui:repeat var="comment" value="#{dInitiativeBean.getComments()}">
 						<tr>
-							<td>#{comment.id}</td>
 							<td>#{comment.comment}</td>
 							<td>#{comment.date}</td>
 						</tr>
@@ -91,7 +87,6 @@
 			<table id="relatedTable" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>Id</th>
 							<th>Descripcion</th>
 							<th>Area</th>
 							<th>Estado</th>
@@ -101,7 +96,6 @@
 					<tbody>
 						<ui:repeat var="initiative" value="#{dInitiativeBean.getRelated()}">
 						<tr>
-							<td>#{initiative.id}</td>
 							<td>#{initiative.description}</td>
 							<td>#{initiative.area}</td>
 							<td>#{initiative.status.status}</td>
