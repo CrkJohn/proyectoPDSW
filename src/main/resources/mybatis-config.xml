@@ -13,6 +13,7 @@
     	<typeAlias type='edu.eci.pdsw.entities.TypeStatus' alias='TypeStatus'/>
     	<typeAlias type='edu.eci.pdsw.entities.Keyword' alias='Keyword'/>
     	<typeAlias type='edu.eci.pdsw.entities.Comment' alias='Comment'/>
+    	<typeAlias type='edu.eci.pdsw.entities.chartInitiative' alias='chartInitiative'/>
     </typeAliases>        
 
         

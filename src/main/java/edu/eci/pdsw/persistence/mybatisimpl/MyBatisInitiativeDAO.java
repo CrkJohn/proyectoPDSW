@@ -13,6 +13,7 @@ import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.persistence.InitiativeDAO;
 import edu.eci.pdsw.entities.TypeStatus;
 import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.chartInitiative;
 import edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper;
 import edu.eci.pdsw.samples.services.ServicesException;
 
@@ -134,6 +135,11 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	public void deleteInterested(int idInitiative, int idUser) {
 		initiativeMapper.deleteInterested(idInitiative, idUser);
 		
+	}
+
+	@Override
+	public List<chartInitiative> gerDataChart() {
+		return initiativeMapper.getDataChart();
 	}
 
 	

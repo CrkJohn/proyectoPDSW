@@ -6,6 +6,7 @@ import edu.eci.pdsw.entities.Comment;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.entities.User;
+import edu.eci.pdsw.entities.chartInitiative;
 import edu.eci.pdsw.entities.TypeStatus;
 
 
@@ -101,6 +102,8 @@ public interface InitiativeServices {
 	public List<Initiative> loadRelated(int id) throws ServicesException;
 
 	public void deleteInterested(int idInitiative, int idUser);
+	
+	public List<chartInitiative> getDataChart() throws ServicesException;
 	
 	
 }
