@@ -32,13 +32,6 @@ public class InitiativeChart extends BasePageBean {
  
     private BarChartModel barModel;
  
-    @PostConstruct
-    public void init() {
-     
-        createBarModels();
-        
-    }
- 
     public void itemSelect(ItemSelectEvent event) {
         FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO, "Item selected",
                 "Item Index: " + event.getItemIndex() + ", Series Index:" + event.getSeriesIndex());
@@ -48,13 +41,14 @@ public class InitiativeChart extends BasePageBean {
  
  
     public BarChartModel getBarModel() {
+    	createBarModel();
         return barModel;
     }
  
     private BarChartModel initBarModel() {
         BarChartModel model = new BarChartModel();
         ChartSeries area= new ChartSeries();
-       
+        area.setLabel("Numero de iniciativas");
         List<chartInitiative> c;
 		try {
 			c = initiativeService.getDataChart();
@@ -71,23 +65,18 @@ public class InitiativeChart extends BasePageBean {
         return model;
     }
  
-    private void createBarModels() {
-        createBarModel();
-    }
- 
     private void createBarModel()  {
         barModel = initBarModel();
-        //System.out.println(barModel);
-        barModel.setTitle("Bar Chart");
+        barModel.setTitle("Iniciativas por area");
         barModel.setLegendPosition("ne");
  
         Axis xAxis = barModel.getAxis(AxisType.X);
-        xAxis.setLabel("Gender");
+        xAxis.setLabel("Area");
  
         Axis yAxis = barModel.getAxis(AxisType.Y);
-        yAxis.setLabel("Births");
+        yAxis.setLabel("Cantidad Iniciativas");
         yAxis.setMin(0);
-        yAxis.setMax(200);
+        yAxis.setMax(15);
     }
 
 }
