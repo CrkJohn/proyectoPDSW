@@ -22,33 +22,39 @@
 		<div class="row">
 			<div class="col-xs-6">
 				<h3>Interesados</h3>
-				<table id="interestedTable" class="table table-bordered table-striped">
-					<thead>
-						<tr>
-							<th>Id</th>
-							<th>Name</th>
-							<th>Last Name</th>
-							<th>Email</th>
-						</tr>
-					</thead>
-					<tbody>
-						<ui:repeat var="user" value="#{dInitiativeBean.getInterested()}">
-						<tr>
-							<td>#{user.id}</td>
-							<td>#{user.name}</td>
-							<td>#{user.lastName}</td>
-							<td>#{user.email}</td>
-						</tr>
-						</ui:repeat>
-					</tbody>
-				</table>
+				<h:panelGroup id="userInterested">
+					<table id="interestedTable" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Name</th>
+								<th>Last Name</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+						<tbody>
+							<ui:repeat var="user" value="#{dInitiativeBean.getInterested()}">
+							<tr>
+								<td>#{user.id}</td>
+								<td>#{user.name}</td>
+								<td>#{user.lastName}</td>
+								<td>#{user.email}</td>
+							</tr>
+							</ui:repeat>
+						</tbody>
+					</table>
+				</h:panelGroup>
 				
-				<p:commandButton value = "Interesado"  
-					actionListener="#{dInitiativeBean.insertInterested()}" id="botonInteres" styleClass="btn btn-primary">
-			  	</p:commandButton>
-				<p:commandButton value = "Dejar Interes"  
-					actionListener="#{dInitiativeBean.deleteInterested()}" id="botonDejarInteres" styleClass="btn btn-primary">
-			  	</p:commandButton>
+				<h:form>
+					<p:commandButton value = "Interesado"  
+						actionListener="#{dInitiativeBean.insertInterested()}" update=":userInterested" id="botonInteres" styleClass="btn btn-primary">
+						<f:param name="initiative" value="#{dInitiativeBean.initiative}" />
+				  	</p:commandButton>
+					<p:commandButton value = "Dejar Interes"  
+						actionListener="#{dInitiativeBean.deleteInterested()}" update=":userInterested" id="botonDejarInteres" styleClass="btn btn-default">
+						<f:param name="initiative" value="#{dInitiativeBean.initiative}" />
+				  	</p:commandButton>
+				 </h:form>
 				
 				
 			</div>

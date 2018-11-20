@@ -2,12 +2,13 @@ package edu.eci.pdsw.managedBeans;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import edu.eci.pdsw.entities.Comment;
@@ -41,7 +42,6 @@ public class DescriptionInitiative extends BasePageBean{
 	}
 
 	public List<User> getInterested() throws ServicesException{
-		System.out.println(initiativeService);
 		return initiativeService.loadInterested(initiative);
 	}
 	
