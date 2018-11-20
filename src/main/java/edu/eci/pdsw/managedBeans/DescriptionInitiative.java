@@ -56,6 +56,10 @@ public class DescriptionInitiative extends BasePageBean{
 	public List<Comment> getComments() throws ServicesException{
 		return initiativeService.loadComment(initiative);
 	}
+	
+	/*public void insertComment(String newComment) throws ServicesException{
+		initiativeService.addComment(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()), newComment);
+	}*/
 		
 	public List<Initiative> getRelated() throws ServicesException{
 		return initiativeService.loadRelated(initiative);
