@@ -14,6 +14,10 @@ $('#select').on('change', function() {
 	$(".status").val($('#select').val());
 });
 
+$("#modifyInitiative").on('shown.bs.modal', function(){
+	$("#InitiativeStatus\\:inStatus").val($("#inStatus").val())
+});
+
 
 $(document).ready(function() {
     $("#initiativeTable").DataTable();
@@ -21,6 +25,7 @@ $(document).ready(function() {
 	$("#interestedTable").DataTable();
 	$("#commentTable").DataTable();
 	$("#relatedTable").DataTable();
+	$("#myInitiativeTable").DataTable();
 } );
 
 $(document).on("click", ".open-DescriptionInitiative", function () {
@@ -33,4 +38,9 @@ $(document).on("keypress", ":input", function(event) {
     if (event.keyCode == 13) {
         event.preventDefault();
     }
+});
+
+$(document).on("click", ".modify-Initiative", function () {
+     var inStatus = $(this).data('id');
+     $(".modal-body #inStatus").val( inStatus );
 });

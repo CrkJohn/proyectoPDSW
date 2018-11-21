@@ -49,5 +49,7 @@ public interface InitiativeMapper {
 	public List<chartInitiative> getDataChart();
 
 	public List<Initiative> loadByUser(@Param("idUser")int idUser);
+
+	public void modifyAllInitiative(@Param("name")String name,@Param("area") String area,@Param("description") String description);
 	
 }

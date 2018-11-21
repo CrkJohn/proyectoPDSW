@@ -229,6 +229,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public void modifyAllInitiative(String name, String area, String description) throws ServicesException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 
 	

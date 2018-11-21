@@ -141,5 +141,10 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		return initiativeMapper.getDataChart();
 	}
 
+	@Override
+	public void modifyAllInitiative(String name, String area, String description) {
+		initiativeMapper.modifyAllInitiative(name,area,description);		
+	}
+
 	
 }

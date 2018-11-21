@@ -78,7 +78,7 @@
 					</tbody>
 				</table>
 				
-			  		<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
+			  		<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 						<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addComment">Agregar comentario</button></td>
 					</h:panelGroup>
 				</h:panelGroup>
@@ -126,7 +126,7 @@
 			  <p:messages autoUpdate="true" />
 			  <div class="form-group">
 			  	<label for="Comment1">Comentario</label>
-			   	<p:inputText id="comment" binding="#{comment}" styleClass="form-control" style = "height: 70px"/>
+			   	<p:inputTextarea id="comment" binding="#{comment}" styleClass="form-control"/>
 			  </div>
 			  <p:commandButton value = "Comentar"
 				actionListener="#{dInitiativeBean.insertComment(comment.value)}" id="boton" styleClass="btn btn-success">

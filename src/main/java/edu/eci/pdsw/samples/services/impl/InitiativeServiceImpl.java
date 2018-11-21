@@ -160,6 +160,12 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		return initiativeDAO.loadByUser(idUser);
 	}
 
+	@Override
+	public void modifyAllInitiative(String name, String area, String description) throws ServicesException {
+		initiativeDAO.modifyAllInitiative(name,area,description);
+		
+	}
+
 
 
 }

@@ -8,18 +8,27 @@
 	
 <ui:composition template="/WEB-INF/include/template.xhtml">
 <ui:define name ="head">
+	<h:outputStylesheet name = "css/bootstrap-tagsinput.css" />
 	<h:outputStylesheet name = "css/initiative.css" />
+	<h:outputStylesheet name = "dataTable/css/dataTables.bootstrap.min.css" />
 </ui:define>
 <ui:define name = "body">
 	<div class="col-xs-12">
-		<h1>Mis iniciativas</h1>
-		<table id="initiativeTable" class="table table-bordered table-striped">
+
+		<h1>Mis iniciativas
+			<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
+			 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#initiativeModal">Agregar</button>
+				 <br/><br/>
+			</h:panelGroup>
+		</h1>
+		<table id="myInitiativeTable" class="table table-bordered table-striped">
 			<thead>
 				<tr>
 					<th>Nombre</th>
 					<th>Area</th>
 					<th>Estado</th>
-					
+					<th>Descripción</th>
+					<th>...</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,11 +37,85 @@
 					<td>#{item.name}</td>
 					<td>#{item.area}</td>
 					<td>#{item.status.status}</td>
+					<td>#{item.description}</td>
+					<td>
+						<button type="button" data-id="#{item.name}" class="modify-Initiative btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
+					</td>
 				</tr>
 				</ui:repeat>
 			</tbody>
-		</table>
+		</table>	
 	</div>
+
+		<div id="modifyInitiative" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		     <div class= "modal-header">
+		     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		     	<h4>Modificando Iniciativa</h4>
+		     </div>
+		     <div class= "modal-body">
+		     	<h:form id= "InitiativeStatus">
+	     		  <input type="text" name="inStatus" id="inStatus" value="" style="visibility: hidden"/>	  
+				  <p:inputText id="inStatus" binding="#{inStatus}" type="hidden"/>
+				  <div class="form-group">
+				  	<label for="area">Area</label>
+				   	<p:inputText id="areaIn" binding="#{areaIn}" styleClass="form-control"/>
+				  </div>
+				  <div class="form-group">
+				  	<label for="Comment1">Descripción</label>
+				   	<p:inputTextarea id="description" binding="#{description}" styleClass="form-control"/>
+				  </div>
+				  <p:commandButton value = "Modificar"  
+					actionListener="#{initiativeBean.modifyAll(inStatus.value, areaIn.value, description.value)}" id="boton" styleClass="btn btn-success">
+				  </p:commandButton>
+				</h:form>
+		     </div>
+		    </div>
+		  </div>
+		</div>
+	
+	<div id="initiativeModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	     <div class= "modal-header">
+	     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	     	<h4>Agregando iniciativa</h4>
+	     </div>
+	     <div class= "modal-body">
+	     	<h:form id="addInitiative">
+	     	  <div class="form-group">
+			    <label for="Nombre">Nombre</label>
+			    <p:inputText id="nam1" binding="#{nameIni}" styleClass="form-control" />
+			  </div>
+			  <div class="form-group">
+			    <label for="Email1">Descripcion</label>
+			    <p:inputTextarea id="desc2" binding="#{descripcion}" styleClass="form-control" />
+			  </div>
+			  <div class="form-group">
+			    <label for="NuevoRol">Area</label>
+			    <p:inputText id="desc" binding="#{area}" styleClass="form-control"/>
+			  </div>
+			  <div class="form-group" id="cont">
+			  	<input id="keywordInsert" type="text" value="Construccion" data-role="tagsinput"/>
+				<p:inputText id="keywordIn" binding="#{keywordIn}" type="hidden"/>
+				<br></br>
+				<br></br>
+				<p:commandButton value = "Agregar"  
+					actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value, keywordIn.value, nameIni.value)}" id="boton" styleClass="btn btn-primary">
+			  	</p:commandButton>
+			  </div>
+			</h:form>
+	     </div>
+	    </div>
+	  </div>
+	</div>
+
+	<h:outputScript name = "js/bootstrap-tagsinput.js" />
+ 	<h:outputScript name = "js/initiative.js" />
+	<h:outputScript name = "dataTable/js/jquery.dataTables.min.js" />
+	<h:outputScript name = "dataTable/js/dataTables.bootstrap.min.js" />
+
 </ui:define>
 </ui:composition>
 </html>

@@ -178,6 +178,11 @@
 		update initiative set type_status_id= #{newStatus} where "Name"= #{name};
 	</update>
 	
+	<update id="modifyAllInitiative">
+		update initiative set description= #{description} where "Name"= #{name} and type_status_id='En espera revision';
+		update initiative set area= #{area} where "Name"= #{name} and type_status_id='En espera revision';
+	</update>
+	
 	
 	
 </mapper>
