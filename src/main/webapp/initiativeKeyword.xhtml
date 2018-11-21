@@ -20,10 +20,9 @@
 		<thead>
 			<tr>
 				<th>Id</th>
-				<th>Descripcion</th>
+				<th>Nombre</th>
 				<th>Area</th>
 				<th>Estado</th>
-				<th>Votos</th>
 				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}"><th>Ver mas</th></h:panelGroup>
 			</tr>
 		</thead>
@@ -31,10 +30,9 @@
 			<ui:repeat var="item" value="#{initiativeBean.listAll()}">
 			<tr>
 				<td>#{item.id}</td>
-				<td>#{item.description}</td>
+				<td>#{item.name}</td>
 				<td>#{item.area}</td>
 				<td>#{item.status.status}</td>
-				<td>#{item.numVotes}</td>
 				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
 					<td><p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/></td>
 				</h:panelGroup>
@@ -56,22 +54,18 @@
 		<thead>
 			<tr>
 				<th>Id</th>
-				<th>Descripcion</th>
+				<th>Nombre</th>
 				<th>Area</th>
 				<th>Estado</th>
-				<th>Votos</th>
-				
 			</tr>
 		</thead>
 		<tbody>
 			<ui:repeat var="initiative" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
 			<tr>
 				<td>#{initiative.id}</td>
-				<td>#{initiative.description}</td>
+				<td>#{initiative.name}</td>
 				<td>#{initiative.area}</td>
 				<td>#{initiative.status.status}</td>
-				<td>#{initiative.numVotes}</td>
-		
 			</tr>
 			</ui:repeat>
 		</tbody>
@@ -92,6 +86,10 @@
 	     </div>
 	     <div class= "modal-body">
 	     	<h:form id="addInitiative">
+	     	  <div class="form-group">
+			    <label for="Nombre">Nombre</label>
+			    <p:inputText id="nam1" binding="#{nameIn}" styleClass="form-control" />
+			  </div>
 			  <div class="form-group">
 			    <label for="Email1">Descripcion</label>
 			    <p:inputText id="desc2" binding="#{descripcion}" styleClass="form-control" />
@@ -104,7 +102,7 @@
 			  	<input id="keywordInsert" type="text" value="Construccion" data-role="tagsinput"/>
 				<p:inputText id="keywordIn" binding="#{keywordIn}" type="hidden"/>
 				<p:commandButton value = "Agregar"  
-					actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value, keywordIn.value)}" id="boton" styleClass="btn btn-primary">
+					actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value, keywordIn.value, nameIn.value)}" id="boton" styleClass="btn btn-primary">
 			  	</p:commandButton>
 			  </div>
 			</h:form>

@@ -92,7 +92,6 @@ public class UserBean extends BasePageBean {
 	
 	public void modifyUser(String email, int rol) {
 		try {
-			System.out.println(email+" "+rol);
 			initiativeService.modifyUser(email, rol);
 		} catch (ServicesException e) {
 			// TODO Auto-generated catch block

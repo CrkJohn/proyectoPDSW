@@ -14,7 +14,7 @@ import edu.eci.pdsw.entities.chartInitiative;
 
 public interface InitiativeDAO {
 	
-	public void addInitiative(String description, String area, int idus, List<String> keywords) throws ServicesException;
+	public void addInitiative(String description, String area, int idus, List<String> keywords,String name) throws ServicesException;
 	
 	public List<Initiative> loadByUser (String id) throws ServicesException;
 	

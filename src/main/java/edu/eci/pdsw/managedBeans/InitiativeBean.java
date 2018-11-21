@@ -30,7 +30,7 @@ public class InitiativeBean extends BasePageBean {
 
 	private static final long serialVersionUID = 3594009161252782831L;
 	
-	public void addInitiative(String description, String area, String keyword) throws ServicesException{
+	public void addInitiative(String description, String area, String keyword, String name) throws ServicesException{
 		System.out.println(description+" "+area);
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
@@ -38,7 +38,7 @@ public class InitiativeBean extends BasePageBean {
 		System.out.println(keywords); 
 		
 		try {
-			initiativeService.createInitiative(description, area, Integer.parseInt(session.getAttribute("id").toString()), keywords);
+			initiativeService.createInitiative(description, area, Integer.parseInt(session.getAttribute("id").toString()), keywords, name);
 		} catch (ServicesException ex) {
 			throw ex;
 		}

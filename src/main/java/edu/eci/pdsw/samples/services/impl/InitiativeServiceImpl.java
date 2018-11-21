@@ -40,9 +40,9 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	}
 
 	@Override
-	public void createInitiative(String description, String area, int idus, List<String> keywords) throws ServicesException{
+	public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws ServicesException{
 		try {
-			initiativeDAO.addInitiative(description, area, idus, keywords);
+			initiativeDAO.addInitiative(description, area, idus, keywords,name);
 		}catch (ServicesException ex) {
 			throw new ServicesException("Error trying to insert the initiative", ex);
 		}

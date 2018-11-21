@@ -9,6 +9,7 @@ public class Initiative {
 	private List<Keyword> keyWords;
 	private TypeStatus status;
 	private String area;
+	private String name;
 	private int numVotes;
 	private Date startDate;
 	private Date modifyDate;
@@ -112,6 +113,18 @@ public class Initiative {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setStatus(TypeStatus status) {
+		this.status = status;
 	}
 	
 	public String toString() {

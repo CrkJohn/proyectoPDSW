@@ -6,7 +6,8 @@
 <mapper namespace="edu.eci.pdsw.persistence.mybatisimpl.mappers.InitiativeMapper">
 
     <resultMap type='Initiative' id='InitiativeResult'>
-        <id property='id' column='id'/>        
+        <id property='id' column='id'/>
+        <result property='name' column='nameIn'/>        
         <result property='description' column='description'/>
 		<result property='area' column='area'/>
 		<result property='numVotes' column='num_votos'/>
@@ -48,8 +49,8 @@
     
 	<insert id="insertInitiative" parameterType="Initiative">
 		INSERT INTO "initiative"
-		(id, description, area, num_votos,creation_date,User_id,modify_date,type_status_id) 
-		VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{nvotos},#{creation},#{idus},#{modification},#{state})
+		(id, description, area, num_votos,creation_date,User_id,modify_date,type_status_id, "Name") 
+		VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{nvotos},#{creation},#{idus},#{modification},#{state},#{name})
 	</insert>
 	
 	<insert id="insertInterested"  parameterType="int">
@@ -72,6 +73,7 @@
     
 	<select id="load" resultMap="InitiativeResult" parameterType="map">
         SELECT i.id,
+        	i."Name" as nameIn,
 			i.description,
 			i.area,
 			i.creation_date,
@@ -91,6 +93,7 @@
     
     <select id='loadId' resultMap= 'InitiativeResult' parameterType='map'>
     	SELECT i.id,
+    		i."Name",
 			i.description,
 			i.area,
 			i.creation_date,
@@ -110,6 +113,7 @@
 	
 	<select id="loadAll" resultMap="InitiativeResult" parameterType="map">
         SELECT i.id,
+        	i."Name",
 			i.description,
 			i.area,
 			i.creation_date,

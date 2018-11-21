@@ -32,7 +32,7 @@ public interface InitiativeServices {
 	 * @param i
 	 * @throws ServicesException
 	 */
-	public void createInitiative(String description, String area, int idus, List<String> keywords) throws ServicesException;
+	public void createInitiative(String description, String area, int idus, List<String> keywords, String name) throws ServicesException;
 	/**
 	 * 
 	 * @param idUser

@@ -76,7 +76,7 @@ public class InitiativeServiceFactory {
     }
     
     public static void main(String a[]) throws ServicesException{
-    	/*
+    	
         System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getUser("anamariarincon1299@escuelaing.edu.co", "ana123"));
     	
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiative(1));
@@ -99,8 +99,10 @@ public class InitiativeServiceFactory {
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadInterested(1));
     	System.out.println("Cargar iniciativas relacionadas a la 1");
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadRelated(1));
-    	//InitiativeServiceFactory.getInstance().getInitiativeServices().insertInterested(4, 2143);*/
+    	//InitiativeServiceFactory.getInstance().getInitiativeServices().insertInterested(4, 2143);
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getDataChart());
+    	
+    	//InitiativeServiceFactory.getInstance().getInitiativeServices().createInitiative("holi", "hey", 2133, kw, "soy nombre");
     	
     	
     	     

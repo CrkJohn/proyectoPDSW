@@ -22,12 +22,12 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	@Inject
 	InitiativeMapper initiativeMapper;
 
-	public void addInitiative(String description, String area, int idus, List<String> keywords) throws ServicesException{
+	public void addInitiative(String description, String area, int idus, List<String> keywords, String name) throws ServicesException{
 		try {
 			LocalDate creationDate = LocalDate.now();
 			LocalDate modificationDate = LocalDate.now();
 			
-			initiativeMapper.insertInitiative(description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera revision");
+			initiativeMapper.insertInitiative(description,area,0, Date.valueOf(creationDate),idus,Date.valueOf(modificationDate),"En espera revision",name);
 			List<Keyword> kw= initiativeMapper.listKeywords();
 			/*
 			 * Se revisará si ya existe la palabra clave, para no tener datos duplicados en la BD.

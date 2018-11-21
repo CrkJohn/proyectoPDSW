@@ -17,7 +17,8 @@ public interface InitiativeMapper {
 			@Param("creation")Date creation, 
 			@Param("idus")int idus, 
 			@Param("modification")Date modification,
-			@Param("state")String state);
+			@Param("state")String state,
+			@Param("name") String name);
 	
 	public void insertKeyword(@Param("keyword") String keyword);
 	
