@@ -26,8 +26,8 @@
 					<table id="interestedTable" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Name</th>
-								<th>Last Name</th>
+								<th>Nombre</th>
+								<th>Apellido</th>
 								<th>Email</th>
 							</tr>
 						</thead>
@@ -62,15 +62,15 @@
 			<table id="commentTable" class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>Commet</th>
-							<th>Date</th>
+							<th>Comentario</th>
+							<th>Fecha</th>
 						</tr>
 					</thead>
 					<tbody>
 						<ui:repeat var="comment" value="#{dInitiativeBean.getComments()}">
 						<tr>
 							<td>#{comment.comment}</td>
-							<td>#{comment.date}</td>
+							<td>#{comment.dateS}</td>
 						</tr>
 						</ui:repeat>
 					</tbody>
@@ -82,8 +82,17 @@
 				</h:panelGroup>
 			</div>			
 			<div class="col-xs-12">
-			<h3>Información</h3>
-
+			<br></br>
+			<h3>Información de la iniciativa #{dInitiativeBean.initiative}</h3>
+			<br></br>
+			<h4><strong>Descripción:</strong> #{dInitiativeBean.getDescription()}</h4>
+			<h4><strong>Última fecha de modificación:</strong> #{dInitiativeBean.getDate()}</h4>
+			<h4><strong>Area:</strong> #{dInitiativeBean.getArea()}</h4>
+			<h4><strong>Estado:</strong> #{dInitiativeBean.getStatus()}</h4>
+			<h4><strong>Votos:</strong> #{dInitiativeBean.getVotes()}</h4>
+			
+			<h4>Las iniciativas relacionadas se muestran en la siguiente tabla:</h4>
+			<br></br>
 			<table id="relatedTable" class="table table-bordered table-striped">
 					<thead>
 						<tr>

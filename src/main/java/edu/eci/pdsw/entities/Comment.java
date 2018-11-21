@@ -1,12 +1,15 @@
 package edu.eci.pdsw.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Comment {
 	private int id;
 	private User user;
 	private String comment;
 	private Date date;
+	private String dateS;
 	
 	public Comment() {}
 	
@@ -19,7 +22,19 @@ public class Comment {
 	public Date getDate() {
 		return date;
 	}
-
+	
+	public String getDateS(){
+		Locale currentLocale = new Locale ("en", "US") ;
+		SimpleDateFormat formatter;
+		formatter = new SimpleDateFormat("EEE, dd/MMM/yyyy HH:mm", currentLocale);
+		String fecha=formatter.format(date);
+		return fecha;
+	}
+	
+	public void setDateS(String s){
+		this.dateS=s;
+	}
+	
 	public void setDate(Date startDate) {
 		this.date = startDate;
 	}
