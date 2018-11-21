@@ -13,9 +13,9 @@
 	<h:outputStylesheet name = "dataTable/css/dataTables.bootstrap.min.css" />
 </ui:define>
 <ui:define name = "body">
-	
-	<p:chart type="bar" model="#{chartBean.barModel}" style="width:700px;height:400px"/>
-
+	<div class="col-xs-12">
+		<p:chart type="bar" model="#{chartBean.barModel}" style="width:700px;height:400px"/>
+	</div>
 	<!--https://www.primefaces.org/showcase/ui/chart/bar.xhtml-->
  	
 	<h:outputScript name = "js/bootstrap-tagsinput.js" />

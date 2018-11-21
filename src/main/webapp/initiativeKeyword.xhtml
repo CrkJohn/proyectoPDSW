@@ -13,136 +13,140 @@
 	<h:outputStylesheet name = "dataTable/css/dataTables.bootstrap.min.css" />
 </ui:define>
 <ui:define name = "body">
-	<br></br>
-	<h1>Ultimas Iniciativas
-		<h:panelGroup layout="block" rendered="#{ userBean.isAdmin()}">
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
+	<div class="col-xs-12">
+		<h1>Ultimas Iniciativas
+			<h:panelGroup layout="block" rendered="#{ userBean.isAdmin()}">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
+			</h:panelGroup>
+		</h1>
+		<table id="initiativeTable" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Area</th>
+					<th>Estado</th>
+					<h:panelGroup layout="block" rendered="#{ userBean.islogged()}"><th>Ver mas</th></h:panelGroup>
+				</tr>
+			</thead>
+			<tbody>
+				<ui:repeat var="item" value="#{initiativeBean.listAll()}">
+				<tr>
+					<td>#{item.name}</td>
+					<td>#{item.area}</td>
+					<td>#{item.status.status}</td>
+					<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
+						<td><center><p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/></center></td>
+					</h:panelGroup>
+						</tr>
+				</ui:repeat>
+			</tbody>
+		</table>
+		
+		<h2>Busqueda de iniciativas por palabras clave</h2>
+		<h:form id="initiativeByKeywords_form">
+			<input id="keyword2" type="text" value="Construccion" data-role="tagsinput"/>
+			<p:inputText id="keyword" binding="#{keywordsInput}" type="hidden"  />
+			<p:commandButton id="buscar_keyword" value = "Buscar" update=":initiative_table" styleClass="btn btn-primary"></p:commandButton>
+		</h:form>
+	 
+		<br/><br/>
+		<h:panelGroup id="initiative_table">
+		<table id="keyinitiative" class="table table-bordered table-striped"> 
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Area</th>
+					<th>Estado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<ui:repeat var="initiative" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
+				<tr>
+					<td>#{initiative.name}</td>
+					<td>#{initiative.area}</td>
+					<td>#{initiative.status.status}</td>
+				</tr>
+				</ui:repeat>
+			</tbody>
+		</table>
+		<h:outputScript name = "dataTable/js/jquery.dataTables.min.js" />
+		<h:outputScript name = "dataTable/js/dataTables.bootstrap.min.js" />
+		<h:outputScript name = "js/refresh.js" />
+	 	</h:panelGroup>
+		<br/><br/>
+	 	
+	 	<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
+	 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#initiativeModal">Agregar</button>
+		 <br/><br/>
 		</h:panelGroup>
-	</h1>
-	<table id="initiativeTable" class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th>Nombre</th>
-				<th>Area</th>
-				<th>Estado</th>
-				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}"><th>Ver mas</th></h:panelGroup>
-			</tr>
-		</thead>
-		<tbody>
-			<ui:repeat var="item" value="#{initiativeBean.listAll()}">
-			<tr>
-				<td>#{item.name}</td>
-				<td>#{item.area}</td>
-				<td>#{item.status.status}</td>
-				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
-					<td><p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/></td>
-				</h:panelGroup>
-					</tr>
-			</ui:repeat>
-		</tbody>
-	</table>
-	
-	<h2>Busqueda de iniciativas por palabras clave</h2>
-	<h:form id="initiativeByKeywords_form">
-		<input id="keyword2" type="text" value="Construccion" data-role="tagsinput"/>
-		<p:inputText id="keyword" binding="#{keywordsInput}" type="hidden"  />
-		<p:commandButton id="buscar_keyword" value = "Buscar" update=":initiative_table" styleClass="btn btn-primary"></p:commandButton>
-	</h:form>
- 
-	<br/><br/>
-	<h:panelGroup id="initiative_table">
-	<table id="keyinitiative" class="table table-bordered table-striped"> 
-		<thead>
-			<tr>
-				<th>Nombre</th>
-				<th>Area</th>
-				<th>Estado</th>
-			</tr>
-		</thead>
-		<tbody>
-			<ui:repeat var="initiative" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
-			<tr>
-				<td>#{initiative.name}</td>
-				<td>#{initiative.area}</td>
-				<td>#{initiative.status.status}</td>
-			</tr>
-			</ui:repeat>
-		</tbody>
-	</table>
- 	</h:panelGroup>
-	<br/><br/>
- 	
- 	<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
- 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#initiativeModal">Agregar</button>
-	 <br/><br/>
-	</h:panelGroup>
-	<div id="initiativeModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
-	  <div class="modal-dialog modal-sm" role="document">
-	    <div class="modal-content">
-	     <div class= "modal-header">
-	     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	     	<h4>Agregando iniciativa</h4>
-	     </div>
-	     <div class= "modal-body">
-	     	<h:form id="addInitiative">
-	     	  <div class="form-group">
-			    <label for="Nombre">Nombre</label>
-			    <p:inputText id="nam1" binding="#{nameIni}" styleClass="form-control" />
-			  </div>
-			  <div class="form-group">
-			    <label for="Email1">Descripcion</label>
-			    <p:inputTextarea id="desc2" binding="#{descripcion}" styleClass="form-control" />
-			  </div>
-			  <div class="form-group">
-			    <label for="NuevoRol">Area</label>
-			    <p:inputText id="desc" binding="#{area}" styleClass="form-control"/>
-			  </div>
-			  <div class="form-group" id="cont">
-			  	<input id="keywordInsert" type="text" value="Construccion" data-role="tagsinput"/>
-				<p:inputText id="keywordIn" binding="#{keywordIn}" type="hidden"/>
-				<br></br>
-				<br></br>
-				<p:commandButton value = "Agregar"  
-					actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value, keywordIn.value, nameIni.value)}" id="boton" styleClass="btn btn-primary">
-			  	</p:commandButton>
-			  </div>
-			</h:form>
-	     </div>
-	    </div>
-	  </div>
-	</div>
+		<div id="initiativeModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
+		  <div class="modal-dialog modal-sm" role="document">
+		    <div class="modal-content">
+		     <div class= "modal-header">
+		     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		     	<h4>Agregando iniciativa</h4>
+		     </div>
+		     <div class= "modal-body">
+		     	<h:form id="addInitiative">
+		     	  <div class="form-group">
+				    <label for="Nombre">Nombre</label>
+				    <p:inputText id="nam1" binding="#{nameIni}" styleClass="form-control" />
+				  </div>
+				  <div class="form-group">
+				    <label for="Email1">Descripcion</label>
+				    <p:inputTextarea id="desc2" binding="#{descripcion}" styleClass="form-control" />
+				  </div>
+				  <div class="form-group">
+				    <label for="NuevoRol">Area</label>
+				    <p:inputText id="desc" binding="#{area}" styleClass="form-control"/>
+				  </div>
+				  <div class="form-group" id="cont">
+				  	<input id="keywordInsert" type="text" value="Construccion" data-role="tagsinput"/>
+					<p:inputText id="keywordIn" binding="#{keywordIn}" type="hidden"/>
+					<br></br>
+					<br></br>
+					<p:commandButton value = "Agregar"  
+						actionListener="#{initiativeBean.addInitiative(descripcion.value,area.value, keywordIn.value, nameIni.value)}" id="boton" styleClass="btn btn-primary">
+				  	</p:commandButton>
+				  </div>
+				</h:form>
+		     </div>
+		    </div>
+		  </div>
+		</div>
 
-	<div id="modifyInitiative" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
-	  <div class="modal-dialog modal-lg" role="document">
-	    <div class="modal-content">
-	     <div class= "modal-header">
-	     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	     	<h4>Modificando Iniciativa</h4>
-	     </div>
-	     <div class= "modal-body">
-	     	<h:form>
-     		  <div class="form-group">
-			    <label for="NameInitiative">Nombre</label>
-			    <p:inputText id="desc" binding="#{nameIn}" styleClass="form-control"/>
-		      </div>
-			  <div class="form-group">
-			    <label for="new_status">Nuevo estado</label>
-			    <select class="form-control" id="select">
-			    	<label for="new_status">Nuevo estado</label>
-					<ui:repeat var="newStatus" value="#{initiativeBean.getTypes()}">
-						<option value="#{newStatus.status}">#{newStatus.status}</option>
-					</ui:repeat> 
-				  </select>
-				  <p:inputText styleClass="status" binding="#{newStatus1}" type="hidden"  />
-			  </div>
+		<div id="modifyInitiative" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" >
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		     <div class= "modal-header">
+		     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		     	<h4>Modificando Iniciativa</h4>
+		     </div>
+		     <div class= "modal-body">
+		     	<h:form>
+	     		  <div class="form-group">
+				    <label for="NameInitiative">Nombre</label>
+				    <p:inputText id="desc" binding="#{nameIn}" styleClass="form-control"/>
+			      </div>
+				  <div class="form-group">
+				    <label for="new_status">Nuevo estado</label>
+				    <select class="form-control" id="select">
+				    	<label for="new_status">Nuevo estado</label>
+						<ui:repeat var="newStatus" value="#{initiativeBean.getTypes()}">
+							<option value="#{newStatus.status}">#{newStatus.status}</option>
+						</ui:repeat> 
+					  </select>
+					  <p:inputText styleClass="status" binding="#{newStatus1}" type="hidden"  />
+				  </div>
 
-			  <p:commandButton value = "Modificar"  
-				actionListener="#{initiativeBean.modifyStatus(newStatus1.value,nameIn.value)}" id="boton" styleClass="btn btn-success">
-			  </p:commandButton>
-			</h:form>
-	     </div>
-	    </div>
-	  </div>
+				  <p:commandButton value = "Modificar"  
+					actionListener="#{initiativeBean.modifyStatus(newStatus1.value,nameIn.value)}" id="boton" styleClass="btn btn-success">
+				  </p:commandButton>
+				</h:form>
+		     </div>
+		    </div>
+		  </div>
+		</div>
 	</div>
 	
 	 <h:outputScript name = "js/bootstrap-tagsinput.js" />

@@ -8,101 +8,102 @@
 
 <ui:composition template="/WEB-INF/include/template.xhtml">
 <ui:define name ="head">
+	<h:outputStylesheet name = "css/initiative.css" />
 </ui:define>
 <ui:define name = "body">
-	<br></br>
-	<h1>Usuarios</h1>
-	<table id="usersTable" class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Nombre</th>
-				<th>Correo</th>
-				<th>Rol</th>
-				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}"><th>Modificar</th></h:panelGroup>
-			</tr>
-		</thead>
-		<tbody>
-			<ui:repeat var="user" value="#{userBean.getUsers()}">
-			<tr>
-				<td>#{user.id}</td>
-				<td>#{user.name}</td>
-				<td>#{user.email}</td>
-				<td>#{user.type}</td>
-				<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
-					<td><button type="button" data-id="#{user.email}" class="modify-User btn btn-primary" data-toggle="modal" data-target="#modifyUs">Modificar</button></td>
-				</h:panelGroup>
-			</tr>
-			</ui:repeat>
-		</tbody>
-	</table>	
-	
-	<h2>Busqueda de usuarios</h2>
-	<h:form id="userByMail_form">
-		<input id="usemail2" type="text" value="santiago" data-role="tagsinput"/>
-		<p:inputText id="mail" binding="#{mailInput}" type="hidden"  />
-		<p:commandButton id="buscar_mail" value = "Buscar" update=":user_table" styleClass="btn btn-primary"></p:commandButton>
-	</h:form>
-	
-	<br/><br/>
-	<h:panelGroup id="user_table">
-	<table id="usermail" class="table table-bordered table-striped"> 
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Nombre</th>
-				<th>Correo</th>
-				<th>Rol</th>
-			</tr>
-		</thead>
-		<tbody>
-			<ui:repeat var="uMail" value="#{userBean.getUserByMail(mailInput.value)}">
-			<tr>
-				<td>#{uMail.id}</td>
-				<td>#{uMail.name}</td>
-				<td>#{uMail.email}</td>
-				<td>#{uMail.type}</td>
+	<div class="col-xs-12">
+		<h1>Usuarios</h1>
+		<table id="usersTable" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nombre</th>
+					<th>Correo</th>
+					<th>Rol</th>
+					<h:panelGroup layout="block" rendered="#{ userBean.islogged()}"><th>Modificar</th></h:panelGroup>
+				</tr>
+			</thead>
+			<tbody>
+				<ui:repeat var="user" value="#{userBean.getUsers()}">
+				<tr>
+					<td>#{user.id}</td>
+					<td>#{user.name}</td>
+					<td>#{user.email}</td>
+					<td>#{user.type}</td>
+					<h:panelGroup layout="block" rendered="#{ userBean.islogged()}">
+						<td><button type="button" data-id="#{user.email}" class="modify-User btn btn-primary" data-toggle="modal" data-target="#modifyUs">Modificar</button></td>
+					</h:panelGroup>
+				</tr>
+				</ui:repeat>
+			</tbody>
+		</table>	
 		
-			</tr>
-			</ui:repeat>
-		</tbody>
-	</table>
- 	</h:panelGroup>
- 	
-	
-	<br/><br/>
-	
-	
-	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modifyUs">
-	  <div class="modal-dialog modal-sm" role="document">
-	    <div class="modal-content">
-	     <div class= "modal-header">
-	     	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	     	<h4>MODIFICANDO ROL</h4>
-	     </div>
-	     <div class= "modal-body">
-	     	<h:form id="rol_form">
-	     	  <input type="text" name="emailUser" id="emailUser" value="" style="visibility: hidden"/>	  
-			  <p:inputText id="emailUser" binding="#{emailUser}" type="hidden"/>
-			  <div class="form-group" >
-			  	  <label for="NuevoRol">Nuevo Rol</label>
-				  <select class="form-control" id="select">
-					<label for="NuevoRol">Nuevo Rol</label>
-					<ui:repeat var="item" value="#{userBean.getTypes()}">
-						<option value="#{item.ordinal()}">#{item}</option>
-					</ui:repeat> 
-				  </select>
-				  <p:inputText styleClass="rol" binding="#{modifyRol2}" type="hidden"  />
-			  </div>
-			  <p:commandButton value = "Modificar"
-				actionListener="#{userBean.modifyUser(emailUser.value,modifyRol2.value)}" id="boton" styleClass="btn btn-success">
-			  </p:commandButton>
-			</h:form>
-	     </div>
-	    </div>
-	  </div>
+		<h2>Busqueda de usuarios</h2>
+		<h:form id="userByMail_form">
+			<input id="usemail2" type="text" value="santiago" data-role="tagsinput"/>
+			<p:inputText id="mail" binding="#{mailInput}" type="hidden"  />
+			<p:commandButton id="buscar_mail" value = "Buscar" update=":user_table" styleClass="btn btn-primary"></p:commandButton>
+		</h:form>
+		
+		<br/><br/>
+		<h:panelGroup id="user_table">
+		<table id="usermail" class="table table-bordered table-striped"> 
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nombre</th>
+					<th>Correo</th>
+					<th>Rol</th>
+				</tr>
+			</thead>
+			<tbody>
+				<ui:repeat var="uMail" value="#{userBean.getUserByMail(mailInput.value)}">
+				<tr>
+					<td>#{uMail.id}</td>
+					<td>#{uMail.name}</td>
+					<td>#{uMail.email}</td>
+					<td>#{uMail.type}</td>
+			
+				</tr>
+				</ui:repeat>
+			</tbody>
+		</table>
+	 	</h:panelGroup>
+	 	
+		
+		<br/><br/>
+		
+		
+		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modifyUs">
+		  <div class="modal-dialog modal-sm" role="document">
+		    <div class="modal-content">
+		     <div class= "modal-header">
+		     	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		     	<h4>MODIFICANDO ROL</h4>
+		     </div>
+		     <div class= "modal-body">
+		     	<h:form id="rol_form">
+		     	  <input type="text" name="emailUser" id="emailUser" value="" style="visibility: hidden"/>	  
+				  <p:inputText id="emailUser" binding="#{emailUser}" type="hidden"/>
+				  <div class="form-group" >
+				  	  <label for="NuevoRol">Nuevo Rol</label>
+					  <select class="form-control" id="select">
+						<label for="NuevoRol">Nuevo Rol</label>
+						<ui:repeat var="item" value="#{userBean.getTypes()}">
+							<option value="#{item.ordinal()}">#{item}</option>
+						</ui:repeat> 
+					  </select>
+					  <p:inputText styleClass="rol" binding="#{modifyRol2}" type="hidden"  />
+				  </div>
+				  <p:commandButton value = "Modificar"
+					actionListener="#{userBean.modifyUser(emailUser.value,modifyRol2.value)}" id="boton" styleClass="btn btn-success">
+				  </p:commandButton>
+				</h:form>
+		     </div>
+		    </div>
+		  </div>
+		</div>
 	</div>
-	
 	<h:outputScript name = "js/user.js" />
 	
 </ui:define>

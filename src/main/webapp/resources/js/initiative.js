@@ -29,6 +29,8 @@ $(document).on("click", ".open-DescriptionInitiative", function () {
 });
 
 
-$("#keyinitiative").load(function(){
-	$("#keyinitiative").DataTable();
+$(document).on("keypress", ":input", function(event) {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+    }
 });

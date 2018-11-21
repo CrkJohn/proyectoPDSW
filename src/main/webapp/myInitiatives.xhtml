@@ -8,32 +8,31 @@
 	
 <ui:composition template="/WEB-INF/include/template.xhtml">
 <ui:define name ="head">
-	<h:outputStylesheet name = "css/bootstrap-tagsinput.css" />
 	<h:outputStylesheet name = "css/initiative.css" />
-	<h:outputStylesheet name = "dataTable/css/dataTables.bootstrap.min.css" />
 </ui:define>
 <ui:define name = "body">
-	<h1>Todas mis iniciativas: </h1>
-	<table id="initiativeTable" class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th>Nombre</th>
-				<th>Area</th>
-				<th>Estado</th>
-				
-			</tr>
-		</thead>
-		<tbody>
-			<ui:repeat var="item" value="#{initiativeBean.myInitiatives()}">
-			<tr>
-				<td>#{item.name}</td>
-				<td>#{item.area}</td>
-				<td>#{item.status.status}</td>
-				
-			</tr>
-			</ui:repeat>
-		</tbody>
-	</table>
+	<div class="col-xs-12">
+		<h1>Mis iniciativas</h1>
+		<table id="initiativeTable" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Area</th>
+					<th>Estado</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<ui:repeat var="item" value="#{initiativeBean.myInitiatives()}">
+				<tr>
+					<td>#{item.name}</td>
+					<td>#{item.area}</td>
+					<td>#{item.status.status}</td>
+				</tr>
+				</ui:repeat>
+			</tbody>
+		</table>
+	</div>
 </ui:define>
 </ui:composition>
 </html>
