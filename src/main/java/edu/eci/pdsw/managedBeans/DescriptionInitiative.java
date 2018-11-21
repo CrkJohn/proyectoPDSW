@@ -1,6 +1,10 @@
 package edu.eci.pdsw.managedBeans;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.ZoneId;
 import java.util.List;
+import java.util.Locale;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -71,5 +75,29 @@ public class DescriptionInitiative extends BasePageBean{
 
 	public void setInitiative(int initiative) {
 		this.initiative = initiative;
+	}
+	
+	public String getDescription() throws ServicesException{
+		return initiativeService.searchInitiative(initiative).getDescription();
+	}
+	
+	public String getArea() throws ServicesException{
+		return initiativeService.searchInitiative(initiative).getArea();
+	}
+	
+	public String getStatus() throws ServicesException{
+		return initiativeService.searchInitiative(initiative).getStatus().getStatus();
+	}
+	
+	public int getVotes() throws ServicesException{
+		return initiativeService.searchInitiative(initiative).getNumVotes();
+	}
+	
+	public String getDate() throws ServicesException{
+		Locale currentLocale = new Locale ("en", "US") ;
+		SimpleDateFormat formatter;
+		formatter = new SimpleDateFormat("EEE, dd/MMM/yyyy HH:mm", currentLocale);
+		String fecha=formatter.format(initiativeService.searchInitiative(initiative).getModifyDate());
+		return fecha;
 	}
 }
