@@ -37,13 +37,6 @@ public class DescriptionInitiative extends BasePageBean{
 	
 	private static final long serialVersionUID = 3594009161252782831L;
 	
-	public void modifyStatus(String newStatus, int id) throws ServicesException{
-		initiativeService.modifyInitiative(newStatus, id);
-	}
-	
-	public List<TypeStatus> getTypes () throws ServicesException{
-		return initiativeService.listStatus();
-	}
 
 	public List<User> getInterested() throws ServicesException{
 		return initiativeService.loadInterested(initiative);
@@ -75,22 +68,6 @@ public class DescriptionInitiative extends BasePageBean{
 
 	public void setInitiative(int initiative) {
 		this.initiative = initiative;
-	}
-	
-	public String getDescription() throws ServicesException{
-		return initiativeService.searchInitiative(initiative).getDescription();
-	}
-	
-	public String getArea() throws ServicesException{
-		return initiativeService.searchInitiative(initiative).getArea();
-	}
-	
-	public String getStatus() throws ServicesException{
-		return initiativeService.searchInitiative(initiative).getStatus().getStatus();
-	}
-	
-	public int getVotes() throws ServicesException{
-		return initiativeService.searchInitiative(initiative).getNumVotes();
 	}
 	
 	public String getDate() throws ServicesException{

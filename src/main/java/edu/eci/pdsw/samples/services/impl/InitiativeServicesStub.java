@@ -132,7 +132,7 @@ public class InitiativeServicesStub implements InitiativeServices{
 
 
 	@Override
-	public void modifyInitiative(String newStatus, int id) throws ServicesException {
+	public void modifyInitiative(String newStatus, String name) throws ServicesException {
 		// TODO Auto-generated method stub
 		
 	}
@@ -217,6 +217,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 
 	@Override
 	public List<chartInitiative> getDataChart() throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<Initiative> loadInitiativeByUser(int idUser) throws ServicesException {
 		// TODO Auto-generated method stub
 		return null;
 	}

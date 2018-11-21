@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+<ui:composition template="/WEB-INF/include/template.xhtml">
+<ui:define name ="head">
+	<h:outputStylesheet name = "css/bootstrap-tagsinput.css" />
+	<h:outputStylesheet name = "css/initiative.css" />
+	<h:outputStylesheet name = "dataTable/css/dataTables.bootstrap.min.css" />
+</ui:define>
+<ui:define name = "body">
+	<h1>Todas mis iniciativas: </h1>
+	<table id="initiativeTable" class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Area</th>
+				<th>Estado</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<ui:repeat var="item" value="#{initiativeBean.myInitiatives()}">
+			<tr>
+				<td>#{item.name}</td>
+				<td>#{item.area}</td>
+				<td>#{item.status.status}</td>
+				
+			</tr>
+			</ui:repeat>
+		</tbody>
+	</table>
+</ui:define>
+</ui:composition>
+</html>

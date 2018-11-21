@@ -93,7 +93,7 @@
     
     <select id='loadId' resultMap= 'InitiativeResult' parameterType='map'>
     	SELECT i.id,
-    		i."Name",
+    		i."Name"  as nameIn,
 			i.description,
 			i.area,
 			i.creation_date,
@@ -113,7 +113,7 @@
 	
 	<select id="loadAll" resultMap="InitiativeResult" parameterType="map">
         SELECT i.id,
-        	i."Name",
+        	i."Name"  as nameIn,
 			i.description,
 			i.area,
 			i.creation_date,
@@ -130,6 +130,27 @@
 	    FROM Initiative as i, Key_words as kw, word_initiative as wi, type_status as ts, "User" as u
 	    where kw.id=wi.Key_words_id and ts.status = i.type_status_id and i.user_id = u.id and wi.initiative_id = i.id;
 		
+    </select>
+    
+    <select id="loadByUser" resultMap="InitiativeResult" parameterType="map">
+	    SELECT distinct on (i.id)
+	    		i.id,
+	        	i."Name"  as nameIn,
+				i.description,
+				i.area,
+				i.creation_date,
+				i.modify_date,
+				i.user_id,
+				ts.status as status,
+				i.num_votos,
+				kw.word,
+				u.id idus,
+				u.name,
+				u.email,
+				u.Type_user tuser,
+				u.lastname
+		    FROM Initiative as i, Key_words as kw, word_initiative as wi, type_status as ts, "User" as u
+		    where u.id=#{idUser} and kw.id=wi.Key_words_id and ts.status = i.type_status_id and i.user_id = u.id and wi.initiative_id = i.id;
     </select>
     
     <select id="loadKeywordInitiative" resultMap="KeywordResult" parameterType="map">
@@ -154,7 +175,7 @@
     </select>
     
 	<update id="modifyInitiative">
-		update initiative set type_status_id= #{newStatus} where id= #{id};
+		update initiative set type_status_id= #{newStatus} where "Name"= #{name};
 	</update>
 	
 	

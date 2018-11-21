@@ -30,7 +30,7 @@ public interface InitiativeMapper {
 	
 	public Initiative loadId(@Param("id") int initiativeId);
 
-	public void modifyInitiative(@Param("newStatus")String newStatus,@Param("id") int id);
+	public void modifyInitiative(@Param("newStatus")String newStatus,@Param("name") String name);
 
 	public List<Initiative> loadAll();
 
@@ -47,5 +47,7 @@ public interface InitiativeMapper {
 	public void deleteInterested(@Param("idIni")int idInitiative, @Param("idUser")int idUser);
 
 	public List<chartInitiative> getDataChart();
+
+	public List<Initiative> loadByUser(@Param("idUser")int idUser);
 	
 }

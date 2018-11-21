@@ -64,6 +64,7 @@
 						<tr>
 							<th>Comentario</th>
 							<th>Fecha</th>
+							<th>Usuario</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -71,6 +72,7 @@
 						<tr>
 							<td>#{comment.comment}</td>
 							<td>#{comment.dateS}</td>
+							<td>#{comment.user.name}  #{comment.user.lastName}</td>
 						</tr>
 						</ui:repeat>
 					</tbody>
@@ -82,14 +84,7 @@
 				</h:panelGroup>
 			</div>			
 			<div class="col-xs-12">
-			<br></br>
-			<h3>Información de la iniciativa #{dInitiativeBean.initiative}</h3>
-			<br></br>
-			<h4><strong>Descripción:</strong> #{dInitiativeBean.getDescription()}</h4>
-			<h4><strong>Última fecha de modificación:</strong> #{dInitiativeBean.getDate()}</h4>
-			<h4><strong>Area:</strong> #{dInitiativeBean.getArea()}</h4>
-			<h4><strong>Estado:</strong> #{dInitiativeBean.getStatus()}</h4>
-			<h4><strong>Votos:</strong> #{dInitiativeBean.getVotes()}</h4>
+			<br></br>		
 			
 			<h4>Las iniciativas relacionadas se muestran en la siguiente tabla:</h4>
 			<br></br>

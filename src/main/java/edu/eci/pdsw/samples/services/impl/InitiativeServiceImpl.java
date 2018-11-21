@@ -89,8 +89,8 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	}
 
 	@Override
-	public void modifyInitiative(String newStatus, int id) throws ServicesException {
-		initiativeDAO.modifyInitiative(newStatus,id);
+	public void modifyInitiative(String newStatus, String name) throws ServicesException {
+		initiativeDAO.modifyInitiative(newStatus,name);
 		
 	}
 
@@ -153,6 +153,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	@Override
 	public List<chartInitiative> getDataChart() throws ServicesException {
 		return initiativeDAO.gerDataChart();
+	}
+
+	@Override
+	public List<Initiative> loadInitiativeByUser(int idUser) throws ServicesException {
+		return initiativeDAO.loadByUser(idUser);
 	}
 
 

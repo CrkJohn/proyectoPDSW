@@ -72,9 +72,8 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		}
 	}
 	
-	public List<Initiative> loadByUser(String id) throws ServicesException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Initiative> loadByUser(int idUser) throws ServicesException {
+		return initiativeMapper.loadByUser(idUser);
 	}
 
 	
@@ -83,8 +82,8 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	}
 
 	@Override
-	public void modifyInitiative(String newStatus, int id) throws ServicesException {
-		initiativeMapper.modifyInitiative(newStatus,id);
+	public void modifyInitiative(String newStatus, String name) throws ServicesException {
+		initiativeMapper.modifyInitiative(newStatus,name);
 		
 	}
 

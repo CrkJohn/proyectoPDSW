@@ -47,11 +47,11 @@ public class Comment {
 		this.id = id;
 	}
 
-	public User getIdUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setIdUser(User user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 

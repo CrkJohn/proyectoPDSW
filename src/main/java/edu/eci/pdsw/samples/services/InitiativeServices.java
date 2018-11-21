@@ -83,7 +83,7 @@ public interface InitiativeServices {
 	
 	public List<Initiative> listInitiative() throws ServicesException;
 	
-	public void modifyInitiative(String newStatus, int id) throws ServicesException;
+	public void modifyInitiative(String newStatus, String name) throws ServicesException;
 	
 	public List<TypeStatus> listStatus() throws ServicesException;
 	
@@ -104,6 +104,8 @@ public interface InitiativeServices {
 	public void deleteInterested(int idInitiative, int idUser);
 	
 	public List<chartInitiative> getDataChart() throws ServicesException;
+	
+	public List<Initiative> loadInitiativeByUser(int idUser) throws ServicesException;
 	
 	
 }

@@ -16,13 +16,13 @@ public interface InitiativeDAO {
 	
 	public void addInitiative(String description, String area, int idus, List<String> keywords,String name) throws ServicesException;
 	
-	public List<Initiative> loadByUser (String id) throws ServicesException;
+	public List<Initiative> loadByUser (int idUser) throws ServicesException;
 	
 	public Initiative load(int InitiativeId) throws ServicesException;
 	
 	public List<Initiative> load(List<String> keywords) throws ServicesException;
 
-	public void modifyInitiative(String newStatus, int id) throws ServicesException;
+	public void modifyInitiative(String newStatus, String name) throws ServicesException;
 
 	public List<Initiative> loadAll() throws ServicesException;
 

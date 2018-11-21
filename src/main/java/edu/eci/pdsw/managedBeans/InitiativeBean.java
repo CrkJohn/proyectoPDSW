@@ -53,6 +53,20 @@ public class InitiativeBean extends BasePageBean {
 		return initiativeService.listInitiative();
 	}
 	
+	public void modifyStatus(String newStatus, String name) throws ServicesException{
+		initiativeService.modifyInitiative(newStatus, name);
+	}
+	
+	public List<TypeStatus> getTypes () throws ServicesException{
+		return initiativeService.listStatus();
+	}
+	
+	public List<Initiative> myInitiatives() throws ServicesException{
+		FacesContext facesContext = FacesContext.getCurrentInstance();
+		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
+		return initiativeService.loadInitiativeByUser(Integer.parseInt(session.getAttribute("id").toString()));
+	}
+	
 
 
 }
