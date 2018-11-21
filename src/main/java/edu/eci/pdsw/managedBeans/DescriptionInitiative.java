@@ -96,7 +96,7 @@ public class DescriptionInitiative extends BasePageBean{
 	public String getDate() throws ServicesException{
 		Locale currentLocale = new Locale ("en", "US") ;
 		SimpleDateFormat formatter;
-		formatter = new SimpleDateFormat("EEE, dd/MMM/yyyy HH:mm", currentLocale);
+		formatter = new SimpleDateFormat("EEE, dd-MMM-yyyy HH:mm", currentLocale);
 		String fecha=formatter.format(initiativeService.searchInitiative(initiative).getModifyDate());
 		return fecha;
 	}
