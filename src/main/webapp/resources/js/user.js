@@ -11,6 +11,8 @@ $("#modifyUs").on('shown.bs.modal', function(){
 	$("#rol_form\\:emailUser").val($("#emailUser").val())
 });
 
-
+$(document).ready(function() {
+    $("#usersTable").DataTable();
+} );
 
 

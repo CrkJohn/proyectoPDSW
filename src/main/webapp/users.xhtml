@@ -8,7 +8,9 @@
 
 <ui:composition template="/WEB-INF/include/template.xhtml">
 <ui:define name ="head">
+	<h:outputStylesheet name = "css/bootstrap-tagsinput.css" />
 	<h:outputStylesheet name = "css/initiative.css" />
+	<h:outputStylesheet name = "dataTable/css/dataTables.bootstrap.min.css" />	
 </ui:define>
 <ui:define name = "body">
 	<div class="col-xs-12">
@@ -36,43 +38,7 @@
 				</tr>
 				</ui:repeat>
 			</tbody>
-		</table>	
-		
-		<h2>Busqueda de usuarios</h2>
-		<h:form id="userByMail_form">
-			<input id="usemail2" type="text" value="santiago" data-role="tagsinput"/>
-			<p:inputText id="mail" binding="#{mailInput}" type="hidden"  />
-			<p:commandButton id="buscar_mail" value = "Buscar" update=":user_table" styleClass="btn btn-primary"></p:commandButton>
-		</h:form>
-		
-		<br/><br/>
-		<h:panelGroup id="user_table">
-		<table id="usermail" class="table table-bordered table-striped"> 
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>Nombre</th>
-					<th>Correo</th>
-					<th>Rol</th>
-				</tr>
-			</thead>
-			<tbody>
-				<ui:repeat var="uMail" value="#{userBean.getUserByMail(mailInput.value)}">
-				<tr>
-					<td>#{uMail.id}</td>
-					<td>#{uMail.name}</td>
-					<td>#{uMail.email}</td>
-					<td>#{uMail.type}</td>
-			
-				</tr>
-				</ui:repeat>
-			</tbody>
-		</table>
-	 	</h:panelGroup>
-	 	
-		
-		<br/><br/>
-		
+		</table>					
 		
 		<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="modifyUs">
 		  <div class="modal-dialog modal-sm" role="document">
@@ -105,6 +71,8 @@
 		</div>
 	</div>
 	<h:outputScript name = "js/user.js" />
+	<h:outputScript name = "dataTable/js/jquery.dataTables.min.js" />
+	<h:outputScript name = "dataTable/js/dataTables.bootstrap.min.js" />
 	
 </ui:define>
 </ui:composition>
