@@ -26,7 +26,7 @@ public class Comment {
 	public String getDateS(){
 		Locale currentLocale = new Locale ("en", "US") ;
 		SimpleDateFormat formatter;
-		formatter = new SimpleDateFormat("EEE, dd/MMM/yyyy HH:mm", currentLocale);
+		formatter = new SimpleDateFormat("dd/MMM/yyyy", currentLocale);
 		String fecha=formatter.format(date);
 		return fecha;
 	}
