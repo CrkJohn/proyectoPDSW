@@ -160,7 +160,7 @@
         SELECT kw.id,kw.word
 		from initiative as i, word_initiative as wi, key_words as kw
 		where i.id=#{id} and wi.initiative_id=i.id and kw.id=wi.key_words_id
-   </select>
+    </select>
     
     <select id="loadByStatus" resultMap="InitiativeResult" parameterType="map">
         SELECT distinct on (i.id)
@@ -181,8 +181,7 @@
 				u.lastname
 			    FROM Initiative as i, Key_words as kw, word_initiative as wi, type_status as ts, "User" as u
 	    		where kw.id=wi.Key_words_id and ts.status=#{status} and ts.status = i.type_status_id and i.user_id = u.id and wi.initiative_id = i.id;
-   </select>
-    
+    </select>
     
     <select id="listStatus" resultMap="StatusResult" parameterType="map">
     	select status from type_status;
@@ -206,7 +205,5 @@
 		update initiative set description= #{description} where "Name"= #{name} and type_status_id='En espera revision';
 		update initiative set area= #{area} where "Name"= #{name} and type_status_id='En espera revision';
 	</update>
-	
-	
 	
 </mapper>

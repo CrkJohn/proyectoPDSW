@@ -103,9 +103,9 @@ public class InitiativeServiceFactory {
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getDataChart());
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().listInitiative());*/
     	//InitiativeServiceFactory.getInstance().getInitiativeServices().createInitiative("holi", "hey", 2133, kw, "soy nombre");
-    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadInitiativeByUser(2133));
-    	System.out.println("Consulta iniciativas en estado de: en revision");
-    	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadByStatus("En espera revision"));
+    	//System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadInitiativeByUser(2133));
+    	//System.out.println("Consulta iniciativas en estado de: en revision");
+    	//System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadByStatus("En espera revision"));
     	
     	
     	     
