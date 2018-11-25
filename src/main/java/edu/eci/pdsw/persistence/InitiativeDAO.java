@@ -39,8 +39,9 @@ public interface InitiativeDAO {
 	public void deleteInterested(int idInitiative, int idUser);
 
 	public List<chartInitiative> gerDataChart();
-
+	
 	public void modifyAllInitiative(String name, String area, String description);
 	
+	public List<Initiative> loadByStatus(String status);
 
 }

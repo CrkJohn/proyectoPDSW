@@ -52,4 +52,5 @@ public interface InitiativeMapper {
 
 	public void modifyAllInitiative(@Param("name")String name,@Param("area") String area,@Param("description") String description);
 	
+	public List<Initiative> loadByStatus(@Param("status")String status);
 }
