@@ -109,5 +109,9 @@ public interface InitiativeServices {
 	
 	public void modifyAllInitiative(String name, String area, String description) throws ServicesException;
 	
+	public List<Initiative> loadByStatus(String status)  throws ServicesException;
+
+
+	
 	
 }

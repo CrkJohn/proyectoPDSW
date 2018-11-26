@@ -15,8 +15,7 @@
 <ui:define name = "body">
 
 	<div class="col-xs-12">
-		<h1>Ultimas Iniciativas</h1>
-		
+		<h1>Últimas Iniciativas</h1>
 		<table id="initiativeTable" class="display table table-bordered table-striped">
 			<thead>
 				<tr>
@@ -47,7 +46,7 @@
 			</tbody>
 		</table>
 		
-		<h2>Busqueda de iniciativas por palabras clave</h2>
+		<h2>Búsqueda de iniciativas por palabras clave</h2>
 		<h:form id="initiativeByKeywords_form">
 			<input id="keyword2" type="text" value="Construccion" data-role="tagsinput"/>
 			<p:inputText id="keyword" binding="#{keywordsInput}" type="hidden"  />
@@ -61,7 +60,9 @@
 				<tr>
 					<th>Nombre</th>
 					<th>Area</th>
+					<th>Descripción</th>
 					<th>Estado</th>
+					<th>Fecha de creación</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -69,7 +70,9 @@
 				<tr>
 					<td>#{initiative.name}</td>
 					<td>#{initiative.area}</td>
+					<td>#{initiative.description}</td>
 					<td>#{initiative.status.status}</td>
+					<td>#{initiative.dateS}</td>
 				</tr>
 				</ui:repeat>
 			</tbody>
@@ -111,7 +114,7 @@
 		  </div>
 		</div>
 	</div>
-
+	
 	<h:outputScript name = "js/bootstrap-tagsinput.js" />
  	<h:outputScript name = "js/initiative.js" />
 	<h:outputScript name = "dataTable/js/jquery.dataTables.min.js" />

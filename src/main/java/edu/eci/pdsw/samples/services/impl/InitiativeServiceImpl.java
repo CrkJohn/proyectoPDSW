@@ -166,6 +166,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		
 	}
 
+	@Override
+	public List<Initiative> loadByStatus(String status) throws ServicesException {
+		return initiativeDAO.loadByStatus(status);
+	}
+
 
 
 }

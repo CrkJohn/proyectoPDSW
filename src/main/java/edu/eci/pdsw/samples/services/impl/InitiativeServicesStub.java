@@ -236,6 +236,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public List<Initiative> loadByStatus(String status) throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 	

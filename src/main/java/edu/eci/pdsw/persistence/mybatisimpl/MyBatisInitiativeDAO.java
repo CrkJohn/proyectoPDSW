@@ -146,5 +146,10 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		initiativeMapper.modifyAllInitiative(name,area,description);		
 	}
 
+	@Override
+	public List<Initiative> loadByStatus(String status) {
+		return initiativeMapper.loadByStatus(status);
+	}
+
 	
 }

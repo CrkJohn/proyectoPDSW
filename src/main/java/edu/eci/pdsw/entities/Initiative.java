@@ -1,5 +1,6 @@
 package edu.eci.pdsw.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Initiative {
@@ -16,6 +17,7 @@ public class Initiative {
 	private User user;
 	private List<User> interested;
 	private List<Comment> comments;
+	private String dateS;
 	
 	public Initiative() {}
 	
@@ -125,6 +127,14 @@ public class Initiative {
 
 	public void setStatus(TypeStatus status) {
 		this.status = status;
+	}
+	
+	public String getDateS(){
+		Locale currentLocale = new Locale ("en", "US") ;
+		SimpleDateFormat formatter;
+		formatter = new SimpleDateFormat("dd/MMM/yyyy", currentLocale);
+		String fecha=formatter.format(startDate);
+		return fecha;
 	}
 	
 	public String toString() {
