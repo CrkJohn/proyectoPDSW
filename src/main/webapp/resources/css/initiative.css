@@ -1,3 +1,11 @@
 .table-striped>tbody>tr:nth-of-type(odd){
 background-color: #F2E5E4 !important;
 }
+
+td.details-control {
+    background: url('../../details_open.jpg') no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url('../../details_close.jpg') no-repeat center center;
+}
