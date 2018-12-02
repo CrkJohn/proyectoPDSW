@@ -38,6 +38,12 @@ public interface InitiativeMapper {
 
 	public List<Keyword> listKeywords();
 	
+	public void addVote(@Param("idIni")int idIni, @Param("idUser")int idUser);
+	
+	public int loadVotes(@Param("id") int id);
+	
+	public void deleteVote(@Param("idIni") int idIni, @Param("idUser")int idUser);
+	
 	public void insertInterested(@Param("idIni")int idIni, @Param("idUser")int idUser);
 	
 	public List<User> loadInterested(@Param("id") int id);

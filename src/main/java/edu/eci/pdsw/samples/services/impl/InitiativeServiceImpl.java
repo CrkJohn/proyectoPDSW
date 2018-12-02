@@ -129,6 +129,21 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	public List<Comment> loadComment(int InitiativeId) throws ServicesException {
 		return commentDAO.loadComment(InitiativeId);
 	}
+	
+	@Override
+	public void addVote(int idIni, int idUser) throws ServicesException{
+		initiativeDAO.addVote(idIni, idUser);
+	}
+	
+	@Override
+	public int loadVotes(int id) throws ServicesException{
+		return initiativeDAO.loadVotes(id);
+	}
+	
+	@Override
+	public void deleteVote(int idIni,int idUser) throws ServicesException{
+		initiativeDAO.deleteVote(idIni, idUser);
+	}
 
 	@Override
 	public void insertInterested(int idIni, int idUser) throws ServicesException {

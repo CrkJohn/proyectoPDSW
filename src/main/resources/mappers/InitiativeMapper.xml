@@ -53,6 +53,20 @@
 		VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{nvotos},#{creation},#{idus},#{modification},#{state},#{name})
 	</insert>
 	
+	<insert id="addVote"  parameterType="int">
+    	INSERT INTO "vote" (initiative_id, user_id) VALUES (#{idIni}, #{idUser});
+    </insert>
+    
+    <select id="loadVotes" resultType="int" parameterType="map">
+    	SELECT count(*)
+    	FROM "vote" as v
+        WHERE v.initiative_id=#{id};
+    </select>
+    
+    <delete id="deleteVote"  parameterType="int">
+    	DELETE FROM "vote" WHERE initiative_id=#{idIni} AND user_id=#{idUser};
+    </delete>
+	
 	<insert id="insertInterested"  parameterType="int">
     	INSERT INTO "interested" (initiative_id, user_id) VALUES (#{idIni}, #{idUser});
     </insert>
@@ -61,7 +75,7 @@
     	DELETE FROM "interested" WHERE initiative_id=#{idIni} AND user_id=#{idUser};
     </delete>
     
-	<select id="loadInterested" resultMap="edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult" parameterType="map">
+	<select id="loadInterested" resultType="edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult" parameterType="map">
 		SELECT u.id idus,
 			u.name,
 			u.email,

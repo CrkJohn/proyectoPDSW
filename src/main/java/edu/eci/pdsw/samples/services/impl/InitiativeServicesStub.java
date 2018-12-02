@@ -243,6 +243,27 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public void addVote(int idIni, int idUser) throws ServicesException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public int loadVotes(int id) throws ServicesException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public void deleteVote(int idIni, int idUser) throws ServicesException {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 
 
 	

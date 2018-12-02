@@ -101,6 +101,21 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	public List<Keyword> listKeywords() throws ServicesException {
 		return initiativeMapper.listKeywords();
 	}
+	
+	@Override
+	public void addVote(int idIni, int idUser) throws ServicesException{
+		initiativeMapper.addVote(idIni, idUser);
+	}
+	
+	@Override
+	public int loadVotes(int id) throws ServicesException{
+		return initiativeMapper.loadVotes(id);
+	}
+	
+	@Override
+	public void deleteVote(int idIni,int idUser) throws ServicesException{
+		initiativeMapper.deleteVote(idIni, idUser);
+	}
 
 	@Override
 	public void insertInterested(int idIni, int idUser) throws ServicesException {

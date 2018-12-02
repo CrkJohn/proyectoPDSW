@@ -30,6 +30,12 @@ public interface InitiativeDAO {
 
 	public List<Keyword> listKeywords() throws ServicesException;
 	
+	public void addVote(int idIni, int idUser) throws ServicesException;
+	
+	public int loadVotes(int id) throws ServicesException;
+	
+	public void deleteVote(int idIni, int idUser) throws ServicesException;
+	
 	public void insertInterested(int idIni, int idUser) throws ServicesException;
 	
 	public List<User> loadInterested(int id) throws ServicesException;
