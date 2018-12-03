@@ -28,8 +28,9 @@
 			<tbody>
 				<ui:repeat var="item" value="#{initiativeBean.listAll()}">
 					<tr>
-						<td class=" details-control">
-							<span style="display: none;">
+						<td class="details">
+							<center><i class="far fa-plus-square fa-2x "></i></center>
+							<span style="display:none;">
 								<center>
 									#{item.description}<br></br>
 									<h:panelGroup layout="block" rendered="#{userBean.islogged()}">

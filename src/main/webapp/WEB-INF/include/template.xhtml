@@ -27,19 +27,13 @@
 				</h:panelGroup>
 				<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 					<ul class="nav navbar-nav"><li><a id="user-link" href="/faces/myInitiatives.xhtml">Mis iniciativas</a></li></ul>
-				</h:panelGroup>
-				<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 					<ul class="nav navbar-nav"><li><a id="user-link" href="/faces/initiativeKeyword.xhtml">Todas</a></li></ul>
-				</h:panelGroup>
-				<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 					<ul class="nav navbar-nav"><li><a id="user-link" href="/faces/chartInitiative.xhtml">Graficas</a></li></ul>
+					<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myModalOut">Salir</button>
 				</h:panelGroup>
 				<h:panelGroup layout="block" rendered="#{ not userBean.islogged()}">
 						<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myModalIn">Ingresar</button>
-				</h:panelGroup>
-				<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
-						<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myModalOut">Salir</button>
-				</h:panelGroup>				
+				</h:panelGroup>		
 				<p  class="navbar-text navbar-right" style="margin-right: 30px"><h:outputText rendered="#{ userBean.islogged()}" value="Bienvenid@ #{userBean.getName()}" /></p>
 			</div>
 		</div>
@@ -93,8 +87,21 @@
 	    </div>
 	  </div>
 	</div>
+	<ui:insert name="body-free" />
+	<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
+		<ui:insert name="body" />
+	</h:panelGroup>	
+	<h:panelGroup layout="block" rendered="#{not userBean.islogged()}">
+		<br></br>
+		<div class="col-xs-12 text-center" id="notFound">
+			<div style="font-size:24px;">
+				<i class="far fa-grin-beam-sweat fa-10x"></i>	
+			</div>
+			<div class="col-xs-12"> <h2>Aquí no hay nada de nada.</h2> </div>
+			<div class="col-xs-4 col-xs-offset-4"> <span>No sabemos qué estabas buscando, pero ya no se encuentra en esta dirección, a menos que se tratara de esta página de error. En ese caso, ¡felicidades! No cabe duda de que la has encontrado.</span> </div>
+		</div>
+	</h:panelGroup>	
 
-	<ui:insert name="body" />
 	<h:outputScript name = "bootstrap-3.3.7-dist/js/bootstrap.min.js" />
 	<h:outputScript name = "js/template.js" />
 </h:body>

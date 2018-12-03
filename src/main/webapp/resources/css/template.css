@@ -63,3 +63,16 @@ a,p{
 li >a {
 	color:black !important;
 }
+
+body{
+	font-family: inherit;
+}
+
+#notFound span {
+	font-size: 16px;
+}
+
+#notFound i{
+	color: #900;
+}
+
