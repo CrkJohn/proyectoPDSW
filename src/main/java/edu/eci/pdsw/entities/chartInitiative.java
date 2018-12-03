@@ -4,25 +4,7 @@ public class chartInitiative {
 
 	private int cantidad;
 	private String area;
-	private int cantStatus;
-	private String status;
 	
-	public int getCantStatus() {
-		return cantStatus;
-	}
-
-	public void setCantStatus(int cantStatus) {
-		this.cantStatus = cantStatus;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	public chartInitiative() {}
 	
 	public chartInitiative(int cantidad, String area) {

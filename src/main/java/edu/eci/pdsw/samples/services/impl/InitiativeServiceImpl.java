@@ -186,11 +186,6 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		return initiativeDAO.loadByStatus(status);
 	}
 
-	@Override
-	public List<chartInitiative> getDataStatus() throws ServicesException {
-		return initiativeDAO.getDataStatus();
-	}
-
 
 
 }

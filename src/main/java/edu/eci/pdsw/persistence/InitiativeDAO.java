@@ -50,6 +50,4 @@ public interface InitiativeDAO {
 	
 	public List<Initiative> loadByStatus(String status);
 
-	public List<chartInitiative> getDataStatus();
-
 }

@@ -16,53 +16,7 @@
 	<div class="col-xs-12">
 		<h1>Graficas de las iniciativas según areas a las que pertenecen</h1>
 		<br></br><br></br>
-		<div class="col-xs-6"> <p:chart type="bar" model="#{chartBean.barModel}"  /></div>
-		<div class="col-xs-1"></div>
-		<div class="col-xs-5">
-			<table id="areaTable" class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>Area</th>
-						<th>Cantidad</th>
-					</tr>
-				</thead>
-				<tbody>
-					<ui:repeat var="area" value="#{chartBean.area()}">
-					<tr>
-						<td>#{area.area}</td>
-						<td>#{area.cantidad}</td>
-					</tr>
-					</ui:repeat>
-				</tbody>
-			</table>
-		</div>
-		
-	</div>
-	
-	<div class="col-xs-12">
-		<h1>Graficas de las iniciativas según estado en el que se encuentra</h1>
-		<br></br><br></br>
-		<div class="col-xs-6"> <p:chart type="bar" model="#{chartBean.barStatus}"/></div>
-		<div class="col-xs-1"></div>
-		<div class="col-xs-5">
-			<table id="statusTable" class="table table-bordered table-striped">
-				<thead>
-					<tr>
-						<th>Estado</th>
-						<th>Cantidad</th>
-					</tr>
-				</thead>
-				<tbody>
-					<ui:repeat var="status" value="#{chartBean.status()}">
-					<tr>
-						<td>#{status.status}</td>
-						<td>#{status.cantStatus}</td>
-					</tr>
-					</ui:repeat>
-				</tbody>
-			</table>
-		</div>
-		
+		<p:chart type="bar" model="#{chartBean.barModel}" style="width:700px;height:400px;" />
 	</div>
 	<!--https://www.primefaces.org/showcase/ui/chart/bar.xhtml-->
  	

@@ -111,8 +111,6 @@ public interface InitiativeServices {
 	
 	public List<chartInitiative> getDataChart() throws ServicesException;
 	
-	public List<chartInitiative> getDataStatus() throws ServicesException;
-	
 	public List<Initiative> loadInitiativeByUser(int idUser) throws ServicesException;
 	
 	public void modifyAllInitiative(String name, String area, String description) throws ServicesException;

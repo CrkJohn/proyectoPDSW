@@ -166,10 +166,5 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		return initiativeMapper.loadByStatus(status);
 	}
 
-	@Override
-	public List<chartInitiative> getDataStatus() {
-		return initiativeMapper.getDataStatus();
-	}
-
 	
 }
