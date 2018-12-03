@@ -18,6 +18,7 @@ public class Initiative {
 	private List<User> interested;
 	private List<Comment> comments;
 	private String dateS;
+	private String dateModify;
 	
 	public Initiative() {}
 	
@@ -134,6 +135,14 @@ public class Initiative {
 		SimpleDateFormat formatter;
 		formatter = new SimpleDateFormat("dd/MMM/yyyy", currentLocale);
 		String fecha=formatter.format(startDate);
+		return fecha;
+	}
+	
+	public String getDateModify(){
+		Locale currentLocale = new Locale ("en", "US") ;
+		SimpleDateFormat formatter;
+		formatter = new SimpleDateFormat("dd/MMM/yyyy", currentLocale);
+		String fecha=formatter.format(modifyDate);
 		return fecha;
 	}
 	

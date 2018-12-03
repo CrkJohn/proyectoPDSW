@@ -32,7 +32,16 @@
 							<center><i class="far fa-plus-square fa-2x "></i></center>
 							<span style="display:none;">
 								<center>
-									<p>#{item.description}</p>
+									<p style="margin-left: 25%;margin-right: 25%">
+									La iniciativa fue propuesta por <em>#{item.user.name} #{item.user.lastName}</em> el #{item.dateS}, teniendo en cuenta la información de esta:
+									<br></br>
+									<b><em>"#{item.description}"</em></b>
+									<br></br>	
+						 			Se revisara y estudiará de forma tal que se pueda solucionar lo que se esta presentado o se vera la posiblidad de poder añadir lo que se solicita si esto es lo que se desea.
+						 			<br></br>
+									Última fecha de modificación: #{item.dateModify}.
+									
+									</p>
 									<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 										<p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/>
 									</h:panelGroup>
