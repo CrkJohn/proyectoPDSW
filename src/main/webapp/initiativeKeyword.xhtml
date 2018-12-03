@@ -32,7 +32,7 @@
 							<center><i class="far fa-plus-square fa-2x "></i></center>
 							<span style="display:none;">
 								<center>
-									#{item.description}<br></br>
+									<p>#{item.description}</p>
 									<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 										<p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/>
 									</h:panelGroup>
@@ -62,22 +62,33 @@
 		<table id="keyinitiative" class="table table-bordered table-striped"> 
 			<thead>
 				<tr>
+					<th></th>
 					<th>Nombre</th>
 					<th>Area</th>
-					<th>Descripción</th>
 					<th>Estado</th>
-					<th>Fecha de creación</th>
 				</tr>
 			</thead>
 			<tbody>
 				<ui:repeat var="initiative" value="#{initiativeBean.searchInitiative(keywordsInput.value)}">
-				<tr>
-					<td>#{initiative.name}</td>
-					<td>#{initiative.area}</td>
-					<td>#{initiative.description}</td>
-					<td>#{initiative.status.status}</td>
-					<td>#{initiative.dateS}</td>
-				</tr>
+					<tr>
+						<td class="details">
+							<center><i class="far fa-plus-square fa-2x "></i></center>
+							<span style="display:none;">
+								<center>
+									<p>#{initiative.description}</p>
+									<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
+										<p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{initiative.id}" value= "Ver mas"/>
+									</h:panelGroup>
+									<h:panelGroup layout="block" rendered="#{ userBean.isAdmin()}">
+										<button type="button" data-id="#{initiative.name}" class="modify-Initiative btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
+									</h:panelGroup>
+								</center>
+							</span>
+						</td>
+						<td>#{initiative.name}</td>
+						<td>#{initiative.area}</td>
+						<td>#{initiative.status.status}</td>
+					</tr>
 				</ui:repeat>
 			</tbody>
 		</table>

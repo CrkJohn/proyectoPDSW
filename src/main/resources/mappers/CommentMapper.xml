@@ -42,7 +42,7 @@
 			u.lastname,
 			u.email,
 			u.Type_user tuser
-		FROM "comment" as c, "User" as u, "initiative" as i WHERE  c.initiative_id=#{id} and c.user_id=u.id;
+		FROM "comment" as c, "User" as u, "initiative" as i WHERE  c.initiative_id=#{id} and c.user_id=u.id Order BY c.date DESC; 
 	 </select>
 
 </mapper>
