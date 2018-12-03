@@ -264,6 +264,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public List<chartInitiative> getDataStatus() throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 	
