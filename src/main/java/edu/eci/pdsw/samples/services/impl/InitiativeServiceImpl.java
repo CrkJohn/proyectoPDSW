@@ -176,8 +176,8 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	}
 
 	@Override
-	public void modifyAllInitiative(int id, String area, String description) throws ServicesException {
-		initiativeDAO.modifyAllInitiative(id,area,description);
+	public void modifyAllInitiative(int id, String area, String description,String nombre) throws ServicesException {
+		initiativeDAO.modifyAllInitiative(id,area,description,nombre);
 		
 	}
 

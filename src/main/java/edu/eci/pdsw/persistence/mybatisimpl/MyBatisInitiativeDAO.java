@@ -157,8 +157,8 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	}
 
 	@Override
-	public void modifyAllInitiative(int id, String area, String description) {
-		initiativeMapper.modifyAllInitiative(id,area,description);		
+	public void modifyAllInitiative(int id, String area, String description,String nombre) {
+		initiativeMapper.modifyAllInitiative(id,area,description,nombre);		
 	}
 
 	@Override

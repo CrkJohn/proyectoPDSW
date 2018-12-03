@@ -229,7 +229,7 @@ public class InitiativeServicesStub implements InitiativeServices{
 
 
 	@Override
-	public void modifyAllInitiative(int id, String area, String description) throws ServicesException {
+	public void modifyAllInitiative(int id, String area, String description,String nombre) throws ServicesException {
 		// TODO Auto-generated method stub
 		
 	}

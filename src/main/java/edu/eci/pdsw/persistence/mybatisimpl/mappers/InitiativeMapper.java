@@ -56,7 +56,7 @@ public interface InitiativeMapper {
 
 	public List<Initiative> loadByUser(@Param("idUser")int idUser);
 
-	public void modifyAllInitiative(@Param("id")int id,@Param("area") String area,@Param("description") String description);
+	public void modifyAllInitiative(@Param("id")int id,@Param("area") String area,@Param("description") String description,@Param("nombre")String nombre);
 	
 	public List<Initiative> loadByStatus(@Param("status")String status);
 

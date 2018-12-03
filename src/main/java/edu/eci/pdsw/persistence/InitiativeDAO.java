@@ -46,7 +46,7 @@ public interface InitiativeDAO {
 
 	public List<chartInitiative> gerDataChart();
 	
-	public void modifyAllInitiative(int id, String area, String description);
+	public void modifyAllInitiative(int id, String area, String description,String nombre);
 	
 	public List<Initiative> loadByStatus(String status);
 

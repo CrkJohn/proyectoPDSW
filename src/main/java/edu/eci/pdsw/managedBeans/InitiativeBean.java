@@ -67,10 +67,10 @@ public class InitiativeBean extends BasePageBean {
 		return initiativeService.loadInitiativeByUser(Integer.parseInt(session.getAttribute("id").toString()));
 	}
 	
-	public void modifyAll(int id,String area, String description) {
+	public void modifyAll(int id,String area, String description,String nombre) {
 		//System.out.println(id+" "+area+" "+description);		
 		try {
-			initiativeService.modifyAllInitiative(id, area, description);
+			initiativeService.modifyAllInitiative(id, area, description,nombre);
 		} catch (ServicesException e) {
 			e.printStackTrace();
 		}
