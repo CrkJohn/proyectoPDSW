@@ -75,7 +75,7 @@
     	DELETE FROM "interested" WHERE initiative_id=#{idIni} AND user_id=#{idUser};
     </delete>
     
-	<select id="loadInterested" resultType="edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult" parameterType="map">
+	<select id="loadInterested" resultMap="edu.eci.pdsw.persistence.mybatisimpl.mappers.UserMapper.UserResult" parameterType="map">
 		SELECT u.id idus,
 			u.name,
 			u.email,
