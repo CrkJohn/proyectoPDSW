@@ -89,6 +89,7 @@ public class InitiativeChart extends BasePageBean {
         yAxis.setLabel("Cantidad Iniciativas");
         yAxis.setMin(0);
         yAxis.setMax(15);
+        barModel.setSeriesColors("B00000");
     }
 
     
@@ -124,5 +125,6 @@ public class InitiativeChart extends BasePageBean {
         yAxis.setLabel("Cantidad Iniciativas");
         yAxis.setMin(0);
         yAxis.setMax(15);
+        barModel.setSeriesColors("B00000");
     }
 }
