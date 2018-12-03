@@ -115,7 +115,7 @@ public interface InitiativeServices {
 	
 	public List<Initiative> loadInitiativeByUser(int idUser) throws ServicesException;
 	
-	public void modifyAllInitiative(String name, String area, String description) throws ServicesException;
+	public void modifyAllInitiative(int id, String area, String description) throws ServicesException;
 	
 	public List<Initiative> loadByStatus(String status)  throws ServicesException;
 
