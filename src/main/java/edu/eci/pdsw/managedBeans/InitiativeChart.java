@@ -39,9 +39,21 @@ public class InitiativeChart extends BasePageBean {
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
  
+    public List<chartInitiative> status() throws ServicesException{
+    	return initiativeService.getDataStatus();
+    }
+
+    public List<chartInitiative> area() throws ServicesException{
+    	return initiativeService.getDataChart();
+    }
  
     public BarChartModel getBarModel() {
     	createBarModel();
+        return barModel;
+    }
+    
+    public BarChartModel getBarStatus() {
+    	createBarModelStatus();
         return barModel;
     }
  
@@ -79,4 +91,38 @@ public class InitiativeChart extends BasePageBean {
         yAxis.setMax(15);
     }
 
+    
+    private BarChartModel initBarModelStatus() {
+        BarChartModel model = new BarChartModel();
+        ChartSeries status= new ChartSeries();
+        status.setLabel("Numero de iniciativas");
+        List<chartInitiative> c;
+		try {
+			c = initiativeService.getDataStatus();
+			for(chartInitiative ci : c) {
+	        	status.set(ci.getStatus(),ci.getCantStatus());
+	        }
+	        
+	        model.addSeries(status);
+		} catch (ServicesException e) {
+			e.printStackTrace();
+		}
+        
+        
+        return model;
+    }
+ 
+    private void createBarModelStatus()  {
+        barModel = initBarModelStatus();
+        barModel.setTitle("Iniciativas por estado");
+        barModel.setLegendPosition("ne");
+ 
+        Axis xAxis = barModel.getAxis(AxisType.X);
+        xAxis.setLabel("Estado");
+ 
+        Axis yAxis = barModel.getAxis(AxisType.Y);
+        yAxis.setLabel("Cantidad Iniciativas");
+        yAxis.setMin(0);
+        yAxis.setMax(15);
+    }
 }

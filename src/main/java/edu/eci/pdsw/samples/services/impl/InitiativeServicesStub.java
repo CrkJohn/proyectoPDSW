@@ -1,4 +1,3 @@
-
 package edu.eci.pdsw.samples.services.impl;
 
 import java.util.Arrays;
@@ -261,6 +260,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	public void deleteVote(int idIni, int idUser) throws ServicesException {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	@Override
+	public List<chartInitiative> getDataStatus() throws ServicesException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 
