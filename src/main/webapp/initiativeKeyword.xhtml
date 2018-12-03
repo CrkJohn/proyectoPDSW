@@ -23,24 +23,27 @@
 					<th>Nombre</th>
 					<th>Area</th>
 					<th>Estado</th>
-					<th>Mas información</th>
 				</tr>
 			</thead>
 			<tbody>
 				<ui:repeat var="item" value="#{initiativeBean.listAll()}">
 					<tr>
-						<td class=" details-control"></td>
+						<td class=" details-control">
+							<span style="display: none;">
+								<center>
+									#{item.description}<br></br>
+									<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
+										<p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/>
+									</h:panelGroup>
+									<h:panelGroup layout="block" rendered="#{ userBean.isAdmin()}">
+										<button type="button" data-id="#{item.name}" class="modify-Initiative btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
+									</h:panelGroup>
+								</center>
+							</span>
+						</td>
 						<td>#{item.name}</td>
 						<td>#{item.area}</td>
 						<td>#{item.status.status}</td>
-						<td>
-							<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
-								<p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/>
-							</h:panelGroup>
-							<h:panelGroup layout="block" rendered="#{ userBean.isAdmin()}">
-								<button type="button" data-id="#{item.name}" class="modify-Initiative btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
-							</h:panelGroup>
-						</td>
 					</tr>
 				</ui:repeat>
 			</tbody>
