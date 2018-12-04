@@ -11,7 +11,6 @@ public class Initiative {
 	private TypeStatus status;
 	private String area;
 	private String name;
-	private int numVotes;
 	private Date startDate;
 	private Date modifyDate;
 	private User user;
@@ -22,11 +21,10 @@ public class Initiative {
 	
 	public Initiative() {}
 	
-	public Initiative(int id, String description, String area, int numVotes, Date startDate, Date modifyDate){
+	public Initiative(int id, String description, String area, Date startDate, Date modifyDate){
 		this.description= description;
 		this.area= area;
 		this.id =  id;
-		this.numVotes =  numVotes;
 		this.startDate = startDate;
 		this.modifyDate = modifyDate;
 	}
@@ -87,14 +85,6 @@ public class Initiative {
 		this.area = area;
 	}
 
-	public int getNumVotes() {
-		return numVotes;
-	}
-
-	public void setNumVotes(int numVotes) {
-		this.numVotes = numVotes;
-	}
-
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -148,7 +138,7 @@ public class Initiative {
 	
 	public String toString() {
 		
-		return "[Initiative: id: "+id+", description: "+description+", Area: "+area+", CreationDate: "+startDate+", ModifyDate: "+modifyDate+", user: "+user+", status: "+status+", votes: "+numVotes+", keywords:"+keyWords+", name: "+name+"]";
+		return "[Initiative: id: "+id+", description: "+description+", Area: "+area+", CreationDate: "+startDate+", ModifyDate: "+modifyDate+", user: "+user+", status: "+status+", keywords:"+keyWords+", name: "+name+"]";
 	}
 	
 }
