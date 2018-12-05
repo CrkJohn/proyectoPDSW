@@ -2,9 +2,6 @@ package edu.eci.pdsw.persistence;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Param;
-
-import java.sql.Date;
 import edu.eci.pdsw.entities.Initiative;
 import edu.eci.pdsw.entities.Keyword;
 import edu.eci.pdsw.samples.services.ServicesException;
@@ -43,6 +40,8 @@ public interface InitiativeDAO {
 	public List<Initiative> loadRelated(int id) throws ServicesException;
 
 	public void deleteInterested(int idInitiative, int idUser);
+	
+	public int isInterested(int idIni,int idUser);
 
 	public List<chartInitiative> gerDataChart();
 	

@@ -171,5 +171,10 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 		return initiativeMapper.getDataStatus();
 	}
 
+	@Override
+	public int isInterested(int idIni, int idUser) {
+		return initiativeMapper.isInterested(idIni, idUser);
+	}
+
 	
 }

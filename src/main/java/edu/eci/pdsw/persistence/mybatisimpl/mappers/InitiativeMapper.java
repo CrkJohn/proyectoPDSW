@@ -48,6 +48,8 @@ public interface InitiativeMapper {
 	
 	public List<User> loadInterested(@Param("id") int id);
 	
+	public int isInterested(@Param("idIni") int idIni, @Param("idUser") int idUser);
+	
 	public List<Keyword> loadKeywordInitiative(@Param("id")int id);
 
 	public void deleteInterested(@Param("idIni")int idInitiative, @Param("idUser")int idUser);

@@ -191,6 +191,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 		return initiativeDAO.getDataStatus();
 	}
 
+	@Override
+	public int isInterested(int idIni, int idUser) {
+		return initiativeDAO.isInterested(idIni, idUser);
+	}
+
 
 
 }

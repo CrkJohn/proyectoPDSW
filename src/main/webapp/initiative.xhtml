@@ -59,7 +59,19 @@
 				  </div>
 				  <div class="panel-body">
 					<p class="text-justify">Si te interesa este proyecto y estas dispuesto a trabajar por el informanos, nos gustaria que hicieras parte de el para hacerlo realidad</p>
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Interest">Estoy interesado</button>
+					<h:form id="interesForm">
+						<button type="button" class="btn btn-primary" style="margin-right: 2%" data-toggle="modal" data-target="#Interest">
+							Otros interesados
+						</button>
+						<p:commandButton value = "Interesado"  
+							actionListener="#{dInitiativeBean.insertInterested()}" update=":userInterested interesForm" id="botonInteres" styleClass="btn btn-primary" rendered="#{not dInitiativeBean.isInterested()}">
+							<f:param name="initiative" value="#{dInitiativeBean.initiative}" />
+						</p:commandButton>
+						<p:commandButton value = "Dejar Interes"  
+							actionListener="#{dInitiativeBean.deleteInterested()}" update=":userInterested interesForm" id="botonDejarInteres" styleClass="btn btn-default" rendered="#{dInitiativeBean.isInterested()}">
+							<f:param name="initiative" value="#{dInitiativeBean.initiative}" />
+						</p:commandButton>
+					</h:form>
 				  </div>
 				</div>
 			</div>	

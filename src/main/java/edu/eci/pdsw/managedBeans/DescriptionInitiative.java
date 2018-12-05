@@ -62,6 +62,10 @@ public class DescriptionInitiative extends BasePageBean{
 		return initiativeService.loadRelated(initiative);
 	}
 	
+	public boolean isInterested() {
+		return initiativeService.isInterested(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString())) == 1;
+	}
+	
 	public int getInitiative() {
 		return initiative;
 	}

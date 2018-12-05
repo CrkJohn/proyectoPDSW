@@ -270,6 +270,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public int isInterested(int idIni, int idUser) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
 
 
 	

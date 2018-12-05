@@ -65,6 +65,13 @@
         WHERE v.initiative_id=#{id};
     </select>
     
+    
+    <select id="isInterested" resultType="int" parameterType="int">
+        SELECT count(*)
+        FROM interested as inte
+        WHERE inte.initiative_id = #{idIni} and inte.user_id = #{idUser}; 
+    </select>
+    
     <delete id="deleteVote"  parameterType="int">
     	DELETE FROM "vote" WHERE initiative_id=#{idIni} AND user_id=#{idUser};
     </delete>

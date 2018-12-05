@@ -107,7 +107,6 @@ public class InitiativeServiceFactory {
     	//System.out.println("Consulta iniciativas en estado de: en revision");
     	//System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadByStatus("En espera revision"));
     	
-    	
     	     
     }
     
