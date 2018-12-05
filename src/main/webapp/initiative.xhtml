@@ -34,10 +34,14 @@
 					<tbody>
 						<ui:repeat var="initiative" value="#{dInitiativeBean.getRelated()}">
 						<tr>
-							<td>#{initiative.name}</td>
+							<td>#{initiative.id}</td>
 							<td>#{initiative.user.name} #{initiative.user.lastName}</td>
 							<td>#{initiative.status.status}</td>
-							<td>#{initiative.numVotes}</td>	
+							<td>
+								<h:outputText var="votes" value="#{dInitiativeBean.loadVotes(initiative.id)}">
+									<b><em>"#{votes}"</em></b>
+								</h:outputText>
+							</td>
 						</tr>
 						</ui:repeat>
 					</tbody>

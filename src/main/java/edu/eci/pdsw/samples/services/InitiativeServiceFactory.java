@@ -77,7 +77,7 @@ public class InitiativeServiceFactory {
     
     public static void main(String a[]) throws ServicesException{
     	
-        /*System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getUser("anamariarincon1299@escuelaing.edu.co", "ana123"));
+        /*System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().getUser("anamariarincon1299@mail.escuelaing.edu.co", "ana123"));
     	
     	System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().searchInitiative(1));
 
@@ -106,7 +106,7 @@ public class InitiativeServiceFactory {
     	//System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadInitiativeByUser(2133));
     	//System.out.println("Consulta iniciativas en estado de: en revision");
     	//System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadByStatus("En espera revision"));
-    	
+    	//System.out.println(InitiativeServiceFactory.getInstance().getInitiativeServices().loadVotes(13));
     	     
     }
     

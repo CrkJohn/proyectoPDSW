@@ -54,6 +54,10 @@ public class DescriptionInitiative extends BasePageBean{
 		return initiativeService.loadComment(initiative);
 	}
 	
+	public int loadVotes(int id) throws ServicesException{
+		return initiativeService.loadVotes(id);
+	}
+	
 	public void insertComment(String newComment) throws ServicesException{
 		initiativeService.addComment(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()), newComment);
 	}
