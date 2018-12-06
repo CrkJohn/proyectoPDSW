@@ -18,6 +18,15 @@ $("#modifyInitiative").on('shown.bs.modal', function(){
 	$("#InitiativeStatus\\:inStatus").val($("#inStatus").val())
 });
 
+$("#voteForm\\:botonVoto").on('click',function(){
+window.location.reload();
+});
+
+
+$("#voteForm\\:botonDejarVotar").on('click',function(){
+window.location.reload();
+});
+
 $(document).ready(function() {
     $("#initiativeTable").DataTable();
 	$("#keyinitiative").DataTable();

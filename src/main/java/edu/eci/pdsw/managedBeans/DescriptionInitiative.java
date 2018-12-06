@@ -54,13 +54,13 @@ public class DescriptionInitiative extends BasePageBean{
 		return initiativeService.loadComment(initiative);
 	}
 	
-	public void addVote(int idIni) throws ServicesException{
-		initiativeService.addVote(idIni, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
+	public void addVote() throws ServicesException{
+		initiativeService.addVote(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
 		System.out.println("Entre a insertar el voto");
 	}
 	
-	public void deleteVote(int idIni) throws ServicesException{
-		initiativeService.deleteVote(idIni, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
+	public void deleteVote() throws ServicesException{
+		initiativeService.deleteVote(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
 		System.out.println("Entre a borrar el voto");
 	}
 	
@@ -78,6 +78,10 @@ public class DescriptionInitiative extends BasePageBean{
 	
 	public boolean isInterested() {
 		return initiativeService.isInterested(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString())) == 1;
+	}
+	
+	public boolean hasVoted() throws ServicesException {
+		return initiativeService.hasVoted(initiative, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
 	}
 	
 	public int getInitiative() {

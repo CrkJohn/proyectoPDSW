@@ -33,26 +33,16 @@
 							<span style="display:none;">
 								<center>
 									<p style="margin-left: 25%;margin-right: 25%">
-									La iniciativa fue propuesta por <em>#{item.user.name} #{item.user.lastName}</em> el #{item.dateS}, teniendo en cuenta la información de esta:
+									La descripción de la iniciativa es la siguiente:
 									<br></br>
 									<b><em>"#{item.description}"</em></b>
 									<br></br>	
-						 			Se revisara y estudiará de forma tal que se pueda solucionar lo que se esta presentado o se vera la posiblidad de poder añadir lo que se solicita si esto es lo que se desea.
-						 			<br></br>
-									Última fecha de modificación: #{item.dateModify}.
-									
-									</p>
+						 			</p>
 									<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 										<p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{item.id}" value= "Ver mas"/>
 									</h:panelGroup>
 									<h:panelGroup layout="block" rendered="#{ userBean.isAdmin()}">
 										<button type="button" data-id="#{item.name}" class="modify-Initiative btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
-									</h:panelGroup>
-									<h:panelGroup layout="block" rendered="#{userBean.hasVoted(item.id)}">
-										<p:commandButton type="button" class="btn btn-primary" actionListener="#{initiativeBean.deleteVote(item.id)}" style="margin-left:5px;" value= "DisLike"></p:commandButton>
-									</h:panelGroup>
-									<h:panelGroup layout="block" rendered="#{not userBean.hasVoted(item.id)}">
-										<p:commandButton type="button" class="btn btn-primary" actionListener="#{initiativeBean.addVote(item.id)}" style="margin-left:5px;" value= "Like"></p:commandButton>
 									</h:panelGroup>
 								</center>
 							</span>
@@ -90,7 +80,12 @@
 							<center><i class="far fa-plus-square fa-2x "></i></center>
 							<span style="display:none;">
 								<center>
-									<p>#{initiative.description}</p>
+									<p style="margin-left: 25%;margin-right: 25%">
+									La descripción de la iniciativa es la siguiente:
+									<br></br>
+									<b><em>"#{item.description}"</em></b>
+									<br></br>	
+						 			</p>
 									<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 										<p:button type="button" class="btn btn-primary" outcome="initiative?initiative=#{initiative.id}" value= "Ver mas"/>
 									</h:panelGroup>
