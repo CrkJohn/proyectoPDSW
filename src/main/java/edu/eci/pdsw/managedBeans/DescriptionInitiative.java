@@ -78,6 +78,10 @@ public class DescriptionInitiative extends BasePageBean{
 		this.initiative = initiative;
 	}
 	
+	public Initiative searchInitiativeById(int id) throws ServicesException{
+		return initiativeService.searchInitiative(id);
+	}
+	
 	public String getDate() throws ServicesException{
 		Locale currentLocale = new Locale ("en", "US") ;
 		SimpleDateFormat formatter;
