@@ -39,7 +39,10 @@ public class InitiativeBean extends BasePageBean {
 		
 		try {
 			initiativeService.createInitiative(description, area, Integer.parseInt(session.getAttribute("id").toString()), keywords, name);
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Datos Guardados"));
+			
 		} catch (ServicesException ex) {
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo guardar","Error"));
 			throw ex;
 		}
 	}
@@ -69,12 +72,28 @@ public class InitiativeBean extends BasePageBean {
 	
 	public void modifyAll(int id,String area, String description,String nombre) {
 		//System.out.println(id+" "+area+" "+description);		
+		boolean save=true;
+		if(save){
 		try {
 			initiativeService.modifyAllInitiative(id, area, description,nombre);
-		} catch (ServicesException e) {
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Datos Guardados"));
+			}
+				
+		 catch (ServicesException e) {
+			save=false;
 			e.printStackTrace();
 		}
+		}else{	FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo modificar","Error"));
+		}
 	}
-
-
+	
+	public Initiative loadInitiative(int id) throws ServicesException{
+		System.out.println("HOLAAAAAAAAAAAAAAAAAA");
+		System.out.println(id);
+		return initiativeService.searchInitiative(id); 
+	}
+		
 }
+
+
+
