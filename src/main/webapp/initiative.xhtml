@@ -59,7 +59,7 @@
 					<tbody>
 						<ui:repeat var="initiative" value="#{dInitiativeBean.getRelated()}">
 						<tr>
-							<td>#{initiative.id}</td>
+							<td>#{initiative.name}</td>
 							<td>#{initiative.user.name} #{initiative.user.lastName}</td>
 							<td>#{initiative.status.status}</td>
 							<td>
