@@ -277,6 +277,13 @@ public class InitiativeServicesStub implements InitiativeServices{
 	}
 
 
+	@Override
+	public boolean hasVoted(int idIni, int idUser) throws ServicesException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
 
 
 	

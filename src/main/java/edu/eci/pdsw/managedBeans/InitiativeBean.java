@@ -61,6 +61,20 @@ public class InitiativeBean extends BasePageBean {
 		return initiativeService.listStatus();
 	}
 	
+	public void addVote(int idIni) throws ServicesException{
+		initiativeService.addVote(idIni, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
+		System.out.println("Entre a insertar el voto");
+	}
+	
+	public void deleteVote(int idIni) throws ServicesException{
+		initiativeService.deleteVote(idIni, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
+		System.out.println("Entre a borrar el voto");
+	}
+	
+	public int loadVotes(int id) throws ServicesException{
+		return initiativeService.loadVotes(id);
+	}
+	
 	public List<Initiative> myInitiatives() throws ServicesException{
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);

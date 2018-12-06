@@ -54,6 +54,16 @@ public class DescriptionInitiative extends BasePageBean{
 		return initiativeService.loadComment(initiative);
 	}
 	
+	public void addVote(int idIni) throws ServicesException{
+		initiativeService.addVote(idIni, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
+		System.out.println("Entre a insertar el voto");
+	}
+	
+	public void deleteVote(int idIni) throws ServicesException{
+		initiativeService.deleteVote(idIni, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
+		System.out.println("Entre a borrar el voto");
+	}
+	
 	public int loadVotes(int id) throws ServicesException{
 		return initiativeService.loadVotes(id);
 	}

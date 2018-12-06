@@ -44,6 +44,8 @@ public interface InitiativeMapper {
 	
 	public void deleteVote(@Param("idIni") int idIni, @Param("idUser")int idUser);
 	
+	public int hasVoted(@Param("idIni") int idIni, @Param("idUser")int idUser);
+	
 	public void insertInterested(@Param("idIni")int idIni, @Param("idUser")int idUser);
 	
 	public List<User> loadInterested(@Param("id") int id);

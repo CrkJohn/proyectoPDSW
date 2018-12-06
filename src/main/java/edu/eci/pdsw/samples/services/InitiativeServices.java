@@ -101,6 +101,8 @@ public interface InitiativeServices {
 	
 	public void deleteVote(int idIni, int idUser) throws ServicesException;
 	
+	public boolean hasVoted(int idIni, int idUser) throws ServicesException;
+	
 	public void insertInterested(int idIni, int idUser) throws ServicesException;
 	
 	public List<User> loadInterested(int id) throws ServicesException;

@@ -116,6 +116,16 @@ public class MyBatisInitiativeDAO implements InitiativeDAO{
 	public void deleteVote(int idIni,int idUser) throws ServicesException{
 		initiativeMapper.deleteVote(idIni, idUser);
 	}
+	
+	@Override
+	public boolean hasVoted(int idIni,int idUser) throws ServicesException{
+		if (initiativeMapper.hasVoted(idIni, idUser)!=0) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 
 	@Override
 	public void insertInterested(int idIni, int idUser) throws ServicesException {

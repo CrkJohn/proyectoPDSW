@@ -64,6 +64,10 @@ public class UserBean extends BasePageBean {
 		return false;
 	}
 	
+	public boolean hasVoted(int idIni) throws ServicesException {
+		return initiativeService.hasVoted(idIni, Integer.parseInt(((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("id").toString()));
+	}
+	
 	public String getName() {
 		return ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("name").toString();
 	}

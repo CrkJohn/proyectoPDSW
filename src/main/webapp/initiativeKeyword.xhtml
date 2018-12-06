@@ -48,6 +48,12 @@
 									<h:panelGroup layout="block" rendered="#{ userBean.isAdmin()}">
 										<button type="button" data-id="#{item.name}" class="modify-Initiative btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
 									</h:panelGroup>
+									<h:panelGroup layout="block" rendered="#{userBean.hasVoted(item.id)}">
+										<p:commandButton type="button" class="btn btn-primary" actionListener="#{initiativeBean.deleteVote(item.id)}" style="margin-left:5px;" value= "DisLike"></p:commandButton>
+									</h:panelGroup>
+									<h:panelGroup layout="block" rendered="#{not userBean.hasVoted(item.id)}">
+										<p:commandButton type="button" class="btn btn-primary" actionListener="#{initiativeBean.addVote(item.id)}" style="margin-left:5px;" value= "Like"></p:commandButton>
+									</h:panelGroup>
 								</center>
 							</span>
 						</td>

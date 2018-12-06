@@ -144,6 +144,11 @@ public class InitiativeServiceImpl implements InitiativeServices {
 	public void deleteVote(int idIni,int idUser) throws ServicesException{
 		initiativeDAO.deleteVote(idIni, idUser);
 	}
+	
+	@Override
+	public boolean hasVoted(int idIni,int idUser) throws ServicesException{
+		return initiativeDAO.hasVoted(idIni, idUser);
+	}
 
 	@Override
 	public void insertInterested(int idIni, int idUser) throws ServicesException {

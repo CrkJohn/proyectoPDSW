@@ -65,6 +65,11 @@
         WHERE v.initiative_id=#{id};
     </select>
     
+    <select id="hasVoted" resultType="int" parameterType="map">
+    	SELECT count(*)
+    	FROM "vote" as v
+        WHERE v.initiative_id=#{idIni} and v.user_id=#{idUser};
+    </select>
     
     <select id="isInterested" resultType="int" parameterType="int">
         SELECT count(*)
