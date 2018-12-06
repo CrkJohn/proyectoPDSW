@@ -1,4 +1,7 @@
 $("#myInitiativeTable").DataTable();
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 $(".modify-Initiative").on('click',function(){
 	var nombre = $(this).parent().parent().children()[0];
@@ -16,6 +19,12 @@ $("#keywordInsert").on( 'change',function(){
 $("#modifyInitiative").on('shown.bs.modal', function(){
 	$("#InitiativeStatus\\:inStatus").val($("#inStatus").val())
 });
+
+$("#modifyInitiative").on('hidden.bs.modal', function(){
+	$(".ui-messages-info").remove();
+});
+
+
 
 $(document).on("click", ".modify-Initiative", function () {
      var inStatus = $(this).data('id');

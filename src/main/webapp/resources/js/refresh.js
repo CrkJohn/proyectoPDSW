@@ -18,3 +18,11 @@ var table = $('#keyinitiative').DataTable();
 
 $("#myInitiativeTable").DataTable();
 
+$(".modify-Initiative").on('click',function(){
+	var nombre = $(this).parent().parent().children()[0];
+	var area = $(this).parent().parent().children()[1];
+	var desc = $(this).parent().parent().children()[3];
+	$("#InitiativeStatus\\:nombre").val(nombre.innerText);
+	$("#InitiativeStatus\\:areaIn").val(area.innerText);
+	$("#InitiativeStatus\\:description").val(desc.innerText);
+});

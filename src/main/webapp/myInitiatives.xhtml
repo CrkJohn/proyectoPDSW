@@ -40,7 +40,15 @@
 						<td>#{item.status.status}</td>
 						<td>#{item.description}</td>
 						<td>
-							<button type="button" data-id="#{item.id}" class="modify-Initiative btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
+							<h:panelGroup layout="block" rendered="#{item.status.status.equals('En espera revision')}">
+								<button type="button" data-id="#{item.id}" class="modify-Initiative btn btn-primary" data-toggle="modal" data-target="#modifyInitiative">Modificar</button>
+							</h:panelGroup>
+							<h:panelGroup layout="block" rendered="#{not item.status.status.equals('En espera revision')}">
+								<div data-toggle="tooltip" title="La inciativa esta en otro proceso y ya no se puede modificar" style="cursor: not-allowed;">
+									<button type="button" data-id="#{item.id}" class="modify-Initiative btn btn-primary"  disabled="">Modificar</button>
+								</div>
+							</h:panelGroup>							
+
 						</td>
 					</tr>
 					</ui:repeat>
@@ -122,7 +130,8 @@
 	  </div>
 	</div>
 
- 	<h:outputScript name = "js/myInitiative.js" />
+	<h:outputScript name = "js/bootstrap-tagsinput.js" />
+	<h:outputScript name = "js/myInitiative.js" />
 	<h:outputScript name = "dataTable/js/jquery.dataTables.min.js" />
 	<h:outputScript name = "dataTable/js/dataTables.bootstrap.min.js" />
 
