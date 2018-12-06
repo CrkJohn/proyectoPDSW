@@ -83,7 +83,8 @@
 									<p style="margin-left: 25%;margin-right: 25%">
 									La descripción de la iniciativa es la siguiente:
 									<br></br>
-									<b><em>"#{item.description}"</em></b>
+									<b><em>"#{initiative.description}"</em></b>
+
 									<br></br>	
 						 			</p>
 									<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
@@ -117,7 +118,7 @@
 		     </div>
 		     <div class= "modal-body">
 		     	<h:form id= "InitiativeStatus">
-	     		  <input type="text" name="inStatus" id="inStatus" value="" style="visibility: hidden"/>	  
+	     		  <input type="text" name="inStatus" id="inStatus" value="" style="display:none"/>	  
 				  <p:inputText id="inStatus" binding="#{inStatus}" type="hidden"/>
 				  <div class="form-group">
 				    <label for="new_status">Nuevo estado</label>

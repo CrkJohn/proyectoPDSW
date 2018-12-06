@@ -83,13 +83,14 @@
 					<h:form id="voteForm">
 
 						<p:commandButton value = "Like"
-							actionListener="#{dInitiativeBean.addVote()}" id="botonVoto" styleClass="btn btn-primary" rendered="#{not dInitiativeBean.hasVoted()}">
+							actionListener="#{dInitiativeBean.addVote()}" id="botonVoto" styleClass="btn btn-primary" rendered="#{not dInitiativeBean.hasVoted()}" update="voteForm">
 							<f:param name="initiative" value="#{dInitiativeBean.initiative}" />
 						</p:commandButton>
 						<p:commandButton value = "DisLike"  
-							actionListener="#{dInitiativeBean.deleteVote()}" id="botonDejarVotar" styleClass="btn btn-default" rendered="#{dInitiativeBean.hasVoted()}" >
-							<f:param name="initiative" value="#{dInitiativeBean.initiative}" />
+							actionListener="#{dInitiativeBean.deleteVote()}" id="botonDejarVotar" styleClass="btn btn-default" rendered="#{dInitiativeBean.hasVoted()}" update="voteForm">
+							<f:param name="initiative" value="#{dInitiativeBean.initiative}"/>
 						</p:commandButton>
+						<h:outputScript name = "js/buttons.js" />
 					</h:form>
 				  </div>
 				</div>
