@@ -49,6 +49,12 @@ public class InitiativeBean extends BasePageBean {
 		return initiativeService.searchInitiativeByKeywords(keywords);
 	}
 	
+	public Initiative searchInitiativeById(int id) throws ServicesException{
+		System.out.println(id);
+		System.out.println(initiativeService.searchInitiative(id));
+		return initiativeService.searchInitiative(id);
+	}
+	
 	public List<Initiative> listAll() throws ServicesException{
 		return initiativeService.listInitiative();
 	}

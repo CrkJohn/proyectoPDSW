@@ -18,7 +18,6 @@ $("#modifyInitiative").on('shown.bs.modal', function(){
 	$("#InitiativeStatus\\:inStatus").val($("#inStatus").val())
 });
 
-
 $(document).ready(function() {
     $("#initiativeTable").DataTable();
 	$("#keyinitiative").DataTable();
