@@ -68,7 +68,17 @@ Todas las consultas deben tener al menos la siguiente información: Id, nombre de
 
 # Descripción del proceso
 
-La metodología utilizada fue SCRUM, una de las metodología agiles que existen hoy en día. Consta de 3 participantes: El scrum master, el product owner y el equipo. En esta actividad, el profesor de la clase hizo el papel del product ownner, Santiago Rocha hizo el papel del Scrum Master y los 4 fuimos el equipo de trabajo.
+La metodología utilizada fue SCRUM, el framework de desarrollo ágil más extendido. Se trata de un método iterativo e incremental en el que se divide el desarrollo de un producto en ciclos. En cada uno de estos ciclos, llamados sprints, el equipo trabaja sobre una lista de requisitos priorizada. Al final de dicho ciclo, el resultado debe ser un producto terminado y entregable. 
+Scrum se basa en los siguientes principios:
+* Colaboración estrecha con el cliente.
+* Predisposición y respuesta al cambio.
+* Prefiere el conocimiento tácito de las personas al explícito de los procesos.
+* Desarrollo incremental con entregas funcionales frecuentes.
+* Comunicación verbal directa entre los implicados en el proyecto.
+* Motivación y responsabilidad de los equipos por la auto-gestión, auto-organización y compromiso.
+* Simplicidad. Supresión de artefactos innecesarios en la gestión del proyecto.
+#
+Consta de 3 participantes: El scrum master, el product owner y el equipo. En esta actividad, el profesor hizo el papel del Product Owner, Santiago Rocha hizo el papel del Scrum Master y los 4 fuimos el equipo de trabajo.
 #
 [Enlace de Trello](https://trello.com/b/NoLw4yps/banco-de-iniciativas-e-ideas-de-proyectos)
 
