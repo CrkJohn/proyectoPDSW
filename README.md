@@ -60,15 +60,16 @@ Todas las consultas deben tener al menos la siguiente información: Id, nombre de
 
 # Arquitectura y diseño detallado.
 ### Modelo E-R: 
-![alt text](https://github.com/Santiago-Rocha/proyectopdsw/img/ModeloE-R.png "Logo Title Text 1")
+![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/ModeloE-R.png "Modelo E-R")
 ### Diagrama de Clases:
-![alt text](https://github.com/Santiago-Rocha/proyectopdsw/img/DiagramaDeClases.png "Logo Title Text 1")
+![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/DiagramaDeClases.png "Diagrama de clases")
 ### Heroku:
 [Aquí se encuentra la aplicación desplegada en heroku](https://proyectodask.herokuapp.com/)
 
 # Descripción del proceso
 
 La metodología utilizada fue SCRUM, una de las metodología agiles que existen hoy en día. Consta de 3 participantes: El scrum master, el product owner y el equipo. En esta actividad, el profesor de la clase hizo el papel del product ownner, Santiago Rocha hizo el papel del Scrum Master y los 4 fuimos el equipo de trabajo.
+#
 [Enlace de Trello](https://trello.com/b/NoLw4yps/banco-de-iniciativas-e-ideas-de-proyectos)
 
 
