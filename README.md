@@ -82,5 +82,25 @@ Consta de 3 participantes: El scrum master, el product owner y el equipo. En est
 #
 [Enlace de Trello](https://trello.com/b/NoLw4yps/banco-de-iniciativas-e-ideas-de-proyectos)
 
+#
+### Sprint 1
+##### Sprint-Backlog
+![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/Sprint1.png "Sprint-Backlog1")
+##### Sprint-Burndown Chart
+![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/chart1.png "SprintBurndown1")
+
+### Sprint 2
+##### Sprint-Backlog
+![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/Sprint2.png "SprintBacklog2")
+##### Sprint-Burndown Chart
+![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/chart2.png "SprintBurndown2")
+
+### Sprint 3
+##### Sprint-Backlog
+![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/Sprint3.png "SprintBacklog3")
+##### Sprint-Burndown Chart
+![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/chart3.png "SprintBurndown3")
+
+
 
 
