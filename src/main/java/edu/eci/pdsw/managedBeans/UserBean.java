@@ -97,8 +97,11 @@ public class UserBean extends BasePageBean {
 	public void modifyUser(String email, int rol) {
 		try {
 			initiativeService.modifyUser(email, rol);
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Datos Guardados"));
+			
 		} catch (ServicesException e) {
 			// TODO Auto-generated catch block
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo guardar","Error"));
 			e.printStackTrace();
 		}
 	}

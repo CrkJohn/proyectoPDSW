@@ -52,7 +52,7 @@
 	<insert id="insertInitiative" parameterType="Initiative">
 		INSERT INTO "initiative"
 		(id, description, area,creation_date,User_id,modify_date,type_status_id, "Name") 
-		VALUES((select count(*)+2 from "initiative"),#{description},#{area},#{creation},#{idus},#{modification},#{state},#{name})
+		VALUES((select count(*)+1 from "initiative"),#{description},#{area},#{creation},#{idus},#{modification},#{state},#{name})
 	</insert>
 	
 	<insert id="addVote"  parameterType="int">
