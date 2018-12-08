@@ -1,13 +1,15 @@
 
-# Escuela Colombiana de IngenierÌa
+# Escuela Colombiana de Ingenier√≠a
 # Procesos de desarrollo de Software, PDSW 2018-2
 # BANCO DE INICIATIVAS DE PROYECTOS
 #
-##### INTEGRANTES: Santiago Rocha, Diego Carvajal, Ana RincÛn, Karen Dur·n 
-##### PROFESOR: Francisco Ch·ves 
+#[![CircleCI](https://circleci.com/gh/Santiago-Rocha/proyectoPDSW.svg?style=svg)](https://circleci.com/gh/Santiago-Rocha/proyectoPDSW)
+#
+##### INTEGRANTES: Santiago Rocha, Diego Carvajal, Ana Rinc√≥n, Karen Dur√°n 
+##### PROFESOR: Francisco Ch√°ves 
 #
 #
-La Plataforma banco de iniciativas de proyectos, es una herramienta donde la comunidad universitaria de la Escuela Colombiana de IngenierÌa Julio Garavito pueden registrar sus iniciativas e ideas de proyectos para ser desarrollados o gestionados por la PMO de la Escuela. El sistema, m·s all· de facilitar el registro de las iniciativas e ideas de proyectos, es una valiosa base de conocimiento donde los diferentes actores pueden revisar si hay iniciativas, ideas o intereses similares y aunar esfuerzos para la materializaciÛn. Adicional a lo anterior, el personal acadÈmico puede integrar a los estudiantes de diferentes asignaturas o proyectos de grado para su realizaciÛn, materializando las iniciativas para el beneficio de toda la comunidad universitaria. La PMO puede priorizar las iniciativas viables, asignar responsables, gestionar la asignaciÛn de recursos, llevar mÈtricas e identificar grupos de interÈs -a travÈs del tiempo- que se van presentando para cada iniciativa. Con esto se espera lograr no solo la realizaciÛn de los proyectos sino una aplicaciÛn pr·ctica de los conocimientos adquiridos por los estudiantes dentro de las asignaturas de la Escuela generando un ambiente de aprendizaje colaborativo.
+La Plataforma banco de iniciativas de proyectos, es una herramienta donde la comunidad universitaria de la Escuela Colombiana de Ingenier√≠a Julio Garavito pueden registrar sus iniciativas e ideas de proyectos para ser desarrollados o gestionados por la PMO de la Escuela. El sistema, m√°s all√° de facilitar el registro de las iniciativas e ideas de proyectos, es una valiosa base de conocimiento donde los diferentes actores pueden revisar si hay iniciativas, ideas o intereses similares y aunar esfuerzos para la materializaci√≥n. Adicional a lo anterior, el personal acad√©mico puede integrar a los estudiantes de diferentes asignaturas o proyectos de grado para su realizaci√≥n, materializando las iniciativas para el beneficio de toda la comunidad universitaria. La PMO puede priorizar las iniciativas viables, asignar responsables, gestionar la asignaci√≥n de recursos, llevar m√©tricas e identificar grupos de inter√©s -a trav√©s del tiempo- que se van presentando para cada iniciativa. Con esto se espera lograr no solo la realizaci√≥n de los proyectos sino una aplicaci√≥n pr√°ctica de los conocimientos adquiridos por los estudiantes dentro de las asignaturas de la Escuela generando un ambiente de aprendizaje colaborativo.
 
 
 # Detalles provistos por el Stakeholder.
@@ -31,52 +33,52 @@ Cambiar el estado de las iniciativas
 	
 	
 Estado de la Iniciativa
-1 En espera de revisiÛn
-2 En revisiÛn
+1 En espera de revisi√≥n
+2 En revisi√≥n
 3 Proyecto
 4 Solucionado
 
 Proponente:
-Registrar de una iniciativa o idea: Importante guardar la referencia a los datos del usuario para poder ser contactados, incluyendo su ·rea o dependencia.
+Registrar de una iniciativa o idea: Importante guardar la referencia a los datos del usuario para poder ser contactados, incluyendo su √°rea o dependencia.
 Consultar las ideas o iniciativas que el proponente ha realizado
-Modificar una iniciativa o idea siempre y cuando se encuentre en el estado ìpropuestaî.
+Modificar una iniciativa o idea siempre y cuando se encuentre en el estado ‚Äúpropuesta‚Äù.
  
-P˙blico:
-Consultar la informaciÛn de las diferentes ideas o iniciativas 
-Poder mostrar su interÈs o afinidad con el desarrollo de una idea o iniciativa de proyecto que se encuentre en el banco y dejar comentarios u observaciones al mismo. 
+P√∫blico:
+Consultar la informaci√≥n de las diferentes ideas o iniciativas 
+Poder mostrar su inter√©s o afinidad con el desarrollo de una idea o iniciativa de proyecto que se encuentre en el banco y dejar comentarios u observaciones al mismo. 
 Votar (dar like) sobre una idea o iniciativa.
-Indicar la intenciÛn de trabajar o apoyar el desarrollo de la iniciativa o idea de proyecto, es decir, que le interesa
+Indicar la intenci√≥n de trabajar o apoyar el desarrollo de la iniciativa o idea de proyecto, es decir, que le interesa
 Consultar las ideas o iniciativas de acuerdo a palabras clave
-Entregar estadÌsticas con base en la informaciÛn registrada.
+Entregar estad√≠sticas con base en la informaci√≥n registrada.
  
 Administrador:
-Consulta de toda la informaciÛn relacionada con las ideas o iniciativas. Permitir hacer la consulta de las ideas o iniciativas por ·reas, dependencia, palabras clave.
-Incorporar al informe diferentes estadÌsticas.
-* Porcentaje de ideas de las diferentes ·reas o dependencias.
+Consulta de toda la informaci√≥n relacionada con las ideas o iniciativas. Permitir hacer la consulta de las ideas o iniciativas por √°reas, dependencia, palabras clave.
+Incorporar al informe diferentes estad√≠sticas.
+* Porcentaje de ideas de las diferentes √°reas o dependencias.
 * Cantidad de proyectos relacionados por cada uno de los estados.
-Ideal que todas estas consultas puedan ser descargadas en excel o pdf. Posiblemente se tengan gr·ficos estadÌsticos que permitan visualizar la informaciÛn anterior.
+Ideal que todas estas consultas puedan ser descargadas en excel o pdf. Posiblemente se tengan gr√°ficos estad√≠sticos que permitan visualizar la informaci√≥n anterior.
 
-Todas las consultas deben tener al menos la siguiente informaciÛn: Id, nombre de la iniciativa, el estado, el n˙mero de votos, el nombre, el usuario y el email del proponente, el ·rea o dependencia, la fecha de creaciÛn de la iniciativa.
+Todas las consultas deben tener al menos la siguiente informaci√≥n: Id, nombre de la iniciativa, el estado, el n√∫mero de votos, el nombre, el usuario y el email del proponente, el √°rea o dependencia, la fecha de creaci√≥n de la iniciativa.
 
-# Arquitectura y diseÒo detallado.
+# Arquitectura y dise√±o detallado.
 ### Modelo E-R: 
 ![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/ModeloE-R.png "Modelo E-R")
 ### Diagrama de Clases:
 ![alt text](https://github.com/Santiago-Rocha/proyectoPDSW/blob/master/img/DiagramaDeClases.png "Diagrama de clases")
 ### Heroku:
-[AquÌ se encuentra la aplicaciÛn desplegada en heroku](https://proyectodask.herokuapp.com/)
+[Aqu√≠ se encuentra la aplicaci√≥n desplegada en heroku](https://proyectodask.herokuapp.com/)
 
-# DescripciÛn del proceso
+# Descripci√≥n del proceso
 
-La metodologÌa utilizada fue SCRUM, el framework de desarrollo ·gil m·s extendido. Se trata de un mÈtodo iterativo e incremental en el que se divide el desarrollo de un producto en ciclos. En cada uno de estos ciclos, llamados sprints, el equipo trabaja sobre una lista de requisitos priorizada. Al final de dicho ciclo, el resultado debe ser un producto terminado y entregable. 
+La metodolog√≠a utilizada fue SCRUM, el framework de desarrollo √°gil m√°s extendido. Se trata de un m√©todo iterativo e incremental en el que se divide el desarrollo de un producto en ciclos. En cada uno de estos ciclos, llamados sprints, el equipo trabaja sobre una lista de requisitos priorizada. Al final de dicho ciclo, el resultado debe ser un producto terminado y entregable. 
 Scrum se basa en los siguientes principios:
-* ColaboraciÛn estrecha con el cliente.
-* PredisposiciÛn y respuesta al cambio.
-* Prefiere el conocimiento t·cito de las personas al explÌcito de los procesos.
+* Colaboraci√≥n estrecha con el cliente.
+* Predisposici√≥n y respuesta al cambio.
+* Prefiere el conocimiento t√°cito de las personas al expl√≠cito de los procesos.
 * Desarrollo incremental con entregas funcionales frecuentes.
-* ComunicaciÛn verbal directa entre los implicados en el proyecto.
-* MotivaciÛn y responsabilidad de los equipos por la auto-gestiÛn, auto-organizaciÛn y compromiso.
-* Simplicidad. SupresiÛn de artefactos innecesarios en la gestiÛn del proyecto.
+* Comunicaci√≥n verbal directa entre los implicados en el proyecto.
+* Motivaci√≥n y responsabilidad de los equipos por la auto-gesti√≥n, auto-organizaci√≥n y compromiso.
+* Simplicidad. Supresi√≥n de artefactos innecesarios en la gesti√≥n del proyecto.
 #
 Consta de 3 participantes: El scrum master, el product owner y el equipo. En esta actividad, el profesor hizo el papel del Product Owner, Santiago Rocha hizo el papel del Scrum Master y los 4 fuimos el equipo de trabajo.
 #
