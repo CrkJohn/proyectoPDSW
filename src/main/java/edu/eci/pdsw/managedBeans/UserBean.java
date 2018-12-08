@@ -59,8 +59,18 @@ public class UserBean extends BasePageBean {
 	}
 	
 	public boolean isAdmin() {
-		if(islogged())
-			return ((HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true)).getAttribute("type").toString().equals("0");
+		if(islogged()) {
+			HttpSession sesion = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+			return sesion.getAttribute("type").toString().equals("0") || sesion.getAttribute("type").toString().equals("1");
+		}
+		return false;
+	}
+	
+	public boolean isPublic() {
+		if(islogged()) {
+			HttpSession sesion = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+			return sesion.getAttribute("type").toString().equals("3");
+		}
 		return false;
 	}
 	

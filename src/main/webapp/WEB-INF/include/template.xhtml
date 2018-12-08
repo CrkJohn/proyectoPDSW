@@ -24,8 +24,10 @@
 			<div class="navbar-collpase">
 				<h:panelGroup layout="block" rendered="#{userBean.islogged()}">
 					<ul class="nav navbar-nav"><li><a id="user-link" href="/faces/initiativeKeyword.xhtml">Todas</a></li></ul>
-					<ul class="nav navbar-nav"><li><a id="user-link" href="/faces/myInitiatives.xhtml">Mis iniciativas</a></li></ul>
-					<ul class="nav navbar-nav"><li><a id="user-link" href="/faces/chartInitiative.xhtml">Graficas</a></li></ul>
+					<h:panelGroup layout="block" rendered="#{ not userBean.isPublic()}">
+						<ul class="nav navbar-nav"><li><a id="user-link" href="/faces/myInitiatives.xhtml">Mis iniciativas</a></li></ul>
+					</h:panelGroup>
+					<ul class="nav navbar-nav"><li><a id="user-link" href="/faces/chartInitiative.xhtml">Graficas</a></li></ul>			
 					<button type="button" class="btn btn-default navbar-btn navbar-right" data-toggle="modal" data-target="#myModalOut">Salir</button>
 				</h:panelGroup>
 				<h:panelGroup layout="block" rendered="#{ userBean.isAdmin()}">
