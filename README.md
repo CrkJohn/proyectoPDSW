@@ -1,9 +1,9 @@
-
+﻿
 # Escuela Colombiana de Ingeniería
 # Procesos de desarrollo de Software, PDSW 2018-2
 # BANCO DE INICIATIVAS DE PROYECTOS
 #
-#[![CircleCI](https://circleci.com/gh/Santiago-Rocha/proyectoPDSW.svg?style=svg)](https://circleci.com/gh/Santiago-Rocha/proyectoPDSW)
+[![CircleCI](https://circleci.com/gh/Santiago-Rocha/proyectoPDSW.svg?style=svg)](https://circleci.com/gh/Santiago-Rocha/proyectoPDSW)
 #
 ##### INTEGRANTES: Santiago Rocha, Diego Carvajal, Ana Rincón, Karen Durán 
 ##### PROFESOR: Francisco Cháves 

@@ -63,7 +63,14 @@ public class InitiativeBean extends BasePageBean {
 	}
 	
 	public void modifyStatus(String newStatus, String name) throws ServicesException{
-		initiativeService.modifyInitiative(newStatus, name);
+		try{
+			initiativeService.modifyInitiative(newStatus, name);
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Datos Guardados"));
+		
+		} catch (ServicesException ex) {
+			FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,"No se pudo guardar","Error"));
+			throw ex;
+		}
 	}
 	
 	public List<TypeStatus> getTypes () throws ServicesException{
